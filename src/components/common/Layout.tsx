@@ -1,6 +1,8 @@
 import { Outlet, NavLink, useLocation, Link } from 'react-router-dom'
 import { useGame } from '../../context/GameContext.tsx'
+import { useGameOrchestrator } from '../../hooks/useGameOrchestrator.ts'
 import { ALL_DOCUMENTS } from '../../data/index.ts'
+import ChapterTransition from '../ChapterTransition/ChapterTransition.tsx'
 import type { DocumentId } from '../../types/index.ts'
 
 const tabs = [
@@ -19,6 +21,7 @@ function extractDocId(pathname: string): DocumentId | null {
 export default function Layout() {
   const location = useLocation()
   const { state } = useGame()
+  const { transitionChapter, handleTransitionComplete } = useGameOrchestrator()
 
   const isDocPage = location.pathname.startsWith('/doc/')
   const activeDocId = extractDocId(location.pathname)
@@ -27,6 +30,13 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
+      {/* Chapter transition overlay */}
+      {transitionChapter !== null && (
+        <ChapterTransition
+          chapterNumber={transitionChapter}
+          onComplete={handleTransitionComplete}
+        />
+      )}
       {/* Desktop sidebar navigation */}
       <nav className="hidden md:flex md:flex-col md:w-64 md:shrink-0 md:border-r md:border-paper-300 md:shadow-[1px_0_4px_rgba(0,0,0,0.05)] bg-paper-200">
         {/* Game title header */}

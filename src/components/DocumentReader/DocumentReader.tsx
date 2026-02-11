@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useGame } from '../../context/GameContext.tsx'
-import { ALL_DOCUMENTS, CONTRADICTIONS } from '../../data/index.ts'
+import { useContradiction } from '../../hooks/useContradiction.ts'
+import { ALL_DOCUMENTS } from '../../data/index.ts'
 import type {
   DocumentCategory,
   DocumentId,
-  ContradictionDef,
   Highlight,
 } from '../../types/index.ts'
 
@@ -35,48 +35,12 @@ const CATEGORY_COLORS: Record<DocumentCategory, string> = {
   TJC: 'bg-stamp-300/15 text-stamp-300',
 }
 
-// ===== Contradiction checking =====
-
-function triggerMatchesHighlights(
-  trigger: ContradictionDef['triggers'][number],
-  highlights: Highlight[],
-): Highlight | undefined {
-  return highlights.find((h) => {
-    if (h.docId !== trigger.docId) return false
-    if (h.paragraphIndex !== trigger.paragraphIndex) return false
-    return trigger.keywords.every((kw) => h.text.includes(kw))
-  })
-}
-
-function findNewlyTriggeredContradiction(
-  highlights: Highlight[],
-  alreadyTriggeredIds: Set<string>,
-): { contradiction: ContradictionDef; pair: [string, string] } | null {
-  for (const contradiction of Object.values(CONTRADICTIONS)) {
-    if (alreadyTriggeredIds.has(contradiction.id)) continue
-
-    const [triggerA, triggerB] = contradiction.triggers
-    const matchA = triggerMatchesHighlights(triggerA, highlights)
-    const matchB = triggerMatchesHighlights(triggerB, highlights)
-
-    if (matchA && matchB) {
-      return { contradiction, pair: [matchA.id, matchB.id] }
-    }
-  }
-  return null
-}
-
 // ===== Component =====
 
 export default function DocumentReader() {
   const { id } = useParams<{ id: string }>()
-  const {
-    state,
-    markDocumentAsRead,
-    addHighlight,
-    removeHighlight,
-    triggerContradiction,
-  } = useGame()
+  const { state, markDocumentAsRead, addHighlight, removeHighlight } = useGame()
+  const { checkAndTrigger } = useContradiction()
 
   const [triggeredToast, setTriggeredToast] = useState<string | null>(null)
 
@@ -106,7 +70,6 @@ export default function DocumentReader() {
 
   const highlightsForDoc = state.highlights.filter((h) => h.docId === docId)
   const highlightedIndices = new Set(highlightsForDoc.map((h) => h.paragraphIndex))
-  const alreadyTriggeredIds = new Set(state.connections.map((c) => c.id))
 
   function handleParagraphClick(paragraphIndex: number, text: string): void {
     const existingHighlight = highlightsForDoc.find(
@@ -128,21 +91,9 @@ export default function DocumentReader() {
 
     addHighlight(newHighlight)
 
-    // Check for contradiction triggers with the new highlight included
-    const allHighlightsAfterAdd = [...state.highlights, newHighlight]
-    const result = findNewlyTriggeredContradiction(
-      allHighlightsAfterAdd,
-      alreadyTriggeredIds,
-    )
-
+    const result = checkAndTrigger(newHighlight)
     if (result) {
-      triggerContradiction(
-        result.contradiction.id,
-        result.pair,
-        result.contradiction.unlocks.documents,
-        result.contradiction.unlocks.notebookFields,
-      )
-      setTriggeredToast(result.contradiction.name)
+      setTriggeredToast(result.contradictionName)
       setTimeout(() => setTriggeredToast(null), 4000)
     }
   }
