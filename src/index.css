@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* 字體 */
+  --font-serif: 'Noto Serif TC', 'Times New Roman', serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* 米色系（紙張底色） */
+  --color-paper-50: #fefdfb;
+  --color-paper-100: #fdf8f0;
+  --color-paper-200: #f5ead6;
+  --color-paper-300: #e8d5b0;
+  --color-paper-400: #d4b886;
+  --color-paper-500: #c9a96e;
+
+  /* 深灰系（墨色，主文字） */
+  --color-ink-50: #f5f5f5;
+  --color-ink-100: #e0e0e0;
+  --color-ink-200: #b0b0b0;
+  --color-ink-300: #808080;
+  --color-ink-400: #606060;
+  --color-ink-500: #404040;
+  --color-ink-600: #2d2d2d;
+  --color-ink-700: #1a1a1a;
+  --color-ink-800: #111111;
+  --color-ink-900: #0a0a0a;
+
+  /* 暗紅系（機密戳記、重點色） */
+  --color-stamp-300: #c97070;
+  --color-stamp-400: #b84545;
+  --color-stamp-500: #8b2020;
+  --color-stamp-600: #6e1818;
+  --color-stamp-700: #501010;
+
+  /* 終端機風格（黑底綠字） */
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-text: #33ff33;
+  --color-terminal-dim: #1a6b1a;
+  --color-terminal-bright: #66ff66;
+}
+
+/* 全域基本樣式（Google Fonts 由 index.html <link> 載入） */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-paper-100);
+  color: var(--color-ink-700);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
