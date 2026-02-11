@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext.tsx'
-import { NOTEBOOK_FIELDS } from '../../data/index.ts'
+import { NOTEBOOK_FIELDS, CLOSING_LINES } from '../../data/index.ts'
 import type { NotebookFieldDef, NotebookFieldId } from '../../types/index.ts'
 
 // ===== Constants =====
@@ -9,25 +9,6 @@ import type { NotebookFieldDef, NotebookFieldId } from '../../types/index.ts'
 const SUMMARY_DISPLAY_MS = 6000
 const PHASE_TRANSITION_MS = 1500
 const LINE_REVEAL_MS = 1200
-
-const CLOSING_LINES: readonly string[] = [
-  '你確認了以下事實：',
-  '- 陳文成在被警總帶走後，再也沒有回家。',
-  '- 陳屍處並非第一現場。',
-  '- 他殺之可能性顯高於自殺或意外。',
-  '- 政府自己的實驗早已排除自殺，但選擇隱瞞。',
-  '- 四十年間，錄音帶消失了、檔案「不存在」了、證人移居海外了。',
-  '',
-  '但以下問題仍然無解：',
-  '- 那天晚上究竟發生了什麼？',
-  '- 是誰？為什麼？',
-  '- 完整的錄音帶裡記錄了什麼？',
-  '',
-  '推理簿上有幾格永遠填不滿。',
-  '不是因為你不夠努力，而是因為有人花了四十年確保它們被填不滿。',
-  '',
-  '然而，每一份被閱讀的檔案，都是對遺忘的抵抗。',
-]
 
 // ===== Field definition lookup =====
 

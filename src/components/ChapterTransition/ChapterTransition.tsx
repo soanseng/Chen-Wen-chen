@@ -1,24 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import { CHAPTERS } from '../../data/index.ts'
-
-// ===== Transition-specific display data =====
-
-/** Mood text shown during chapter transitions (more descriptive than ChapterDef.mood) */
-const TRANSITION_MOODS: Record<number, string> = {
-  0: '溫暖→不安',
-  1: '壓迫感逐漸升高',
-  2: '緊張、封閉、無處可逃',
-  3: '憤怒、困惑',
-  4: '系統性的恐怖、冷酷的官僚語言',
-  5: '無力但堅定',
-}
-
-/** Special narrative text shown for specific chapter transitions */
-const SPECIAL_TEXT: Partial<Record<number, string>> = {
-  2: '約談至此結束。此後陳文成再也沒有回家。',
-  3: '你正在尋找的錄音帶，在這份簽文之後，再也沒有被任何人聽過。',
-}
+import { CHAPTERS, CHAPTER_TRANSITIONS } from '../../data/index.ts'
 
 // ===== Animation timing =====
 
@@ -104,8 +86,9 @@ export default function ChapterTransition({
 
   // Format chapter label: 序章 for prologue, 第N章 otherwise
   const chapterLabel = chapterNumber === 0 ? '序章' : `第${chapterNumber}章`
-  const mood = TRANSITION_MOODS[chapterNumber]
-  const specialText = SPECIAL_TEXT[chapterNumber]
+  const transitionData = CHAPTER_TRANSITIONS[chapterNumber]
+  const mood = transitionData?.mood
+  const narrative = transitionData?.narrative ?? []
 
   return (
     <div
@@ -129,11 +112,15 @@ export default function ChapterTransition({
         </p>
       )}
 
-      {/* Special narrative text */}
-      {specialText && (
-        <p className="font-serif text-sm text-paper-300/70 mt-8 max-w-sm text-center leading-relaxed italic">
-          {specialText}
-        </p>
+      {/* Transition narrative text */}
+      {narrative.length > 0 && (
+        <div className="mt-8 max-w-sm text-center space-y-2">
+          {narrative.map((line, i) => (
+            <p key={i} className="font-serif text-sm text-paper-300/70 leading-relaxed italic">
+              {line}
+            </p>
+          ))}
+        </div>
       )}
     </div>
   )

@@ -1,14 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { OPENING_LINES } from '../data/index.ts'
+
 const SAVE_KEY = 'cwc_game_save_v1'
 
-const LINES = [
-  '民國70年7月2日，一位旅美學人被帶離家門。',
-  '隔日，他的屍體出現在大學校園裡。',
-  '四十年來，真相始終未明。',
-  '這些是剛解密的檔案。請開始閱讀。',
-] as const
+const LINES = OPENING_LINES
 
 const CHAR_DELAY_MS = 60
 const LINE_PAUSE_MS = 600

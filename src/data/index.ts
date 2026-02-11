@@ -17,6 +17,11 @@ import { chapter4Documents } from './documents/chapter4.ts'
 import { finaleDocuments } from './documents/finale.ts'
 import { hiddenDocuments } from './documents/hidden.ts'
 import { notebookFields } from './notebook.ts'
+import {
+  OPENING_LINES,
+  CHAPTER_TRANSITIONS,
+  CLOSING_LINES,
+} from './narratives.ts'
 
 // ===== Documents =====
 
@@ -66,3 +71,8 @@ export const CONTRADICTIONS: Record<ContradictionId, ContradictionDef> = buildCo
 export const CHAPTERS: ChapterDef[] = chapters
 
 export const NOTEBOOK_FIELDS: NotebookFieldDef[] = notebookFields
+
+// ===== Narratives =====
+
+export { OPENING_LINES, CHAPTER_TRANSITIONS, CLOSING_LINES }
+export type { ChapterTransitionText } from './narratives.ts'
