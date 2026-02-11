@@ -3,6 +3,7 @@ import { useGame } from '../../context/GameContext.tsx'
 import { useGameOrchestrator } from '../../hooks/useGameOrchestrator.ts'
 import { ALL_DOCUMENTS } from '../../data/index.ts'
 import ChapterTransition from '../ChapterTransition/ChapterTransition.tsx'
+import { ChapterDarkenEffect } from '../visual/ChapterDarkenEffect.tsx'
 import type { DocumentId } from '../../types/index.ts'
 
 const tabs = [
@@ -37,6 +38,9 @@ export default function Layout() {
           onComplete={handleTransitionComplete}
         />
       )}
+
+      {/* Progressive darkening effect (Ch1 oppression, Ch2 ending) */}
+      <ChapterDarkenEffect />
       {/* Desktop sidebar navigation */}
       <nav className="hidden md:flex md:flex-col md:w-64 md:shrink-0 md:border-r md:border-paper-300 md:shadow-[1px_0_4px_rgba(0,0,0,0.05)] bg-paper-200">
         {/* Game title header */}

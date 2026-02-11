@@ -95,6 +95,16 @@ export default function ChapterTransition({
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-ink-900 px-6 select-none"
       style={{ opacity, transition }}
     >
+      {/* Subtle scan-line overlay for retro feel */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(transparent, transparent 2px, rgba(0,0,0,0.5) 2px, rgba(0,0,0,0.5) 4px)',
+        }}
+        aria-hidden="true"
+      />
+
       {/* Chapter number label */}
       <p className="font-serif text-xs tracking-[0.25em] text-paper-400 uppercase mb-6">
         {chapterLabel}
@@ -121,6 +131,13 @@ export default function ChapterTransition({
             </p>
           ))}
         </div>
+      )}
+
+      {/* Special Chapter 2 ending note */}
+      {chapterNumber === 3 && (
+        <p className="mt-12 text-xs text-paper-400/40 tracking-wider">
+          此後陳文成再也沒有回家
+        </p>
       )}
     </div>
   )

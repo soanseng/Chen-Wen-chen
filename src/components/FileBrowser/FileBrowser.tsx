@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGame } from '../../context/GameContext.tsx'
 import { CHAPTERS, ALL_DOCUMENTS, DOCUMENTS_BY_CHAPTER } from '../../data/index.ts'
+import { CategoryIcon } from '../visual/CategoryIcon.tsx'
 import type { DocumentCategory, DocumentDef, ChapterDef } from '../../types/index.ts'
 
 // ===== Category labels =====
@@ -148,12 +149,13 @@ function DocumentListItem({ doc, isRead, onClick }: DocumentListItemProps) {
       onClick={onClick}
       className="w-full text-left px-4 py-3 flex items-center gap-3 border-b border-paper-200 hover:bg-paper-200/60 transition-colors group"
     >
-      {/* Unread indicator */}
-      <span
-        className={`shrink-0 w-2 h-2 rounded-full transition-colors ${
-          isRead ? 'bg-transparent' : 'bg-stamp-400'
-        }`}
-      />
+      {/* Category pixel icon + unread indicator */}
+      <span className="shrink-0 relative flex items-center justify-center w-6 h-6">
+        <CategoryIcon category={doc.category} size={20} />
+        {!isRead && (
+          <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-stamp-400" />
+        )}
+      </span>
 
       {/* Document info */}
       <div className="flex-1 min-w-0">
