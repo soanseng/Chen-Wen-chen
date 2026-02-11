@@ -77,13 +77,23 @@ Chen-Wen-chen/
 │   ├── pixi/                        # PixiJS 視覺場景
 │   │   ├── index.ts
 │   │   ├── PixiCanvas.tsx
-│   │   ├── deskScene.ts             # 桌面背景
+│   │   ├── pixelArtEngine.ts        # 像素風繪圖引擎
+│   │   ├── pixelPalette.ts          # 統一調色盤
 │   │   ├── stampAnimation.ts        # 印章動畫
-│   │   └── chapterScenes.ts         # 章節轉場像素場景
+│   │   ├── scenes/                  # 研究桌章節背景場景
+│   │   │   ├── index.ts
+│   │   │   └── deskScenes.ts
+│   │   └── illustrations/           # 文件＋矛盾像素插圖
+│   │       ├── index.ts
+│   │       ├── prologueIllustrations.ts
+│   │       ├── chapter1~4Illustrations.ts
+│   │       ├── finaleIllustrations.ts
+│   │       └── contradictionIllustrations.ts
 │   └── styles/
 ├── docs/
 │   ├── plans/                       # 實作計畫
-│   │   └── 2026-02-11-v2-papers-please-redesign.md
+│   │   ├── 2026-02-11-v2-papers-please-redesign.md
+│   │   └── 2026-02-11-v2-pixel-art-scenes.md
 │   ├── documents.md
 │   ├── contradictions.md
 │   ├── gameflow.md
@@ -153,19 +163,23 @@ Chen-Wen-chen/
 
 ### 進行中（v2 重新設計）
 
-詳見 `docs/plans/2026-02-11-v2-papers-please-redesign.md`
+詳見 `docs/plans/` 目錄
 
 - [ ] Phase A：自動發現系統（閱讀即觸發矛盾 + DiscoveryPanel）
 - [ ] Phase B：研究桌 UI（ResearchDesk + DocumentSheet + 底部導航）
-- [ ] Phase C：像素風視覺強化（桌面場景、印章動畫、章節轉場像素畫）
+- [ ] Phase C：像素風視覺強化（印章動畫、章節轉場像素畫）
 - [ ] Phase D：互動推理簿（印章蓋章機制）
 - [ ] Phase E：手機觸控優化（滑動手勢、響應式佈局、效能）
+- [ ] Phase F：像素風場景與插圖（研究桌背景 × 6 + 文件插圖 × 12 + 矛盾插圖 × 5）
 
 ### 設計約束
 
 - 不使用背景音樂、音效
 - 像素風視覺服務敘事，不追求華麗特效
+- 所有像素風資產以程式生成（Canvas 2D / PixiJS Graphics），不依賴外部圖片檔
+- 像素場景使用剪影和極簡細節，尊重歷史敏感度（不畫具體人臉）
 - PixiJS 負責場景渲染（桌面、印章、轉場），React 負責文字與互動
+- 像素場景解析度：桌面 160×90px，文件插圖 120×80px，顯示時 2x–3x 放大
 - 字體：Noto Serif TC（Google Fonts）
 - 調色盤：米色（paper）、深灰（ink）、暗紅（stamp）+ 木紋桌面深棕
 - 所有遊戲文件內容以 `src/data/` 下的結構化資料模組儲存
