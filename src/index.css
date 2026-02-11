@@ -53,3 +53,9 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* 淡入動畫（用於終章文字逐行顯示等） */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
