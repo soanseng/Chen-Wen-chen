@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { GameProvider } from './context/GameContext'
 import Layout from './components/common/Layout'
 import Opening from './components/Opening'
@@ -10,7 +10,7 @@ import Ending from './components/Ending/Ending'
 export default function App() {
   return (
     <GameProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Opening />} />
           <Route element={<Layout />}>
@@ -20,7 +20,7 @@ export default function App() {
           </Route>
           <Route path="/ending" element={<Ending />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </GameProvider>
   )
 }
