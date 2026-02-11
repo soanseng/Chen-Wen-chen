@@ -2,16 +2,18 @@
 
 ## 專案概述
 
-一款網頁互動文字調查遊戲，靈感來自台灣1981年陳文成事件。玩家扮演現代研究員，透過瀏覽解密檔案、標記可疑段落、觸發矛盾連結，逐步拼湊真相——但結局不是「破案」，推理簿上永遠有填不完的空白，因為真相至今未明。
+一款 Papers, Please 風格的網頁互動調查遊戲，以台灣 1981 年陳文成事件為題材。玩家扮演現代研究員，在研究桌上翻閱解密檔案，系統自動比對已讀文件中的矛盾——讀得越多、發現越多，但推理簿上永遠有填不完的空白，因為真相至今未明。
+
+**設計靈感**：Papers, Please（桌面文件比對 + 印章判斷 + 像素風視覺）
 
 ## 技術規格
 
-- **前端框架**：React + Vite + TailwindCSS
-- **視覺層**：PixiJS 簡單 2D 像素風（印章、紙張質感、文件圖示），以文字為主
-- **設計**：手機優先（Mobile-first），電腦也能玩
-- **UI 風格**：類似終端機或舊式文件管理器（黑底綠字 / 米色紙張質感），輔以像素風圖像增添年代感
+- **前端框架**：React 19 + Vite 7 + TailwindCSS 4
+- **視覺引擎**：PixiJS 8（桌面場景、像素風資產、印章動畫、章節轉場）
+- **設計**：手機優先（Mobile-first），觸控為主，電腦也能玩
+- **UI 風格**：研究桌面隱喻——深色木紋桌面 + 散落的米色紙張檔案 + 紅色機密印章，像素風圖像增添年代感
 - **存檔**：localStorage（預估 ~9KB）
-- **部署**：純前端，無後端。Vite 打包為靜態資產
+- **部署**：GitHub Pages，純前端靜態資產。`base: '/Chen-Wen-chen/'`
 - **語言**：繁體中文
 
 ## 專案結構
@@ -23,37 +25,90 @@ Chen-Wen-chen/
 ├── README.md
 ├── package.json
 ├── vite.config.ts
-├── tailwind.config.ts
 ├── tsconfig.json
 ├── index.html                # Vite 入口
 ├── public/
-│   └── assets/               # 像素風靜態資源（印章 sprite 等）
+│   └── assets/               # 像素風靜態資源
 ├── src/
 │   ├── main.tsx              # React 入口
-│   ├── App.tsx
-│   ├── components/           # React UI 元件
-│   ├── hooks/                # Custom hooks（useSaveGame, useContradiction 等）
-│   ├── context/              # 遊戲狀態 Context
-│   ├── data/                 # 32 份文件內容（結構化資料模組）
-│   ├── pixi/                 # PixiJS 整合（印章、紙張質感、轉場特效）
-│   └── styles/               # TailwindCSS 自訂設定與覆寫
-├── docs/                     # 規劃文件（已完成）
-│   ├── documents.md          # 32 份遊戲內文件素材清單
-│   ├── contradictions.md     # 16 個矛盾點與線索圖譜
-│   ├── gameflow.md           # 5 章遊戲流程大綱
-│   ├── characters.md         # 角色人物表與虛構化建議
-│   └── savedata.md           # 存檔 JSON 結構定義
-├── 促轉會《陳文成案調查報告》001-072.pdf  # 原始資料（不納入版控）
-└── 促轉會《陳文成案調查報告》073-170.pdf  # 原始資料（不納入版控）
+│   ├── App.tsx               # HashRouter 路由
+│   ├── components/
+│   │   ├── Opening.tsx              # 遊戲開場
+│   │   ├── DiscoveryPanel.tsx       # 矛盾發現面板（核心 UI）
+│   │   ├── ResearchDesk/            # 研究桌主畫面（Papers, Please 風格）
+│   │   │   ├── ResearchDesk.tsx
+│   │   │   └── DocumentCard.tsx
+│   │   ├── DocumentSheet/           # Bottom Sheet 文件閱讀器
+│   │   │   └── DocumentSheet.tsx
+│   │   ├── DocumentReader/          # 文件內容渲染
+│   │   │   └── DocumentReader.tsx
+│   │   ├── Notebook/                # 推理簿（印章互動）
+│   │   │   ├── Notebook.tsx
+│   │   │   └── StampSelector.tsx
+│   │   ├── Ending/                  # 終局場景
+│   │   │   └── Ending.tsx
+│   │   ├── ChapterTransition/       # 章節轉場（像素場景）
+│   │   │   └── ChapterTransition.tsx
+│   │   ├── common/
+│   │   │   └── Layout.tsx           # 主佈局 + 底部導航
+│   │   └── visual/                  # 視覺效果元件
+│   │       ├── CategoryIcon.tsx
+│   │       ├── PaperTexture.tsx
+│   │       ├── StampOverlay.tsx
+│   │       ├── ChapterDarkenEffect.tsx
+│   │       └── TypewriterReader.tsx
+│   ├── hooks/
+│   │   ├── useSaveGame.ts
+│   │   ├── useContradiction.ts      # 矛盾偵測（自動 + 手動）
+│   │   ├── useChapterUnlock.ts
+│   │   └── useGameOrchestrator.ts   # 遊戲流程編排 + 發現佇列
+│   ├── context/
+│   │   ├── GameContext.tsx
+│   │   └── gameState.ts
+│   ├── data/                        # 32 份文件 + 17 個矛盾
+│   │   ├── index.ts
+│   │   ├── chapters.ts
+│   │   ├── contradictions.ts
+│   │   ├── notebook.ts
+│   │   ├── narratives.ts
+│   │   └── documents/
+│   │       ├── prologue.ts ~ finale.ts
+│   │       └── hidden.ts
+│   ├── pixi/                        # PixiJS 視覺場景
+│   │   ├── index.ts
+│   │   ├── PixiCanvas.tsx
+│   │   ├── deskScene.ts             # 桌面背景
+│   │   ├── stampAnimation.ts        # 印章動畫
+│   │   └── chapterScenes.ts         # 章節轉場像素場景
+│   └── styles/
+├── docs/
+│   ├── plans/                       # 實作計畫
+│   │   └── 2026-02-11-v2-papers-please-redesign.md
+│   ├── documents.md
+│   ├── contradictions.md
+│   ├── gameflow.md
+│   ├── characters.md
+│   └── savedata.md
+└── .github/
+    └── workflows/
+        └── deploy.yml               # GitHub Pages 自動部署
 ```
 
-## 核心遊戲機制
+## 核心遊戲機制（v2）
 
-1. **閱讀文件**：玩家瀏覽各章解鎖的檔案
-2. **標記段落**：長按/點擊可疑段落進行標記
-3. **矛盾連結**：系統偵測到兩段標記命中特定矛盾 → 自動連結
-4. **解鎖進展**：觸發矛盾 → 解鎖新文件 / 新推論 / 推理簿欄位
-5. **推理簿**：12 個欄位，其中 4 個永遠鎖定（真相不可得）
+### 閱讀即發現（Auto-Discovery）
+
+1. **研究桌**：玩家在 Papers, Please 風格的桌面上瀏覽檔案卡片
+2. **閱讀文件**：點擊卡片開啟文件（底部滑入 sheet）
+3. **自動偵測**：系統比對已讀文件，當兩份相關文件都已讀 → 自動觸發矛盾
+4. **發現面板**：全螢幕 DiscoveryPanel 呈現矛盾引文＋歷史解讀
+5. **記入推理簿**：玩家確認發現 → 解鎖新文件 / 新推論 / 推理簿欄位
+6. **推理簿**：12 個欄位，choice 類用印章蓋章，4 個永遠鎖定（真相不可得）
+
+### 選配機制
+
+- **段落標記**：進階玩家可手動標記段落（原始觸發方式保留為 power-user 功能）
+- **文件交叉參照**：文件中的 crossRefs 可快速跳轉相關檔案
 
 ## 文件 ID 命名規則
 
@@ -64,7 +119,7 @@ Chen-Wen-chen/
 - `DOC-OFF-xx`：官方文件（Official）
 - `DOC-EXT-xx`：外部資料（External）
 
-矛盾編號：`C-01` ~ `C-16`（🔓 可解決 14 個、🔒 永遠無解 2 個）
+矛盾編號：`C-01` ~ `C-17`（🔓 可解決 15 個、🔒 永遠無解 2 個）
 
 ## 章節結構
 
@@ -87,35 +142,41 @@ Chen-Wen-chen/
 
 ## 開發指引
 
-### 待開發項目
+### 已完成（v1）
 
-規劃文件已完成，接下來是實作階段。建議順序：
+- [x] Phase 0-1：專案初始化、遊戲引擎
+- [x] Phase 2：核心 UI 元件
+- [x] Phase 3：遊戲機制整合
+- [x] Phase 4：文件內容撰寫
+- [x] Phase 5：PixiJS 像素風視覺層
+- [x] Phase 6：GitHub Pages 部署
 
-1. **專案初始化**：Vite + React + TailwindCSS 腳手架，PixiJS 整合
-2. **遊戲狀態管理**：React Context（或 Zustand）管理全域遊戲狀態
-3. **文件瀏覽器元件**：檔案列表 UI、分類瀏覽
-4. **文件閱讀器元件**：文件內容渲染、段落標記（長按/點擊）功能
-5. **矛盾偵測引擎**：custom hook 比對已標記段落，觸發矛盾連結
-6. **章節進度**：解鎖邏輯、章節轉場
-7. **推理簿**：12 欄位的筆記本介面（獨立 React 路由或視圖）
-8. **存檔系統**：localStorage custom hook（`useSaveGame`）
-9. **PixiJS 像素風圖層**：印章 sprite、紙張老化質感、文件分類圖示、章節轉場特效
-10. **文件內容撰寫**：32 份遊戲內文件的實際文本（`src/data/` 下的結構化資料）
+### 進行中（v2 重新設計）
+
+詳見 `docs/plans/2026-02-11-v2-papers-please-redesign.md`
+
+- [ ] Phase A：自動發現系統（閱讀即觸發矛盾 + DiscoveryPanel）
+- [ ] Phase B：研究桌 UI（ResearchDesk + DocumentSheet + 底部導航）
+- [ ] Phase C：像素風視覺強化（桌面場景、印章動畫、章節轉場像素畫）
+- [ ] Phase D：互動推理簿（印章蓋章機制）
+- [ ] Phase E：手機觸控優化（滑動手勢、響應式佈局、效能）
 
 ### 設計約束
 
 - 不使用背景音樂、音效
-- 動畫克制、服務敘事：PixiJS 用於細微視覺增強（印章渲染、紙張質感、章節轉場淡入/淡出），非電影式特效。文字仍是主要媒介
-- 字體：Noto Serif TC 或系統明體（於 `tailwind.config.ts` 中設定自訂 font-family）
-- 調色盤保持低調（米色、深灰、暗紅作為重點色），以 TailwindCSS 自訂主題管理
-- 所有遊戲文件內容以 `src/data/` 下的結構化資料模組儲存，以 ES module 匯入
+- 像素風視覺服務敘事，不追求華麗特效
+- PixiJS 負責場景渲染（桌面、印章、轉場），React 負責文字與互動
+- 字體：Noto Serif TC（Google Fonts）
+- 調色盤：米色（paper）、深灰（ink）、暗紅（stamp）+ 木紋桌面深棕
+- 所有遊戲文件內容以 `src/data/` 下的結構化資料模組儲存
+- 觸控目標最小 44x44px
 
 ### 存檔結構
 
 完整 JSON schema 見 `docs/savedata.md`。關鍵欄位：
 - `chapter`：當前/已解鎖/已完成章節
 - `documents`：各文件解鎖與已讀狀態
-- `highlights`：玩家標記的段落
+- `highlights`：玩家標記的段落（選配功能保留）
 - `connections`：已觸發的矛盾連結
 - `notebook`：推理簿 12 欄位的值與鎖定狀態
 
@@ -123,3 +184,5 @@ Chen-Wen-chen/
 
 - 促轉會《陳文成案調查報告》（2020）
 - `docs/` 目錄下的 5 份規劃文件為本遊戲設計的唯一權威來源
+- Papers, Please（Lucas Pope, 2013）——遊戲機制設計靈感
+- Lucas Pope 的手機移植開發日誌——觸控適配參考
