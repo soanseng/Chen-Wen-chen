@@ -257,4 +257,20 @@ export const contradictions: ContradictionDef[] = [
       chapter: null,
     },
   },
+  {
+    id: 'C-17',
+    name: '「同意」的假象',
+    description:
+      '警總報告表聲稱約談經陳文成「同意」，但出境管制文件記載他是在毫無預備的情況下被帶走，連換衣服的時間都沒有。',
+    resolvable: true,
+    triggers: [
+      { docId: 'DOC-SUR-03', paragraphIndex: 0, keywords: ['徵得', '同意'] },
+      { docId: 'DOC-OFF-01', paragraphIndex: 4, keywords: ['毫無預備', '帶走'] },
+    ],
+    unlocks: {
+      documents: [],
+      notebookFields: [],
+      chapter: null,
+    },
+  },
 ]

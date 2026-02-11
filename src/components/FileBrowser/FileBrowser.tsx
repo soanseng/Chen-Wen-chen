@@ -177,6 +177,54 @@ function DocumentListItem({ doc, isRead, onClick }: DocumentListItemProps) {
   )
 }
 
+// ===== Investigation progress hint =====
+
+interface ProgressHintProps {
+  highlightCount: number
+  triggeredCount: number
+  highestUnlocked: number
+  nextChapterLocked: boolean
+}
+
+function getNextChapterRequirement(highestUnlocked: number, triggeredCount: number): string | null {
+  switch (highestUnlocked) {
+    case 0: return '閱讀所有檔案以解鎖下一章'
+    case 1: return `已發現矛盾 ${triggeredCount}／2`
+    case 2: return '在文件中尋找關於錄音帶的矛盾'
+    case 3: return '在文件中尋找關於現場鑑識的矛盾'
+    case 4: return '尋找被隱瞞的關鍵證據'
+    default: return null
+  }
+}
+
+function InvestigationHint({ highlightCount, triggeredCount, highestUnlocked, nextChapterLocked }: ProgressHintProps) {
+  if (!nextChapterLocked && highestUnlocked >= 5) return null
+
+  const mechanic = highlightCount === 0 && highestUnlocked >= 1
+    ? '點擊文件中可疑的段落進行標記。不同文件之間的矛盾，就是突破口。'
+    : highlightCount > 0 && triggeredCount === 0 && highestUnlocked >= 1
+    ? '繼續標記不同文件中的可疑段落——當兩處標記命中矛盾時，調查就會推進。'
+    : null
+
+  const requirement = nextChapterLocked
+    ? getNextChapterRequirement(highestUnlocked, triggeredCount)
+    : null
+
+  if (!mechanic && !requirement) return null
+
+  return (
+    <div className="mx-4 my-3 px-4 py-3 bg-paper-200/60 border border-dashed border-paper-400 rounded text-xs font-serif space-y-1">
+      {mechanic && <p className="text-ink-500">{mechanic}</p>}
+      {requirement && (
+        <p className="text-ink-400">
+          <span className="text-ink-300 mr-1">▸</span>
+          {requirement}
+        </p>
+      )}
+    </div>
+  )
+}
+
 // ===== Main component =====
 
 export default function FileBrowser() {
@@ -297,6 +345,16 @@ export default function FileBrowser() {
             ))}
           </div>
         )}
+
+        {/* Investigation progress hint */}
+        <InvestigationHint
+          highlightCount={state.highlights.length}
+          triggeredCount={state.connections.filter((c) => c.triggered).length}
+          highestUnlocked={Math.max(...state.chapter.unlocked)}
+          nextChapterLocked={!state.chapter.unlocked.includes(
+            Math.max(...state.chapter.unlocked) + 1,
+          )}
+        />
       </div>
     </div>
   )

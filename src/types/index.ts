@@ -22,6 +22,7 @@ export type DocumentId =
 export type ContradictionId =
   | 'C-01' | 'C-02' | 'C-03' | 'C-04' | 'C-05' | 'C-06' | 'C-07' | 'C-08'
   | 'C-09' | 'C-10' | 'C-11' | 'C-12' | 'C-13' | 'C-14' | 'C-15' | 'C-16'
+  | 'C-17'
 
 // ===== 文件定義（靜態資料） =====
 

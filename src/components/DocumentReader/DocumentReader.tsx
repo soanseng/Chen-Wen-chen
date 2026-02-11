@@ -141,6 +141,14 @@ export default function DocumentReader() {
 
         <hr className="border-paper-300 mb-6 mx-4" />
 
+        {/* Highlight instruction (show when player has few highlights) */}
+        {hasContent && state.highlights.length < 3 && (
+          <p className="mx-4 mb-4 px-3 py-2 text-xs text-ink-400 bg-paper-200/50 border border-dashed border-paper-300 rounded font-serif">
+            <span className="text-ink-300 mr-1">&#9654;</span>
+            點擊可疑段落進行標記。標記不同文件中的矛盾之處，調查就會推進。
+          </p>
+        )}
+
         {/* Document content */}
         {hasContent ? (
           <section className="px-4 pb-4">
