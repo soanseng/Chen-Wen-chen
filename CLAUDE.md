@@ -6,10 +6,12 @@
 
 ## 技術規格
 
-- **前端**：純 HTML / CSS / JavaScript，無框架、無後端
+- **前端框架**：React + Vite + TailwindCSS
+- **視覺層**：PixiJS 簡單 2D 像素風（印章、紙張質感、文件圖示），以文字為主
 - **設計**：手機優先（Mobile-first），電腦也能玩
-- **UI 風格**：類似終端機或舊式文件管理器（黑底綠字 / 米色紙張質感）
+- **UI 風格**：類似終端機或舊式文件管理器（黑底綠字 / 米色紙張質感），輔以像素風圖像增添年代感
 - **存檔**：localStorage（預估 ~9KB）
+- **部署**：純前端，無後端。Vite 打包為靜態資產
 - **語言**：繁體中文
 
 ## 專案結構
@@ -19,6 +21,22 @@ Chen-Wen-chen/
 ├── CLAUDE.md                 # 本檔案
 ├── .gitignore
 ├── README.md
+├── package.json
+├── vite.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+├── index.html                # Vite 入口
+├── public/
+│   └── assets/               # 像素風靜態資源（印章 sprite 等）
+├── src/
+│   ├── main.tsx              # React 入口
+│   ├── App.tsx
+│   ├── components/           # React UI 元件
+│   ├── hooks/                # Custom hooks（useSaveGame, useContradiction 等）
+│   ├── context/              # 遊戲狀態 Context
+│   ├── data/                 # 32 份文件內容（結構化資料模組）
+│   ├── pixi/                 # PixiJS 整合（印章、紙張質感、轉場特效）
+│   └── styles/               # TailwindCSS 自訂設定與覆寫
 ├── docs/                     # 規劃文件（已完成）
 │   ├── documents.md          # 32 份遊戲內文件素材清單
 │   ├── contradictions.md     # 16 個矛盾點與線索圖譜
@@ -73,23 +91,24 @@ Chen-Wen-chen/
 
 規劃文件已完成，接下來是實作階段。建議順序：
 
-1. **基礎框架**：`index.html` + CSS 基礎樣式（終端機/文件管理器風格）
-2. **文件系統**：文件瀏覽器 UI、文件內容渲染
-3. **標記系統**：段落標記（長按/點擊）、標記管理
-4. **矛盾偵測引擎**：比對已標記段落，觸發矛盾連結
-5. **章節進度**：解鎖邏輯、章節轉場
-6. **推理簿**：12 欄位的筆記本介面
-7. **存檔系統**：localStorage 讀寫
-8. **文件內容撰寫**：32 份遊戲內文件的實際文本
+1. **專案初始化**：Vite + React + TailwindCSS 腳手架，PixiJS 整合
+2. **遊戲狀態管理**：React Context（或 Zustand）管理全域遊戲狀態
+3. **文件瀏覽器元件**：檔案列表 UI、分類瀏覽
+4. **文件閱讀器元件**：文件內容渲染、段落標記（長按/點擊）功能
+5. **矛盾偵測引擎**：custom hook 比對已標記段落，觸發矛盾連結
+6. **章節進度**：解鎖邏輯、章節轉場
+7. **推理簿**：12 欄位的筆記本介面（獨立 React 路由或視圖）
+8. **存檔系統**：localStorage custom hook（`useSaveGame`）
+9. **PixiJS 像素風圖層**：印章 sprite、紙張老化質感、文件分類圖示、章節轉場特效
+10. **文件內容撰寫**：32 份遊戲內文件的實際文本（`src/data/` 下的結構化資料）
 
 ### 設計約束
 
 - 不使用背景音樂、音效
-- 動畫極度克制（僅淡入/淡出）
-- 字體：Noto Serif TC 或系統明體
-- 調色盤保持低調（米色、深灰、暗紅作為重點色）
-- 單一 HTML 檔或最少的檔案數
-- 所有遊戲文件內容以 JS 物件或 JSON 內嵌
+- 動畫克制、服務敘事：PixiJS 用於細微視覺增強（印章渲染、紙張質感、章節轉場淡入/淡出），非電影式特效。文字仍是主要媒介
+- 字體：Noto Serif TC 或系統明體（於 `tailwind.config.ts` 中設定自訂 font-family）
+- 調色盤保持低調（米色、深灰、暗紅作為重點色），以 TailwindCSS 自訂主題管理
+- 所有遊戲文件內容以 `src/data/` 下的結構化資料模組儲存，以 ES module 匯入
 
 ### 存檔結構
 

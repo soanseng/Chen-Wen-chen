@@ -357,6 +357,8 @@
 
 ## 存檔操作
 
+> **實作說明**：實際實作將以 React custom hook（`useSaveGame`）封裝以下 localStorage 邏輯。底層 API 呼叫不變，hook 負責提供 `gameState`、`saveGame()`、`loadGame()`、`resetGame()` 等介面供 React 元件使用。
+
 ```javascript
 // 存檔 key 格式
 const SAVE_KEY = 'cwc_game_save_v1';
