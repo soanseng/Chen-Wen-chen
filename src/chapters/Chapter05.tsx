@@ -1,6 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { LibraryBuilding } from '@/components/infographic/LibraryBuilding'
+import { InjuryDiagram } from '@/components/infographic/InjuryDiagram'
+import { CrimeSceneMap } from '@/components/infographic/CrimeSceneMap'
+import { SixDoubts } from '@/components/infographic/SixDoubts'
 import chapterData from '@/data/chapters/ch05.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -64,13 +68,7 @@ export function Chapter05() {
       <ScrollSection minHeight="60vh" aria-label="研究生圖書館建築剖面圖">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* LibraryBuilding 元件：Task 4.6 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ library-building diagram · progress: {progress.toFixed(2)} ]
-            </div>
+            <LibraryBuilding progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
@@ -107,13 +105,7 @@ export function Chapter05() {
       <ScrollSection minHeight="60vh" aria-label="傷痕位置人體圖">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* InjuryDiagram 元件：Task 4.6 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ injury-diagram · progress: {progress.toFixed(2)} ]
-            </div>
+            <InjuryDiagram progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
@@ -136,13 +128,7 @@ export function Chapter05() {
       <ScrollSection minHeight="60vh" aria-label="六大疑點卡片">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* SixDoubts 元件：Task 4.6 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ six-doubts · progress: {progress.toFixed(2)} ]
-            </div>
+            <SixDoubts progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
@@ -165,13 +151,7 @@ export function Chapter05() {
       <ScrollSection minHeight="60vh" aria-label="現場平面圖">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* CrimeSceneMap 元件：Task 4.6 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ crime-scene-map · progress: {progress.toFixed(2)} ]
-            </div>
+            <CrimeSceneMap progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
