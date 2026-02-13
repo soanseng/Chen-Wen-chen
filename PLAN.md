@@ -747,7 +747,7 @@ git commit -m "feat: implement character relationship map"
 
 ---
 
-### Task 4.5: 實作證詞矛盾對照表
+### Task 4.5: 實作證詞矛盾對照表 ✅
 
 規格來源：`docs/extracted/infographic-specs.md` → `testimony-comparison`
 
