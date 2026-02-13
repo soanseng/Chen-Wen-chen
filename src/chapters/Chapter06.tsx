@@ -2,7 +2,7 @@ import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { InvestigationWaves } from '@/components/infographic/InvestigationWaves'
-import { WechtArrivalScene } from '@/components/pixel/scenes'
+import { WechtArrivalScene, SecretExperimentScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch06.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -107,6 +107,15 @@ export function Chapter06() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: secret-experiment */}
+      <ScrollSection minHeight="80vh" aria-label="明園專案秘密實驗場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <SecretExperimentScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

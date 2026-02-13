@@ -59,23 +59,31 @@ export function PixelScene({
   const onProgressRef = useRef(onProgress)
   onProgressRef.current = onProgress
 
+  // Track whether the current init should be cancelled
+  const cancelledRef = useRef(false)
+
   // Init/destroy PixiJS app based on viewport visibility
   const initApp = useCallback(async () => {
     const el = containerRef.current
     if (!el || appRef.current || reducedMotion) return
 
+    cancelledRef.current = false
     const app = new Application()
-    let cancelled = false
 
-    await app.init({
-      width: BASE_WIDTH,
-      height: BASE_HEIGHT,
-      backgroundAlpha: 0,
-      resolution: 1,
-      antialias: false,
-    })
+    try {
+      await app.init({
+        width: BASE_WIDTH,
+        height: BASE_HEIGHT,
+        backgroundAlpha: 0,
+        resolution: 1,
+        antialias: false,
+      })
+    } catch {
+      // WebGL context creation failed — silently degrade
+      return
+    }
 
-    if (cancelled) {
+    if (cancelledRef.current) {
       app.destroy(true)
       return
     }
@@ -96,13 +104,10 @@ export function PixelScene({
     if (cleanup) cleanupRef.current = cleanup
 
     initializedRef.current = true
-
-    return () => {
-      cancelled = true
-    }
   }, [reducedMotion])
 
   const destroyApp = useCallback(() => {
+    cancelledRef.current = true
     if (cleanupRef.current) {
       cleanupRef.current()
       cleanupRef.current = null

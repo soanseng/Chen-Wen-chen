@@ -5,7 +5,7 @@ import { LibraryBuilding } from '@/components/infographic/LibraryBuilding'
 import { InjuryDiagram } from '@/components/infographic/InjuryDiagram'
 import { CrimeSceneMap } from '@/components/infographic/CrimeSceneMap'
 import { SixDoubts } from '@/components/infographic/SixDoubts'
-import { LibraryDawnScene } from '@/components/pixel/scenes'
+import { LibraryDawnScene, ForensicEvidenceScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch05.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -102,6 +102,15 @@ export function Chapter05() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: forensic-evidence */}
+      <ScrollSection minHeight="80vh" aria-label="法醫證據分析場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <ForensicEvidenceScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

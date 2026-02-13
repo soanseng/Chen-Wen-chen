@@ -2,7 +2,7 @@ import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { SurveillanceTimeline } from '@/components/infographic/SurveillanceTimeline'
-import { SurveillanceWebScene } from '@/components/pixel/scenes'
+import { SurveillanceWebScene, ReadingFormosaScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch02.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -58,6 +58,15 @@ export function Chapter02() {
         {(progress, isInView) => (
           <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <SurveillanceWebScene progress={progress} isInView={isInView} />
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: reading-formosa */}
+      <ScrollSection minHeight="80vh" aria-label="閱讀美麗島雜誌場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <ReadingFormosaScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

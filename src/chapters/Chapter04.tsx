@@ -4,7 +4,7 @@ import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { DialogueBox } from '@/components/narrative/DialogueBox'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
 import { TestimonyComparison } from '@/components/infographic/TestimonyComparison'
-import { InterrogationRoomScene, BlankHoursScene } from '@/components/pixel/scenes'
+import { InterrogationRoomScene, BlankHoursScene, MorningBasketballScene, BeingTakenScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch04.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -34,6 +34,15 @@ export function Chapter04() {
         mood="壓迫、恐懼、空白——時間感凝滯"
       />
 
+      {/* PIXEL_SCENE: morning-basketball */}
+      <ScrollSection minHeight="80vh" aria-label="清晨籃球場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <MorningBasketballScene progress={progress} isInView={isInView} />
+          </div>
+        )}
+      </ScrollSection>
+
       {/* 第一段：清晨——被帶走 */}
       <ScrollSection aria-label="清晨——被帶走">
         {(progress) => (
@@ -47,6 +56,15 @@ export function Chapter04() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: being-taken */}
+      <ScrollSection minHeight="80vh" aria-label="被帶走場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <BeingTakenScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

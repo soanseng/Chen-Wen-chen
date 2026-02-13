@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { MemorialScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch07.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -71,6 +72,15 @@ export function Chapter07() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: memorial */}
+      <ScrollSection minHeight="80vh" aria-label="陳文成紀念廣場場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <MemorialScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

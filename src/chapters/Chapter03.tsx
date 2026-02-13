@@ -2,7 +2,7 @@ import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
-import { AirportReturnScene } from '@/components/pixel/scenes'
+import { AirportReturnScene, LastFreeNightScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch03.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -66,6 +66,15 @@ export function Chapter03() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: last-free-night */}
+      <ScrollSection minHeight="80vh" aria-label="最後的自由之夜場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <LastFreeNightScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

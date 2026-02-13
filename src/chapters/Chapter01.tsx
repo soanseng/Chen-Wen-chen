@@ -1,7 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
-import { CampusLifeScene } from '@/components/pixel/scenes'
+import { CampusLifeScene, LinkouChildhoodScene } from '@/components/pixel/scenes'
 import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch01.json'
 import type { ChapterData } from '@/data/chapters/types'
@@ -38,6 +38,15 @@ export function Chapter01() {
                 <NarrativeParagraph paragraph={p} />
               </div>
             ))}
+          </div>
+        )}
+      </ScrollSection>
+
+      {/* PIXEL_SCENE: linkou-childhood */}
+      <ScrollSection minHeight="80vh" aria-label="林口童年場景">
+        {(progress, isInView) => (
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
+            <LinkouChildhoodScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
