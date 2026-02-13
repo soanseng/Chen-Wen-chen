@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { ContentWarning } from '@/components/ui/ContentWarning'
+import { CharacterMap } from '@/components/infographic/CharacterMap'
 import {
   Chapter01,
   Chapter02,
@@ -53,6 +54,15 @@ function App() {
           <Chapter06 />
           <ChapterDivider />
           <Chapter07 />
+
+          <ChapterDivider />
+
+          {/* INFOGRAPHIC: character-map (global) */}
+          <section aria-label="人物關係圖" className="py-16">
+            <div className="max-w-4xl mx-auto px-4">
+              <CharacterMap />
+            </div>
+          </section>
 
           <footer className="py-16 text-center text-ink-600 text-sm font-mono">
             <p>基於歷史文獻的紀錄呈現</p>
