@@ -1,0 +1,735 @@
+{
+  "metadata": {
+    "description": "陳文成事件整合時間線——合併五份文獻，去重排序，標註來源與交叉比對",
+    "sources": [
+      "01-wecht-report.md (Wecht 法醫報告)",
+      "02-tjc-report-part1.md (促轉會調查報告上冊)",
+      "03-tjc-report-part2.md (促轉會調查報告下冊)",
+      "04-cause-of-death.md (死因分析簡報)",
+      "05-investigation-report.md (黃怡、林世煜調查報告)"
+    ],
+    "significanceLevels": {
+      "background": "背景事件，提供脈絡",
+      "turning-point": "轉折點，改變事件走向",
+      "critical": "關鍵事件，直接相關",
+      "aftermath": "事後發展，調查與影響"
+    },
+    "lastUpdated": "2026-02-13"
+  },
+  "events": [
+    {
+      "id": "E001",
+      "date": "1950-01-30",
+      "time": null,
+      "title": "陳文成出生",
+      "description": "出生於台北縣林口鄉，家境困苦。",
+      "sources": ["黃怡、林世煜調查報告，第3頁"],
+      "significance": "background",
+      "chapter": 1
+    },
+    {
+      "id": "E002",
+      "date": "1975",
+      "time": null,
+      "title": "陳文成赴美留學",
+      "description": "前往美國攻讀統計學博士，就讀密西根大學（University of Michigan）。",
+      "sources": ["Wecht Report, p. 1"],
+      "significance": "background",
+      "chapter": 1
+    },
+    {
+      "id": "E003",
+      "date": "1978",
+      "time": null,
+      "title": "任職 Carnegie Mellon 大學",
+      "description": "取得博士學位後，受聘為 Carnegie Mellon 大學統計系助理教授。",
+      "sources": ["Wecht Report, p. 1", "促轉會調查報告，第1頁"],
+      "significance": "background",
+      "chapter": 1
+    },
+    {
+      "id": "E004",
+      "date": "1979-09-30",
+      "time": null,
+      "title": "【彩虹資料1】陳文成致電施明德",
+      "description": "最早被發現的監聽紀錄。陳文成從美國致電《美麗島雜誌》總經理施明德，時間在美麗島事件之前。此紀錄直到促轉會調查時才從國安局解密檔案中發現。",
+      "sources": ["促轉會調查報告，第36頁，圖12"],
+      "significance": "turning-point",
+      "chapter": 2
+    },
+    {
+      "id": "E005",
+      "date": "1979-12-10",
+      "time": null,
+      "title": "美麗島事件爆發",
+      "description": "高雄爆發大規模民主運動示威，國民黨政府隨後大規模逮捕黨外人士，海外台灣人社群的政治參與成為情治機關重點監控對象。",
+      "sources": ["促轉會調查報告，第33頁"],
+      "significance": "turning-point",
+      "chapter": 2
+    },
+    {
+      "id": "E006",
+      "date": "1980-01-27",
+      "time": null,
+      "title": "【彩虹資料2】陳錦華致電陳文成",
+      "description": "陳錦華自臺北致電陳文成，討論匯款事宜。",
+      "sources": ["促轉會調查報告，第37頁"],
+      "significance": "background",
+      "chapter": 2
+    },
+    {
+      "id": "E007",
+      "date": "1980-02-28",
+      "time": null,
+      "title": "林義雄家滅門血案",
+      "description": "省議員林義雄之母與雙生女兒遭殺害，長女重傷，至今未破案。此事件加深海外台灣人對島內政治恐怖的恐懼。",
+      "sources": ["黃怡、林世煜調查報告，第8頁"],
+      "significance": "background",
+      "chapter": 2
+    },
+    {
+      "id": "E008",
+      "date": "1980-07-24",
+      "time": null,
+      "title": "【彩虹資料3】警總攔截陳素貞家書",
+      "description": "警總特檢處攔截陳素貞寄父親的家書，內含家庭生活描述。顯示情治機關連私人信件也在監控範圍內。",
+      "sources": ["促轉會調查報告，第38頁，圖14"],
+      "significance": "background",
+      "chapter": 2
+    },
+    {
+      "id": "E009",
+      "date": "1981-02-15",
+      "time": null,
+      "title": "【彩虹資料4】陳錦華致電陳素貞",
+      "description": "陳錦華致電陳素貞，提到「用長途電話不方便」，顯示通話者可能意識到遭監聽或存在安全顧慮。",
+      "sources": ["促轉會調查報告，第39頁"],
+      "significance": "background",
+      "chapter": 2
+    },
+    {
+      "id": "E010",
+      "date": "1981-05-15",
+      "time": null,
+      "title": "【彩虹資料5】返台前最後一筆監聽紀錄",
+      "description": "陳錦華家某人致電陳文成，為返台前最後一筆監聽紀錄。",
+      "sources": ["促轉會調查報告，第40頁"],
+      "significance": "background",
+      "chapter": 2
+    },
+    {
+      "id": "E011",
+      "date": "1981-05-20",
+      "time": null,
+      "title": "陳文成一家返台探親",
+      "description": "陳文成偕妻子陳素貞、一歲兒子艾瑞克（Eric）從匹茲堡出發返台探親。入境即遭管制，出境許可被扣留不予核發。",
+      "sources": [
+        "Wecht Report, p. 3",
+        "促轉會調查報告，第3、44頁",
+        "黃怡、林世煜調查報告，第8頁"
+      ],
+      "significance": "turning-point",
+      "chapter": 3,
+      "crossRef": "Wecht 報告未詳述入境管制機制，促轉會報告揭露入境即遭扣留出境許可"
+    },
+    {
+      "id": "E012",
+      "date": "1981-05",
+      "time": null,
+      "title": "國安局佈建線民監控陳文成",
+      "description": "國安局透過師大「安定小組」等管道佈建線民，回報陳文成日常動態、社交活動、言論。監控手段從被動（電話監聽、郵件攔截）升級為主動（線民佈建、入出境管制）。",
+      "sources": ["促轉會調查報告，第45–49頁"],
+      "significance": "turning-point",
+      "chapter": 3
+    },
+    {
+      "id": "E013",
+      "date": "1981-06-25",
+      "time": null,
+      "title": "陳文成於中央研究院演講",
+      "description": "返台期間受邀在多處演講，包括文化大學、台灣大學數學系等。6月25日於中央研究院以台語發表演講。",
+      "sources": ["黃怡、林世煜調查報告，第9頁"],
+      "significance": "background",
+      "chapter": 3
+    },
+    {
+      "id": "E014",
+      "date": "1981-06-30",
+      "time": null,
+      "title": "第一次約談——偽裝為境管人員登門",
+      "description": "保安處人員偽裝為出入境管理局人員至陳文成住處，於公關室進行約談，詢問其在美活動。陳文成因出境證問題未能按原定7月1日返美。",
+      "sources": [
+        "促轉會調查報告，第51–55頁",
+        "Wecht Report, p. 7",
+        "黃怡、林世煜調查報告，第9頁"
+      ],
+      "significance": "critical",
+      "chapter": 3,
+      "crossRef": "Wecht 報告僅提及陳文成「到出入境管理局辦手續」，未揭露此為保安處偽裝的實質約談。促轉會報告首次揭露此偽裝手法。"
+    },
+    {
+      "id": "E015",
+      "date": "1981-07-01",
+      "time": null,
+      "title": "追問出境證未果",
+      "description": "陳文成與弟弟陳文華先至出入境管理局，再到警總會客室追問出境證，對方以代號互相推諉。原定7月1日出境未能成行（航空公司曾通知有機位，後因出境證問題無法出境）。",
+      "sources": [
+        "Wecht Report, p. 3",
+        "黃怡、林世煜調查報告，第9–10頁"
+      ],
+      "significance": "critical",
+      "chapter": 3
+    },
+    {
+      "id": "E016",
+      "date": "1981-07-01",
+      "time": "evening",
+      "title": "白健二稱與陳文成夫婦共進晚餐",
+      "description": "白健二於1994年公聽會回述：7月1日晚與陳文成夫婦吃晚飯，陳文成提及前一天與警總談話氣氛很好。白稱可透過姊夫（內政部長邱創煥）協助。",
+      "sources": ["黃怡、林世煜調查報告，第10頁"],
+      "significance": "background",
+      "chapter": 3,
+      "note": "此證詞為1994年公聽會回述，非1981年第一手紀錄"
+    },
+    {
+      "id": "E017",
+      "date": "1981-07-02",
+      "time": "05:00",
+      "title": "陳文成清晨起床打籃球",
+      "description": "清晨5點起床，至台大操場打籃球。",
+      "sources": ["黃怡、林世煜調查報告，第10頁"],
+      "significance": "background",
+      "chapter": 4
+    },
+    {
+      "id": "E018",
+      "date": "1981-07-02",
+      "time": "07:45",
+      "title": "返家詢問出境證通知",
+      "description": "跑回家詢問陳素貞是否接到出入境管理局電話，回覆未接到。",
+      "sources": ["黃怡、林世煜調查報告，第10頁"],
+      "significance": "background",
+      "chapter": 4
+    },
+    {
+      "id": "E019",
+      "date": "1981-07-02",
+      "time": "08:30",
+      "title": "【關鍵事件】警總無預警帶走陳文成",
+      "description": "甯漢彤等三名男子出示台灣警備司令部約談傳票，無預警帶走陳文成前往保安處。家屬欲保留傳票未果。陳文成更衣後隨三人離開。",
+      "sources": [
+        "Wecht Report, p. 3",
+        "促轉會調查報告，第57–58頁",
+        "黃怡、林世煜調查報告，第10頁"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "crossRef": "三份文獻時間一致。促轉會強調「無預警」性質。Wecht 報告稱「與妹婿打完籃球回家後」。"
+    },
+    {
+      "id": "E020",
+      "date": "1981-07-02",
+      "time": "09:00",
+      "title": "第二次約談開始",
+      "description": "於警總保安處進行正式約談，製作筆錄。約談有錄音但並非全程，現有錄音譯文不完整。約談人員施壓要求承認台獨活動、交代在美活動與人際關係，以出境許可作為交換條件。",
+      "sources": [
+        "Wecht Report, p. 3, 7–8",
+        "促轉會調查報告，第58–62頁",
+        "促轉會調查報告（下冊），第64–68頁"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "discrepancy": "Wecht 報告稱約談為「早上九點到晚上九點半」（12小時）；促轉會報告記載約談正式開始時間未確定，約談筆錄結束時間約在晚間。兩份報告的確切時間有出入。"
+    },
+    {
+      "id": "E021",
+      "date": "1981-07-02",
+      "time": "~17:00",
+      "title": "白健二稱接到陳文成來電（爭議）",
+      "description": "白健二於1994年公聽會稱：7月2日傍晚約5時接到陳文成來電，稱正在被警總約談、暫告段落，語氣聽不出異狀。此證詞存在三種可能：白健二捏造、陳文成偷打、或警總說陳文成沒打電話是撒謊。",
+      "sources": ["黃怡、林世煜調查報告，第10頁"],
+      "significance": "background",
+      "chapter": 4,
+      "note": "此證詞為1994年回述，且與官方說法矛盾。1981年檢方調查報告亦未納入此證詞。"
+    },
+    {
+      "id": "E022",
+      "date": "1981-07-02",
+      "time": "21:00-21:30",
+      "title": "警總宣稱約談結束、送陳文成返家（爭議）",
+      "description": "警總宣稱約談於當晚結束後，派王憶華等人駕車將陳文成送返住處附近。但五名目擊證人的證詞在時間點、目擊對象身高、交通工具等方面彼此矛盾，且與警總說法不符。促轉會結論：無法證明陳文成被送返住處。",
+      "sources": [
+        "Wecht Report, p. 3, 8",
+        "促轉會調查報告（下冊），第69–77頁，表8"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "discrepancy": "警總稱21:30送回；白健二稱21:00即被告知「人已放出」。五名目擊證人證詞互相矛盾。促轉會認定現有證據無法證明陳文成脫離警總的實力支配。"
+    },
+    {
+      "id": "E023",
+      "date": "1981-07-02",
+      "time": "22:35",
+      "title": "目擊者見不明男子進出公寓（爭議）",
+      "description": "陳文成住處同棟住戶（徐翠屏、周慧芬、何孟修、陳秋菊、連見立）於22:35左右目擊一高一矮二名男子從車上下來上樓，約22:40較矮者離去。這些目擊者的證詞在多個維度上互相矛盾。",
+      "sources": [
+        "Wecht Report, p. 13（譯注4）",
+        "促轉會調查報告（下冊），第69–77頁",
+        "黃怡、林世煜調查報告，第11頁"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "discrepancy": "Wecht 報告譯注稱時間為22:15；黃怡報告與促轉會報告稱22:35。五名證人在身高、車輛、時間等方面證詞矛盾。"
+    },
+    {
+      "id": "E024",
+      "date": "1981-07-02",
+      "time": "~23:00-24:00",
+      "title": "陳文成到鄧維祥家（爭議——促轉會認定難以採信）",
+      "description": "鄧維祥自稱接到陳文成來電後外出碰面，後至其家中。陳文成描述被約談之事，寫了一封英文信（信封上寫 To whom it may concern），離開前說「這可能是我們最後一次見面了」。但促轉會認定鄧維祥歷次證詞前後歧異甚大，其妻鄧湯娟好的證詞亦與之矛盾，此說詞難以採信。",
+      "sources": [
+        "Wecht Report, p. 8–9",
+        "促轉會調查報告（下冊），第78–87頁",
+        "黃怡、林世煜調查報告，第33頁"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "discrepancy": "Wecht 報告中鄧維祥為陳文成死前最後見證者，敘述較為詳細且有感情色彩。促轉會報告則從證詞比對角度，認定此說詞不可信。此差異直接影響對陳文成最後行蹤的判斷。"
+    },
+    {
+      "id": "E025",
+      "date": "1981-07-03",
+      "time": "00:30-01:00",
+      "title": "陳文成離開鄧維祥家（爭議——促轉會認定難以採信）",
+      "description": "據鄧維祥說法，陳文成於凌晨12:30至1:00間離開。此後至清晨7:00發現遺體，約6小時行蹤完全空白。但此說法被促轉會認定不可信。",
+      "sources": [
+        "Wecht Report, p. 8–9",
+        "促轉會調查報告（下冊），第78–87頁"
+      ],
+      "significance": "critical",
+      "chapter": 4,
+      "discrepancy": "若鄧維祥說詞不可信，則自7月2日被警總帶走後，陳文成的行蹤完全無法確認——現有證據無法證明他曾脫離警總的實力支配。"
+    },
+    {
+      "id": "E026",
+      "date": "1981-07-03",
+      "time": "~07:00-07:30",
+      "title": "【關鍵事件】陳文成遺體被發現",
+      "description": "台大校警陳治國接到不明男子電話報稱研究圖書館後方草坪有人倒臥。校警劉仁富約20分鐘後在消防梯下發現陳文成遺體，仰臥橫跨在水溝上。遺體衣著異常：襯衫露於長褲外、皮帶繫在襯衫外肚臍上方、雙腳未穿襪子。",
+      "sources": [
+        "Wecht Report, p. 10",
+        "促轉會調查報告，第3頁",
+        "促轉會調查報告（下冊），第87頁",
+        "黃怡、林世煜調查報告，第31頁"
+      ],
+      "significance": "critical",
+      "chapter": 5,
+      "discrepancy": "發現時間：Wecht 報告稱~07:00；黃怡報告附錄稱07:30。遺體姿態：DeGroot 記載「雙臂垂在身邊」；檢察官陳春男稱「兩手肘向上彎曲成舉重狀」。兩種描述完全矛盾。"
+    },
+    {
+      "id": "E027",
+      "date": "1981-07-03",
+      "time": "07:50-12:10",
+      "title": "現場初勘",
+      "description": "羅斯福路派出所會同古亭分局刑事組抵達現場，實施警戒、搜索、照相、測繪、採證、訪問。10:45檢察官陳春男偕法醫高坤玉到場勘查相驗。",
+      "sources": ["黃怡、林世煜調查報告，第31頁"],
+      "significance": "critical",
+      "chapter": 5
+    },
+    {
+      "id": "E028",
+      "date": "1981-07-03",
+      "time": "14:00",
+      "title": "家屬接獲匿名電話通知",
+      "description": "下午2點多，拒報姓名者來電稱陳文成被車撞死、在台大太平間要家屬認屍。十多分鐘後古亭分局又來電改請至分局，帶上三樓作筆錄。",
+      "sources": ["黃怡、林世煜調查報告，第11頁"],
+      "significance": "critical",
+      "chapter": 5,
+      "note": "最初說法為「車撞死」，與實際情況完全不符，此通報方式本身即為疑點。"
+    },
+    {
+      "id": "E029",
+      "date": "1981-07-04",
+      "time": "16:00",
+      "title": "警總記者會——定調「畏罪自殺」",
+      "description": "警總在法醫調查結果尚未做成前即召開記者會，宣布陳文成為「畏罪自殺」。此定調無形中限縮後續偵辦方向。",
+      "sources": [
+        "促轉會調查報告，第8頁，表1",
+        "促轉會調查報告（下冊），第115、150頁"
+      ],
+      "significance": "critical",
+      "chapter": 5
+    },
+    {
+      "id": "E030",
+      "date": "1981-07-04",
+      "time": "17:00",
+      "title": "「迅雷小組」成立",
+      "description": "警總記者會一小時後，警總徐副總司令召集「迅雷小組」，要求外交部拍發電報給駐美各辦事處及亞東關係協會東京辦事處，為此案定調。",
+      "sources": ["促轉會調查報告（下冊），第150頁"],
+      "significance": "turning-point",
+      "chapter": 6
+    },
+    {
+      "id": "E031",
+      "date": "1981-07-05",
+      "time": "07:00-09:00",
+      "title": "現場複勘",
+      "description": "含錄影、照相、測繪、丈量各樓平台高度與欄杆尺寸，記錄二樓平台外沿混凝土剝落位置。地毯式搜索未發現可疑跡證。",
+      "sources": ["黃怡、林世煜調查報告，第32頁"],
+      "significance": "background",
+      "chapter": 5
+    },
+    {
+      "id": "E032",
+      "date": "1981-07-05",
+      "time": null,
+      "title": "警總改口否認約談",
+      "description": "警總改口否認陳文成曾被約談，與前一日記者會說法矛盾，媒體開始報導矛盾。",
+      "sources": ["促轉會調查報告，第8頁，表1"],
+      "significance": "turning-point",
+      "chapter": 6
+    },
+    {
+      "id": "E033",
+      "date": "1981-07-06",
+      "time": null,
+      "title": "第一次解剖",
+      "description": "在台灣進行（陳文成去世後三天），由方中民博士主持，楊日松、劉森熙、高坤玉等參與。發現右側肋骨多處骨折、右腎裂傷、肺部出血等。",
+      "sources": [
+        "Wecht Report, p. 5",
+        "促轉會調查報告，第9頁"
+      ],
+      "significance": "critical",
+      "chapter": 5
+    },
+    {
+      "id": "E034",
+      "date": "1981-07-19",
+      "time": null,
+      "title": "【第一波調查】檢察官偵查報告公布",
+      "description": "台北地檢處檢察官陳春男發表偵查報告，結論為「自殺或意外墜樓死亡」。研判陳屍處為第一現場，由五樓太平梯平台墜下並碰擦二樓外沿墜地死亡。",
+      "sources": [
+        "Wecht Report, p. 13（譯注4）",
+        "促轉會調查報告，第13頁，表2",
+        "促轉會調查報告（下冊），第120頁",
+        "黃怡、林世煜調查報告，第42頁"
+      ],
+      "significance": "turning-point",
+      "chapter": 6,
+      "note": "促轉會後來的分析推翻了此報告「陳屍處為第一現場」的核心前提。"
+    },
+    {
+      "id": "E035",
+      "date": "1981-08",
+      "time": null,
+      "title": "陳素貞與兒子返回匹茲堡",
+      "description": "陳素貞帶著一歲大的兒子艾瑞克返回匹茲堡。她從獲知死訊起即不相信丈夫是自殺。",
+      "sources": ["Wecht Report, p. 3"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E036",
+      "date": "1981-08",
+      "time": null,
+      "title": "警總掌握 Wecht 將赴台的情報",
+      "description": "警總掌握陳庭茂轉達陳素貞的請求——請 Carnegie Mellon 大學校長委請法醫來台檢驗屍體。",
+      "sources": ["促轉會調查報告（下冊），第146頁"],
+      "significance": "background",
+      "chapter": 6
+    },
+    {
+      "id": "E037",
+      "date": "1981-09",
+      "time": null,
+      "title": "國民黨當局同意 Wecht 赴台調查",
+      "description": "在 Carnegie Mellon 大學校董 Richard Cyert 推動下，國民黨當局同意 Wecht 與 DeGroot 赴台進行獨立法醫調查。",
+      "sources": [
+        "Wecht Report, p. 2",
+        "促轉會調查報告，第14頁，表2"
+      ],
+      "significance": "turning-point",
+      "chapter": 6
+    },
+    {
+      "id": "E038",
+      "date": "1981-09-15",
+      "time": null,
+      "title": "沈君山通聯被情治機關截獲",
+      "description": "清大教授沈君山與在美經濟學者刁錦寰的通聯被情報機關截獲，內容涉及 Wecht 與 DeGroot 來台的具體安排。",
+      "sources": ["促轉會調查報告（下冊），第146頁"],
+      "significance": "background",
+      "chapter": 6
+    },
+    {
+      "id": "E039",
+      "date": "1981-09-20",
+      "time": null,
+      "title": "Wecht 與 DeGroot 從匹茲堡出發",
+      "description": "Wecht 與 DeGroot 自匹茲堡出發前往台灣進行獨立調查。",
+      "sources": ["Wecht Report, p. 3"],
+      "significance": "background",
+      "chapter": 6
+    },
+    {
+      "id": "E040",
+      "date": "1981-09-21",
+      "time": null,
+      "title": "【第二波調查】Wecht 與 DeGroot 抵台",
+      "description": "抵台後由台北市警察局外事室周振亞主任接機，隨即前往市立殯儀館檢驗遺體。毛高文、沈君山、方中民等學者亦到場。國安局全程監控其行程動態，但 Wecht 當時不知曉被監控。",
+      "sources": [
+        "Wecht Report, p. 4–5",
+        "促轉會調查報告（下冊），第147頁"
+      ],
+      "significance": "turning-point",
+      "chapter": 6
+    },
+    {
+      "id": "E041",
+      "date": "1981-09-21",
+      "time": null,
+      "title": "駐美辦事處成立投書小組",
+      "description": "負責撰擬文稿，目標是「澄清」陳文成命案及防止中共統戰。至10月底共發出三百餘封投書。",
+      "sources": ["促轉會調查報告（下冊），第151頁"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E042",
+      "date": "1981-09-22",
+      "time": null,
+      "title": "Wecht 檢驗遺體與會見汪敬煦",
+      "description": "前往陳文成父親家檢查衣物；晚間與警總總司令汪敬煦及安全部調查組長鄧小韓會面五小時，聽取20分鐘訊問錄音摘錄、看12頁供述書。汪否認與陳文成之死有關。Wecht 被拒絕帶回組織樣本。",
+      "sources": [
+        "Wecht Report, p. 6–8",
+        "促轉會調查報告（下冊），第147頁"
+      ],
+      "significance": "critical",
+      "chapter": 6
+    },
+    {
+      "id": "E043",
+      "date": "1981-09-22",
+      "time": null,
+      "title": "美聯社記者周清月報導「驗屍」",
+      "description": "AP 記者周清月（Tina Chou）以陳庭茂為消息來源報導 Wecht 與 DeGroot 來台「驗屍」（autopsy），後遭新聞局認定用詞不實。",
+      "sources": ["促轉會調查報告（下冊），第148頁"],
+      "significance": "background",
+      "chapter": 6
+    },
+    {
+      "id": "E044",
+      "date": "1981-09-23",
+      "time": null,
+      "title": "Wecht 台大現場勘查與機場記者會",
+      "description": "追蹤陳文成最後行蹤——訪問家人、訪問鄧維祥、前往台大現場勘查。發現五樓消防梯護欄已重新上漆、校園安全紀錄顯示深夜無車輛進出。下午於機場召開記者會，明確表示陳文成之死「比較不自殺而是他殺」。",
+      "sources": [
+        "Wecht Report, p. 8–10",
+        "促轉會調查報告（下冊），第147頁"
+      ],
+      "significance": "critical",
+      "chapter": 6
+    },
+    {
+      "id": "E045",
+      "date": "1981-09-23",
+      "time": null,
+      "title": "周清月被禁止參加記者會",
+      "description": "新聞局認定周清月報導不符事實（兩人僅「檢視」非「驗屍」），禁止其參加機場記者會，暫停其在台灣的採訪權。",
+      "sources": ["促轉會調查報告（下冊），第148頁"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E046",
+      "date": "1981-09-26",
+      "time": null,
+      "title": "周清月記者登記被取消",
+      "description": "新聞局依《外國新聞機構華代表登記手續》第4條，以報導「在國際間嚴重損及中華民國主權與法律的尊嚴」為由，取消周清月記者登記，禁止其採訪活動。此後其在台採訪權長期未恢復。",
+      "sources": ["促轉會調查報告（下冊），第148–149頁"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E047",
+      "date": "1981-10",
+      "time": null,
+      "title": "DeGroot 發表調查報告",
+      "description": "DeGroot 發表《The Trip to Taiwan》報告，在 Carnegie Mellon 大學流通。",
+      "sources": ["Wecht Report, p. 12, 13（譯注6）"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E048",
+      "date": "1981-10",
+      "time": null,
+      "title": "警總「極機密」專案調查報告",
+      "description": "台灣警備總司令部以「極機密」發布陳文成案專案調查報告。",
+      "sources": ["促轉會調查報告，第14頁，表2"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E049",
+      "date": "1981-10-16",
+      "time": null,
+      "title": "警總建議訂定「記者法」",
+      "description": "警總檢送《陳文成案檢討報告》給國安局，建議從速訂定記者法控制媒體。雖未成為現實，但反映警總欲控制媒體報導的意圖。",
+      "sources": ["促轉會調查報告（下冊），第152頁"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E050",
+      "date": "1981-11",
+      "time": null,
+      "title": "台北地檢處重啟偵查",
+      "description": "台北地檢處在各方壓力下重啟偵查。",
+      "sources": ["促轉會調查報告，第15頁，表2"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E051",
+      "date": "1981",
+      "time": null,
+      "title": "【關鍵】蔣經國將汪敬煦升任國安局局長",
+      "description": "命案發生時的警總總司令汪敬煦，非但未被追究責任，反而於同年即升任國安局局長。此人事安排使汪敬煦掌控陳文成案所有辦案進度與資訊。促轉會認為此舉彰顯威權統治當局為確保政權安定而阻撓真相揭露的意志。",
+      "sources": ["促轉會調查報告（下冊），第152頁"],
+      "significance": "critical",
+      "chapter": 6
+    },
+    {
+      "id": "E052",
+      "date": "1982-01",
+      "time": null,
+      "title": "汪敬煦以國安局長身分撥發偵辦經費",
+      "description": "國安局局長汪敬煦發予警總偵辦陳文成案工作費30萬元，列於國安局三處匪、間諜案件偵破預算金額內。嫌疑方主管變為偵辦主導者。",
+      "sources": ["促轉會調查報告（下冊），第153頁，圖48"],
+      "significance": "critical",
+      "chapter": 6
+    },
+    {
+      "id": "E053",
+      "date": "1982-07-11",
+      "time": null,
+      "title": "汪敬煦向蔣經國呈報明園專案",
+      "description": "汪敬煦以國安局局長簽呈形式向蔣經國呈報明園專案辦理情形，稱此案是「奉總統面諭繼續加強偵查辦理」。簽呈蓋有「71.7.11已報總統」戳章。",
+      "sources": ["促轉會調查報告（下冊），第154頁，圖49"],
+      "significance": "critical",
+      "chapter": 6
+    },
+    {
+      "id": "E054",
+      "date": "1984",
+      "time": null,
+      "title": "【關鍵】明園專案落體實驗——排除自殺",
+      "description": "「明園專案小組」秘密以人體模型從台大圖書館五樓進行多種情境的拋落實驗。結果顯示：自殺的可能性小、意外自行跌落的可能性最大、不排除碰撞導致跌落。此結果與警總1981年定調的「畏罪自殺」嚴重矛盾。汪敬煦向蔣經國報告此結論，但國安局以「本案政治性大於法律性」、「以免再引不良反應」為由，將實驗結果列為機密不公布。",
+      "sources": [
+        "促轉會調查報告，第15–16頁",
+        "促轉會調查報告（下冊），第92–97、154–156頁，表17"
+      ],
+      "significance": "critical",
+      "chapter": 6,
+      "note": "蔣經國至遲在此時已知悉自殺可能性被排除，但選擇不公開。"
+    },
+    {
+      "id": "E055",
+      "date": "1985-06",
+      "time": null,
+      "title": "Wecht 正式驗屍報告發表",
+      "description": "Wecht 正式驗屍報告《Murder in Taiwan》發表於《美國法醫學與病理學》期刊（The American Journal of Forensic Medicine and Pathology）。",
+      "sources": ["Wecht Report, p. 13（譯注8）"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E056",
+      "date": "1990",
+      "time": null,
+      "title": "陳文成二姐控告汪敬煦等人殺人",
+      "description": "陳文成二姐陳寶月委由律師李勝雄、張政雄、洪貴參具狀提告，控告前警總總司令汪敬煦等人涉嫌共同殺人罪。",
+      "sources": ["促轉會調查報告（下冊），第155頁"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E057",
+      "date": "1994",
+      "time": null,
+      "title": "陳文成案重新調查、公聽會召開",
+      "description": "政黨政治發展後，國會重開調查，陳文成死因調查公聽會召開。白健二在公聽會上提供7月1–2日的證詞。",
+      "sources": [
+        "Wecht Report, p. 12",
+        "黃怡、林世煜調查報告，第10頁"
+      ],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E058",
+      "date": "2000",
+      "time": null,
+      "title": "【第四波調查】監察院重啟調查",
+      "description": "政黨輪替後，監察院重啟調查。",
+      "sources": ["促轉會調查報告，第16頁，表2"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E059",
+      "date": "2006-07-02",
+      "time": null,
+      "title": "轉型期正義研討會",
+      "description": "陳文成博士紀念基金會主辦「轉型期正義研討會暨陳文成博士逝世25周年祭」，發表黃怡/林世煜調查報告及死因分析簡報。",
+      "sources": [
+        "陳文成之死因，封面",
+        "黃怡、林世煜調查報告，第1頁"
+      ],
+      "significance": "aftermath",
+      "chapter": 7
+    },
+    {
+      "id": "E060",
+      "date": "2007-08",
+      "time": null,
+      "title": "【第五波調查】台北地檢署簽結",
+      "description": "台北地檢署因案件逾追訴時效而簽結。",
+      "sources": ["促轉會調查報告，第17頁，表2"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E061",
+      "date": "2009",
+      "time": null,
+      "title": "【第六波調查】監察院再次調查",
+      "description": "監察院再次調查，指出歷次調查諸多疏漏。",
+      "sources": ["促轉會調查報告，第17–18頁，表2"],
+      "significance": "aftermath",
+      "chapter": 6
+    },
+    {
+      "id": "E062",
+      "date": "2018",
+      "time": null,
+      "title": "促進轉型正義委員會成立",
+      "description": "促轉會依《促進轉型正義條例》成立，開始調查陳文成案。著重追究壓迫體制加害者及其參與者之責任。",
+      "sources": ["促轉會調查報告，第20–21頁"],
+      "significance": "turning-point",
+      "chapter": 7
+    },
+    {
+      "id": "E063",
+      "date": "2020-04-15",
+      "time": null,
+      "title": "促轉會通過《陳文成案調查報告》",
+      "description": "促轉會第46次委員會議通過報告。四大結論：(1)案發前後遭嚴密監控；(2)無法證明脫離警總實力支配；(3)陳屍處非第一現場，死於他殺可能性高；(4)警總介入偵辦、阻礙真相。明確認定：警總對陳文成之死涉有嫌疑。",
+      "sources": ["促轉會調查報告，CIP頁", "促轉會調查報告（下冊），第157–161頁"],
+      "significance": "critical",
+      "chapter": 7
+    }
+  ]
+}

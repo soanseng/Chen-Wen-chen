@@ -1,0 +1,774 @@
+{
+  "metadata": {
+    "description": "陳文成事件人物資料庫——合併五份文獻，去重整合，標註各來源描述差異",
+    "sources": [
+      "01-wecht-report.md",
+      "02-tjc-report-part1.md",
+      "03-tjc-report-part2.md",
+      "04-cause-of-death.md",
+      "05-investigation-report.md"
+    ],
+    "roleCategories": {
+      "victim": "受害者及家屬",
+      "perpetrator": "加害體制相關人員",
+      "investigator": "調查人員（獨立或官方）",
+      "witness": "證人",
+      "media": "媒體相關",
+      "political": "政治人物",
+      "academic": "學術人物",
+      "other": "其他"
+    },
+    "lastUpdated": "2026-02-13"
+  },
+  "characters": [
+    {
+      "id": "chen-wen-chen",
+      "name": "陳文成",
+      "nameEn": "Chen Wen-chen",
+      "born": "1950-01-30",
+      "died": "1981-07-03",
+      "role": "victim",
+      "affiliation": "Carnegie Mellon 大學統計系助理教授",
+      "description": "台灣統計學者，密西根大學博士，Carnegie Mellon 大學助理教授。在美期間積極支持台灣民主運動，為《美麗島雜誌》募款。1981年返台探親後遭系統性監控、兩次約談。7月2日被無預警帶往保安處約談後，翌日陳屍於台灣大學研究生圖書館旁。",
+      "sourceDescriptions": {
+        "01-wecht": "Wecht 描述其為學術界成就斐然的年輕學者，在美國秘密為《美麗島雜誌》募款。(p. 1, 3, 7)",
+        "02-tjc-part1": "促轉會著重其返台後遭跨機關系統性監控的事實。(第1–3、35–62頁)",
+        "05-investigation": "黃怡報告以其生平成長背景開篇，強調家庭「與政治素無淵源」。(第3頁)"
+      },
+      "relations": [
+        {"id": "chen-su-zhen", "type": "spouse"},
+        {"id": "eric-chen", "type": "son"},
+        {"id": "chen-ting-mao", "type": "father"},
+        {"id": "chen-bao-yue", "type": "sister"},
+        {"id": "chen-wen-hua", "type": "brother"},
+        {"id": "deng-wei-xiang", "type": "friend"},
+        {"id": "morris-degroot", "type": "colleague"},
+        {"id": "shi-ming-de", "type": "political-contact"}
+      ],
+      "chapters": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": "chen-su-zhen",
+      "name": "陳素貞",
+      "nameEn": null,
+      "role": "victim",
+      "affiliation": null,
+      "description": "陳文成之妻。事件當天清晨接到警方電話通知丈夫死訊，從獲知起即不相信丈夫是自殺。返回匹茲堡後接受 DeGroot 訪問，但後來婉拒促轉會的訪談。彩虹資料顯示其家書被攔截、電話被監聽。",
+      "sourceDescriptions": {
+        "01-wecht": "接受 DeGroot 訪問，明確表示不相信自殺。(p. 1, 3)",
+        "02-tjc-part1": "婉拒促轉會訪談。彩虹資料第3筆其家書被警總攔截。(第27、38–39頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "spouse"},
+        {"id": "eric-chen", "type": "son"},
+        {"id": "chen-ting-mao", "type": "father-in-law"}
+      ],
+      "chapters": [1, 3, 4, 6]
+    },
+    {
+      "id": "eric-chen",
+      "name": "艾瑞克",
+      "nameEn": "Eric Chen",
+      "role": "victim",
+      "affiliation": null,
+      "description": "陳文成與陳素貞之子，事件發生時年僅一歲。1981年8月隨母親返回匹茲堡。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 3, 12)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "father"},
+        {"id": "chen-su-zhen", "type": "mother"}
+      ],
+      "chapters": [1]
+    },
+    {
+      "id": "chen-ting-mao",
+      "name": "陳庭茂",
+      "nameEn": null,
+      "role": "victim",
+      "affiliation": null,
+      "description": "陳文成之父。案發後積極向國際社會求援，赴美時遭國安局研擬專門對策全面監控。情治機關系統性研究如何防堵其申訴活動。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "國安局圖47：因應陳庭茂赴美研擬對策。(第144–145頁)",
+        "04-cause-of-death": "事發當日至古亭分局領回遺物。(p. 32)",
+        "05-investigation": "多處引用其回憶。(第9、11頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "son"},
+        {"id": "chen-bao-yue", "type": "daughter"},
+        {"id": "chen-wen-hua", "type": "son"}
+      ],
+      "chapters": [3, 5, 6]
+    },
+    {
+      "id": "chen-bao-yue",
+      "name": "陳寶月",
+      "nameEn": null,
+      "role": "victim",
+      "affiliation": null,
+      "description": "陳文成二姐。1990年委由律師控告汪敬煦等五人涉嫌共同殺人罪。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第155頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "brother"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "chen-wen-hua",
+      "name": "陳文華",
+      "nameEn": null,
+      "role": "victim",
+      "affiliation": null,
+      "description": "陳文成弟弟。7月1日與陳文成一同赴出入境管理局及警總會客室追問出境證。",
+      "sourceDescriptions": {
+        "05-investigation": "(第9頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "brother"}
+      ],
+      "chapters": [3]
+    },
+    {
+      "id": "wang-jing-xu",
+      "name": "汪敬煦",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "台灣警備總司令 → 國家安全局局長",
+      "description": "命案發生時為警總總司令。案發後非但未被追究責任，反而於同年即升任國安局局長。以國安局長身分撥發30萬元偵辦經費予警總、主導明園專案呈報蔣經國總統、向蔣呈報落體實驗排除自殺可能的結論，但將實驗結果列為機密不公布。1990年被陳寶月控告涉嫌共同殺人。",
+      "sourceDescriptions": {
+        "01-wecht": "作為警總司令與 Wecht 會面五小時，否認警總與陳文成之死有關，稱「做完訪談後心情很好」。(p. 6–8)",
+        "02-tjc-part1": "事後警總發言與記者會由其主導。(第8–9頁)",
+        "03-tjc-part2": "角色遠比 Wecht 報告所述更為關鍵——從嫌疑方主管變為偵辦主導者。圖48、49為關鍵解密文件。(第152–156頁)"
+      },
+      "relations": [
+        {"id": "chiang-ching-kuo", "type": "superior"},
+        {"id": "deng-xiao-han", "type": "subordinate"},
+        {"id": "ning-han-tong", "type": "subordinate"}
+      ],
+      "chapters": [4, 6]
+    },
+    {
+      "id": "chiang-ching-kuo",
+      "name": "蔣經國",
+      "nameEn": "Chiang Ching-kuo",
+      "role": "perpetrator",
+      "affiliation": "中華民國總統",
+      "description": "至遲在1982年7月已由明園專案落體實驗結果得知陳文成自殺可能性被排除，但實驗結果仍被列為機密。將汪敬煦從警總總司令升任國安局局長。促轉會認為此舉彰顯威權統治當局「政權維穩高於真相發現」的邏輯。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "簽呈蓋有「71.7.11已報總統」戳章，顯示蔣經國知情。(第154–156頁)"
+      },
+      "relations": [
+        {"id": "wang-jing-xu", "type": "subordinate-promoted"},
+        {"id": "shen-chang-huan", "type": "subordinate"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "ning-han-tong",
+      "name": "甯漢彤",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總保安處",
+      "description": "7月2日早上至陳文成住處，無預警帶走陳文成前往保安處。6月30日也曾參與第一次偽裝約談。促轉會有其訪談紀錄。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第51、57–58頁)"
+      },
+      "relations": [
+        {"id": "wang-jing-xu", "type": "superior"},
+        {"id": "chen-wen-chen", "type": "interrogated"}
+      ],
+      "chapters": [3, 4]
+    },
+    {
+      "id": "wang-yi-hua",
+      "name": "王憶華",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總保安處",
+      "description": "警總宣稱約談結束後由其等人駕車送陳文成返家，但目擊證人證詞無法印證此說法。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第69–77頁)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "wang-wen-ji",
+      "name": "王文繼",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總保安處",
+      "description": "7月2日約談相關人員。其對當晚事件的說法收錄於促轉會表8，與其他人的說法有出入。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第69–73頁，表8)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "chen-fu-sheng",
+      "name": "陳復生",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總保安處",
+      "description": "7月2日約談相關人員，收錄於促轉會表8。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第69–73頁，表8)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "deng-xiao-han",
+      "name": "鄧小韓",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總安全部調查組長（中校）",
+      "description": "陪同汪敬煦與 Wecht 會面。促轉會調查時已移居美國，無法取得聯繫。",
+      "sourceDescriptions": {
+        "01-wecht": "陪同汪敬煦與 Wecht 會面。(p. 6)",
+        "02-tjc-part1": "已移居美國，無法訪談。(第28頁，表5)"
+      },
+      "relations": [
+        {"id": "wang-jing-xu", "type": "superior"}
+      ],
+      "chapters": [6],
+      "note": "Wecht 報告寫「鄧小韓」，促轉會報告寫「鄒小韓」，可能為同一人的不同音譯"
+    },
+    {
+      "id": "guo-xue-zhou",
+      "name": "郭學周",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總",
+      "description": "陳文成案關鍵人物之一，促轉會調查時已過世。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第28頁，表5)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "wu-shi-chang",
+      "name": "吳世昌",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總",
+      "description": "陳文成案關鍵人物之一，促轉會調查時已過世。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第28頁，表5)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "wang-zhen-hao",
+      "name": "王振浩",
+      "nameEn": null,
+      "role": "perpetrator",
+      "affiliation": "警總",
+      "description": "陳文成案關鍵人物之一，促轉會調查時已過世。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第28頁，表5)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "shen-chang-huan",
+      "name": "沈昌煥",
+      "nameEn": null,
+      "role": "political",
+      "affiliation": "總統府秘書長",
+      "description": "明園專案呈報流程中可能知悉實驗結果的高層之一。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第155頁)"
+      },
+      "relations": [
+        {"id": "chiang-ching-kuo", "type": "superior"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "cyril-wecht",
+      "name": "魏契",
+      "nameEn": "Cyril Wecht, M.D., J.D.",
+      "role": "investigator",
+      "affiliation": "美國法醫病理學家",
+      "description": "受 Carnegie Mellon 大學校董 Richard Cyert 之邀，與 DeGroot 赴台進行獨立法醫調查。親自重新檢驗遺體，結論為他殺（homicide）。其赴台行程被國安局全程監控。1985年正式驗屍報告《Murder in Taiwan》發表於學術期刊。",
+      "sourceDescriptions": {
+        "01-wecht": "第一人稱敘事，詳述三天調查過程、法醫鑑定與結論。(全文)",
+        "02-tjc-part1": "列為第二波調查。(第14頁，表2)",
+        "03-tjc-part2": "揭露其赴台行程被國安局全程監控。(第145–148頁)",
+        "04-cause-of-death": "引用其結論（落地後存活20-40分鐘）以質疑偵察報告。(p. 36)"
+      },
+      "relations": [
+        {"id": "morris-degroot", "type": "colleague"},
+        {"id": "richard-cyert", "type": "invited-by"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "morris-degroot",
+      "name": "狄格魯特",
+      "nameEn": "Morris DeGroot",
+      "role": "investigator",
+      "affiliation": "Carnegie Mellon 大學統計系教授（陳文成同事）",
+      "description": "與 Wecht 赴台調查。撰寫調查報告《The Trip to Taiwan》。其記錄的遺體姿態（「雙臂垂在身邊」）與檢察官陳春男的記載（「兩手肘向上彎曲成舉重狀」）完全矛盾。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 2, 13)",
+        "02-tjc-part1": "其錄音帶最後出現在國安局檔案引用中，後下落不明。(第14、31頁)",
+        "04-cause-of-death": "遺體姿態記載與陳春男矛盾。(p. 37)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "colleague"},
+        {"id": "cyril-wecht", "type": "colleague"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "richard-cyert",
+      "name": "塞爾特",
+      "nameEn": "Richard Cyert",
+      "role": "academic",
+      "affiliation": "Carnegie Mellon 大學校董",
+      "description": "在七月底致電 Wecht，邀請他加入 DeGroot 的赴台調查行程。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 2)"
+      },
+      "relations": [
+        {"id": "cyril-wecht", "type": "invited"},
+        {"id": "morris-degroot", "type": "colleague"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "deng-wei-xiang",
+      "name": "鄧維祥",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": "台北工專教師（現台北科技大學）",
+      "description": "陳文成的老友、密西根大學同學。自稱7月2日深夜至3日凌晨與陳文成會面。Wecht 報告中描述為陳文成最後見證者；促轉會報告則從歷次證詞矛盾、其妻證詞歧異等分析，判定其說詞難以採信。",
+      "sourceDescriptions": {
+        "01-wecht": "陳文成死前最後見到的人，提供詳細最後行蹤描述。(p. 8–9)",
+        "02-tjc-part1": "列為「自稱知悉7月2日行蹤者」。(第27頁，表4)",
+        "03-tjc-part2": "歷次證詞前後歧異甚大，其妻證詞亦矛盾。促轉會認定難以採信。(第78–87頁)",
+        "05-investigation": "附錄查訪記載：7/2 23時許陳文成至其住所。(第33頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "friend"},
+        {"id": "deng-tang-juan-hao", "type": "spouse"}
+      ],
+      "chapters": [4, 5],
+      "discrepancy": "Wecht 報告與促轉會報告對鄧維祥的評價截然不同——前者視為可信證人，後者認定難以採信。此差異直接影響對陳文成最後行蹤的判斷。"
+    },
+    {
+      "id": "deng-tang-juan-hao",
+      "name": "鄧湯娟好",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": null,
+      "description": "鄧維祥之妻。其證詞與丈夫的說法存在矛盾。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第82–84頁)"
+      },
+      "relations": [
+        {"id": "deng-wei-xiang", "type": "spouse"}
+      ],
+      "chapters": [4]
+    },
+    {
+      "id": "ni-zhao-qiang",
+      "name": "倪肇強",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": null,
+      "description": "先前調查曾憑其證詞認定陳文成夜半到達陳屍現場。但促轉會指出：其未能確認目擊對象是陳文成、歷次證詞前後歧異、且明園專案現場模擬發現他當晚根本無法清楚看見研究圖書館太平梯上的狀況。此證詞不可信。",
+      "sourceDescriptions": {
+        "01-wecht": "譯注3提及汪敬煦稱有目擊者看見太平梯上有人。(p. 13)",
+        "03-tjc-part2": "證詞不可信。(第158頁)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "xu-cui-ping",
+      "name": "徐翠屏",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": null,
+      "description": "五名目擊證人之一。證詞與其他四人及警總說法在目擊時間、身高等方面矛盾。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第69–77頁，表8)",
+        "05-investigation": "(第11、33頁)"
+      },
+      "relations": [],
+      "chapters": [4]
+    },
+    {
+      "id": "liu-ren-fu",
+      "name": "劉仁富",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": "台大校警",
+      "description": "發現陳文成遺體的校警。其向 DeGroot 描述的遺體姿態（雙臂垂在身邊）與偵察報告記載（兩臂彎曲上舉）矛盾。描述當晚有六名校警巡邏，無人報告異常。",
+      "sourceDescriptions": {
+        "01-wecht": "向 Wecht 描述發現遺體的過程。(p. 9–10)",
+        "04-cause-of-death": "遺體姿態兩種矛盾說法的來源之一。(p. 37)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "chen-zhi-guo",
+      "name": "陳治國",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": "台大駐衛警",
+      "description": "7月3日07:30接獲不知名男子電話報稱研究圖書館後方有人倒臥，轉報警方。",
+      "sourceDescriptions": {
+        "05-investigation": "(第31頁)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "bai-jian-er",
+      "name": "白健二",
+      "nameEn": null,
+      "role": "witness",
+      "affiliation": "台大商學系教授",
+      "description": "陳文成的朋友。1994年公聽會上提供7月1–2日的證詞——稱7月1日晚與陳文成夫婦共餐、7月2日傍晚接到陳文成電話、當晚透過關係向警總詢問。其姊夫為內政部長邱創煥。此證詞為1994年回述，1981年檢方報告未納入。",
+      "sourceDescriptions": {
+        "05-investigation": "(第10–11頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "friend"},
+        {"id": "qiu-chuang-huan", "type": "brother-in-law"}
+      ],
+      "chapters": [3, 4],
+      "note": "其證詞存在爭議——「三種可能性」問題"
+    },
+    {
+      "id": "fang-zhong-min",
+      "name": "方中民",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "哈佛大學訓練出身法醫，台灣大學醫學院教授",
+      "description": "執行陳文成初次解剖的主要法醫之一。Wecht 評價其工作合格且週全。曾與 Wecht 通電話，坦率表示不相信命案與政府有關。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 4–5, 11)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "chen-chun-nan",
+      "name": "陳春男",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "台北地檢處檢察官",
+      "description": "發表首份官方偵查報告（1981年7月20日）。記載遺體姿態為「兩手肘向上彎曲成舉重狀」，與 DeGroot 記載的「雙臂垂在身邊」矛盾。偵查結論為「意外或自殺均有可能」。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 13，譯注4)",
+        "02-tjc-part1": "第一波調查。(第13頁，表2)",
+        "04-cause-of-death": "遺體姿態矛盾記載。(p. 37)",
+        "05-investigation": "指揮偵查，到場相驗。(第31–33頁)"
+      },
+      "relations": [],
+      "chapters": [5, 6]
+    },
+    {
+      "id": "gao-kun-yu",
+      "name": "高坤玉",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "法醫",
+      "description": "參與陳文成初次解剖及現場初勘。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 5)",
+        "05-investigation": "7/3 10:45隨檢察官到場勘查。(第31頁)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "yang-ri-song",
+      "name": "楊日松",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "法醫",
+      "description": "參與陳文成初次解剖。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 5，譯注)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "liu-sen-xi",
+      "name": "劉森熙",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "法醫",
+      "description": "參與陳文成初次解剖。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 5，譯注)"
+      },
+      "relations": [],
+      "chapters": [5]
+    },
+    {
+      "id": "li-jun-yi",
+      "name": "李俊億",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "法醫學者",
+      "description": "受促轉會委託重新判讀法醫跡證。與蔡武廷共同發現：陳文成傷痕與陳屍位置不符、身體受傷後有被移動跡象——陳屍處並非第一現場。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第29頁)",
+        "03-tjc-part2": "(第99–106頁)"
+      },
+      "relations": [
+        {"id": "cai-wu-ting", "type": "colleague"}
+      ],
+      "chapters": [5, 6]
+    },
+    {
+      "id": "cai-wu-ting",
+      "name": "蔡武廷",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "動力學專家",
+      "description": "受促轉會委託進行力學分析，與李俊億共同判斷傷痕與落體力學的關係。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第29頁)",
+        "03-tjc-part2": "(第99–106頁)"
+      },
+      "relations": [
+        {"id": "li-jun-yi", "type": "colleague"}
+      ],
+      "chapters": [5, 6]
+    },
+    {
+      "id": "you-bo-xiang",
+      "name": "尤伯祥",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "促進轉型正義委員會委員",
+      "description": "《陳文成案調查報告》主要撰寫人之一。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(CIP頁)"
+      },
+      "relations": [
+        {"id": "ye-hong-ling", "type": "colleague"}
+      ],
+      "chapters": [7]
+    },
+    {
+      "id": "ye-hong-ling",
+      "name": "葉虹靈",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "促進轉型正義委員會委員",
+      "description": "《陳文成案調查報告》主要撰寫人之一。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(CIP頁)"
+      },
+      "relations": [
+        {"id": "you-bo-xiang", "type": "colleague"}
+      ],
+      "chapters": [7]
+    },
+    {
+      "id": "huang-yi",
+      "name": "黃怡",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "記者/撰述工作者",
+      "description": "2006年研討會調查報告主文撰稿人。曾任自由時報、時報週刊等撰述委員。",
+      "sourceDescriptions": {
+        "05-investigation": "(第1–2頁)"
+      },
+      "relations": [
+        {"id": "lin-shi-yu", "type": "colleague"}
+      ],
+      "chapters": [7]
+    },
+    {
+      "id": "lin-shi-yu",
+      "name": "林世煜",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "自由撰稿人",
+      "description": "2006年研討會調查報告協同主持人與撰稿人。曾任職「黨外雜誌」。",
+      "sourceDescriptions": {
+        "05-investigation": "(第1–2頁)"
+      },
+      "relations": [
+        {"id": "huang-yi", "type": "colleague"}
+      ],
+      "chapters": [7]
+    },
+    {
+      "id": "wu-nai-de",
+      "name": "吳乃德",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": null,
+      "description": "2006年研討會調查報告計畫主持人。",
+      "sourceDescriptions": {
+        "05-investigation": "(第2頁)"
+      },
+      "relations": [],
+      "chapters": [7]
+    },
+    {
+      "id": "shi-ming-de",
+      "name": "施明德",
+      "nameEn": null,
+      "role": "political",
+      "affiliation": "《美麗島雜誌》總經理",
+      "description": "陳文成曾將募得款項匯給施明德。彩虹資料第1筆即為陳文成致電施明德的監聽紀錄。警總曾監聽兩人之間的通話。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 7)",
+        "02-tjc-part1": "(第36頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "political-contact"}
+      ],
+      "chapters": [2]
+    },
+    {
+      "id": "zhou-qing-yue",
+      "name": "周清月",
+      "nameEn": "Tina Chou",
+      "role": "media",
+      "affiliation": "美聯社（Associated Press）台北分社",
+      "description": "因報導中使用「驗屍」（autopsy）一詞，遭新聞局禁止參加記者會、暫停採訪權，最後記者登記被取消、禁止入境。75年由印度調回臺灣時資格仍未恢復。促轉會認為此舉顯示威權統治當局對外界追求真相的恐懼。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第147–149頁)"
+      },
+      "relations": [],
+      "chapters": [6]
+    },
+    {
+      "id": "zhou-zhen-ya",
+      "name": "周振亞",
+      "nameEn": null,
+      "role": "other",
+      "affiliation": "台北市警察局外事室主任",
+      "description": "負責接待 Wecht 與 DeGroot，機場迎接、提供翻譯、安排行程。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 4)"
+      },
+      "relations": [],
+      "chapters": [6]
+    },
+    {
+      "id": "chen-jin-hua",
+      "name": "陳錦華",
+      "nameEn": null,
+      "role": "other",
+      "affiliation": null,
+      "description": "出現於彩虹資料第2、4、5筆，與陳文成、陳素貞有頻繁電話聯繫。可能為陳文成的親友或聯絡人。",
+      "sourceDescriptions": {
+        "02-tjc-part1": "(第37、39–40頁)"
+      },
+      "relations": [
+        {"id": "chen-wen-chen", "type": "contact"},
+        {"id": "chen-su-zhen", "type": "contact"}
+      ],
+      "chapters": [2]
+    },
+    {
+      "id": "shen-jun-shan",
+      "name": "沈君山",
+      "nameEn": null,
+      "role": "academic",
+      "affiliation": "清華大學教授",
+      "description": "陳文成初次解剖時在場。1981年9月接機 Wecht 一行。與在美刁錦寰通聯被情治機關截獲。",
+      "sourceDescriptions": {
+        "01-wecht": "解剖時在場。(p. 5)",
+        "03-tjc-part2": "通聯被截獲。(第146–147頁)"
+      },
+      "relations": [
+        {"id": "diao-jin-huan", "type": "colleague"}
+      ],
+      "chapters": [5, 6]
+    },
+    {
+      "id": "diao-jin-huan",
+      "name": "刁錦寰",
+      "nameEn": null,
+      "role": "academic",
+      "affiliation": "在美經濟學者",
+      "description": "與沈君山9月15日通聯被情報機關截獲，涉及 Wecht 來台安排。",
+      "sourceDescriptions": {
+        "03-tjc-part2": "(第146頁)"
+      },
+      "relations": [
+        {"id": "shen-jun-shan", "type": "colleague"}
+      ],
+      "chapters": [6]
+    },
+    {
+      "id": "mao-gao-wen",
+      "name": "毛高文",
+      "nameEn": null,
+      "role": "academic",
+      "affiliation": null,
+      "description": "初次解剖時在場。1981年9月接機 Wecht 一行。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 13，譯注2)",
+        "03-tjc-part2": "(第147頁)"
+      },
+      "relations": [],
+      "chapters": [5, 6]
+    },
+    {
+      "id": "qiu-chuang-huan",
+      "name": "邱創煥",
+      "nameEn": null,
+      "role": "political",
+      "affiliation": "內政部長",
+      "description": "白健二之姊夫。白健二稱可透過此關係協助陳文成。",
+      "sourceDescriptions": {
+        "05-investigation": "(第10頁)"
+      },
+      "relations": [
+        {"id": "bai-jian-er", "type": "brother-in-law"}
+      ],
+      "chapters": [3]
+    },
+    {
+      "id": "jim-leach",
+      "name": "李乙奇",
+      "nameEn": "Jim Leach",
+      "role": "political",
+      "affiliation": "美國共和黨籍愛荷華州眾議員",
+      "description": "與其他美國國會議員呼籲對陳文成案進行週全探查。",
+      "sourceDescriptions": {
+        "01-wecht": "(p. 1)"
+      },
+      "relations": [],
+      "chapters": [6]
+    },
+    {
+      "id": "xiao-ren-zhang",
+      "name": "蕭仁章",
+      "nameEn": null,
+      "role": "investigator",
+      "affiliation": "古亭分局刑警隊員",
+      "description": "現場初勘勘查人員。將死者遺物置於皮鞋帶回古亭分局。",
+      "sourceDescriptions": {
+        "04-cause-of-death": "(p. 32)",
+        "05-investigation": "(第31–32頁)"
+      },
+      "relations": [],
+      "chapters": [5]
+    }
+  ]
+}
