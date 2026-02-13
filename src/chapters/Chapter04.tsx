@@ -37,7 +37,7 @@ export function Chapter04() {
       {/* 第一段：清晨——被帶走 */}
       <ScrollSection aria-label="清晨——被帶走">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s1.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -54,7 +54,7 @@ export function Chapter04() {
       {/* INFOGRAPHIC: july-hourly-timeline（續） */}
       <ScrollSection minHeight="60vh" aria-label="七月逐時時間線（續）">
         {(progress, isInView) => (
-          <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <HourlyTimeline phase={2} progress={progress} isInView={isInView} />
           </div>
         )}
@@ -63,7 +63,7 @@ export function Chapter04() {
       {/* PIXEL_SCENE: interrogation-room */}
       <ScrollSection minHeight="80vh" aria-label="審訊室場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh] px-4">
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <InterrogationRoomScene progress={progress} isInView={isInView} />
           </div>
         )}
@@ -72,7 +72,7 @@ export function Chapter04() {
       {/* 第二段：保安處——十二個小時 */}
       <ScrollSection aria-label="保安處——十二個小時">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s2.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -99,7 +99,7 @@ export function Chapter04() {
       {/* INFOGRAPHIC: testimony-comparison */}
       <ScrollSection minHeight="60vh" aria-label="證詞矛盾對照表">
         {(progress, isInView) => (
-          <div className="max-w-5xl mx-auto px-4 py-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <TestimonyComparison progress={progress} isInView={isInView} />
           </div>
         )}
@@ -108,7 +108,7 @@ export function Chapter04() {
       {/* 第三段：空白的六小時 */}
       <ScrollSection aria-label="空白的六小時">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s3.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -125,7 +125,7 @@ export function Chapter04() {
       {/* PIXEL_SCENE: blank-hours */}
       <ScrollSection minHeight="80vh" aria-label="空白的六小時場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh] px-4">
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <BlankHoursScene progress={progress} isInView={isInView} />
           </div>
         )}

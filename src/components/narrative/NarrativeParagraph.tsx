@@ -12,9 +12,9 @@ export function NarrativeParagraph({ paragraph, className = '' }: NarrativeParag
   if (type === 'quote') {
     return (
       <blockquote
-        className={`border-l-2 border-ink-600 pl-4 my-6 text-ink-300 italic leading-relaxed ${className}`}
+        className={`border-l-2 border-ink-600 pl-3 sm:pl-4 my-4 sm:my-6 text-ink-300 italic leading-relaxed ${className}`}
       >
-        <p className="text-base whitespace-pre-line">{text}</p>
+        <p className="text-sm sm:text-base whitespace-pre-line">{text}</p>
         {citation && (
           <footer className="mt-2 not-italic">
             <Citation source={citation} />
@@ -27,7 +27,7 @@ export function NarrativeParagraph({ paragraph, className = '' }: NarrativeParag
   if (type === 'note') {
     return (
       <div
-        className={`my-6 bg-ink-900/50 border border-ink-700 rounded px-4 py-3 text-sm text-ink-300 leading-relaxed ${className}`}
+        className={`my-4 sm:my-6 bg-ink-900/50 border border-ink-700 rounded px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-ink-300 leading-relaxed ${className}`}
       >
         <p>{text}</p>
         {citation && (
@@ -41,9 +41,9 @@ export function NarrativeParagraph({ paragraph, className = '' }: NarrativeParag
 
   if (type === 'list' && items) {
     return (
-      <div className={`my-4 ${className}`}>
-        {text && <p className="text-ink-200 leading-relaxed text-lg mb-2">{text}</p>}
-        <ul className="list-disc list-inside space-y-1 text-ink-200 text-base ml-2">
+      <div className={`my-3 sm:my-4 ${className}`}>
+        {text && <p className="text-ink-200 leading-relaxed text-base md:text-lg mb-2">{text}</p>}
+        <ul className="list-disc list-inside space-y-1 text-ink-200 text-sm sm:text-base ml-2">
           {items.map((item, i) => (
             <li key={i} className="leading-relaxed">{item}</li>
           ))}
@@ -58,7 +58,7 @@ export function NarrativeParagraph({ paragraph, className = '' }: NarrativeParag
   }
 
   return (
-    <p className={`text-ink-200 leading-relaxed text-lg my-4 ${className}`}>
+    <p className={`text-ink-200 leading-relaxed text-base md:text-lg my-3 sm:my-4 ${className}`}>
       {text}
       {citation && (
         <>

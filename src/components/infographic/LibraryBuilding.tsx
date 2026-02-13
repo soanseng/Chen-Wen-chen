@@ -75,18 +75,18 @@ export function LibraryBuilding({ progress, isInView, className = '' }: LibraryB
 
   return (
     <div className={className} role="region" aria-label="台大研究生圖書館建築剖面圖">
-      <h3 className="text-ink-200 text-base font-medium mb-1 text-center">
+      <h3 className="text-ink-200 text-sm sm:text-base font-medium mb-1 text-center">
         研究生圖書館建築剖面
       </h3>
-      <p className="text-ink-400 text-xs font-mono text-center mb-4">
+      <p className="text-ink-400 text-[10px] sm:text-xs font-mono text-center mb-3 sm:mb-4">
         五層白磚水泥建築 ｜ 東北角消防太平梯 ｜ 五樓護欄高僅 83cm
       </p>
 
       {/* View toggle */}
-      <div className="flex justify-center gap-2 mb-6">
+      <div className="flex justify-center gap-2 mb-4 sm:mb-6">
         <button
           type="button"
-          className={`text-[11px] px-3 py-1 rounded font-mono transition-colors ${
+          className={`text-[11px] px-3 py-1.5 sm:py-1 rounded font-mono transition-colors ${
             view === 'side'
               ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/40'
               : 'bg-ink-800 text-ink-400 border border-ink-700 hover:text-ink-200'
@@ -97,7 +97,7 @@ export function LibraryBuilding({ progress, isInView, className = '' }: LibraryB
         </button>
         <button
           type="button"
-          className={`text-[11px] px-3 py-1 rounded font-mono transition-colors ${
+          className={`text-[11px] px-3 py-1.5 sm:py-1 rounded font-mono transition-colors ${
             view === 'overhead'
               ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/40'
               : 'bg-ink-800 text-ink-400 border border-ink-700 hover:text-ink-200'
@@ -124,15 +124,15 @@ export function LibraryBuilding({ progress, isInView, className = '' }: LibraryB
 
       {/* Active annotation detail */}
       {activePoint && (
-        <div className="mt-4 mx-auto max-w-xl bg-ink-900/90 border border-ink-700 rounded px-4 py-3 transition-all">
-          <div className="text-ink-100 text-sm font-medium mb-1">{activePoint.label}</div>
-          <p className="text-ink-300 text-xs leading-relaxed">{activePoint.detail}</p>
-          <Citation source={activePoint.source} className="text-xs mt-2" />
+        <div className="mt-3 sm:mt-4 mx-auto max-w-xl bg-ink-900/90 border border-ink-700 rounded px-3 sm:px-4 py-2 sm:py-3 transition-all">
+          <div className="text-ink-100 text-xs sm:text-sm font-medium mb-1">{activePoint.label}</div>
+          <p className="text-ink-300 text-[11px] sm:text-xs leading-relaxed">{activePoint.detail}</p>
+          <Citation source={activePoint.source} className="text-[10px] sm:text-xs mt-2" />
         </div>
       )}
 
       {/* Legend */}
-      <div className="flex flex-wrap gap-4 justify-center mt-6 text-[10px] text-ink-500 font-mono">
+      <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mt-4 sm:mt-6 text-[9px] sm:text-[10px] text-ink-500 font-mono">
         <span className="flex items-center gap-1">
           <span className="inline-block w-3 h-0.5 bg-ink-400" />
           建築結構
@@ -174,7 +174,7 @@ function SideView({ visibleAnnotations, activeAnnotation, onAnnotationClick }: V
     <svg
       viewBox="0 0 400 400"
       className="w-full max-w-2xl mx-auto"
-      style={{ maxHeight: '480px' }}
+      style={{ minHeight: '280px', maxHeight: '480px' }}
       role="img"
       aria-label="研究生圖書館側面剖面圖：五層建築與消防太平梯"
     >
@@ -334,11 +334,24 @@ function SideView({ visibleAnnotations, activeAnnotation, onAnnotationClick }: V
             key={point.id}
             className="cursor-pointer"
             onClick={() => onAnnotationClick(isActive ? null : point.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === 'Enter' && onAnnotationClick(isActive ? null : point.id)
+            }
+            aria-label={point.label}
             style={{
               opacity: isVisible ? 1 : 0,
               transition: 'opacity 0.5s',
             }}
           >
+            {/* Invisible larger touch target */}
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r={16}
+              fill="transparent"
+            />
             <circle
               cx={point.x}
               cy={point.y}
@@ -377,7 +390,7 @@ function OverheadView({ visibleAnnotations, activeAnnotation, onAnnotationClick 
     <svg
       viewBox="0 0 400 340"
       className="w-full max-w-2xl mx-auto"
-      style={{ maxHeight: '400px' }}
+      style={{ minHeight: '240px', maxHeight: '400px' }}
       role="img"
       aria-label="研究生圖書館俯瞰平面圖"
     >
@@ -522,11 +535,24 @@ function OverheadView({ visibleAnnotations, activeAnnotation, onAnnotationClick 
             key={point.id}
             className="cursor-pointer"
             onClick={() => onAnnotationClick(isActive ? null : point.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === 'Enter' && onAnnotationClick(isActive ? null : point.id)
+            }
+            aria-label={point.label}
             style={{
               opacity: isVisible ? 1 : 0,
               transition: 'opacity 0.5s',
             }}
           >
+            {/* Invisible larger touch target */}
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r={16}
+              fill="transparent"
+            />
             <circle
               cx={point.x}
               cy={point.y}

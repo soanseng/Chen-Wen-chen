@@ -992,7 +992,7 @@ git commit -m "feat: add transitions and scroll animations"
 
 ---
 
-### Task 5.2: RWD 最佳化
+### Task 5.2: RWD 最佳化 ✅
 
 **Files:**
 - Modify: 各元件

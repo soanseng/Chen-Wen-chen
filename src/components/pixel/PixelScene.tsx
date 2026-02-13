@@ -144,14 +144,18 @@ export function PixelScene({
   if (isMobile || reducedMotion) {
     return (
       <div
-        className="w-full flex items-center justify-center bg-ink-950 border border-ink-800 rounded"
+        className="w-full max-w-2xl mx-auto bg-ink-900/40 border border-ink-800/60 rounded-sm overflow-hidden"
         style={{ aspectRatio: `${BASE_WIDTH}/${BASE_HEIGHT}` }}
         role="img"
         aria-label={ariaLabel}
       >
-        <p className="text-ink-400 text-sm font-mono px-4 text-center">
-          {fallbackText ?? ariaLabel}
-        </p>
+        <div className="w-full h-full flex flex-col items-center justify-center px-6 py-4 text-center">
+          <div className="w-8 h-px bg-ink-700 mb-3" />
+          <p className="text-ink-300 text-sm leading-relaxed">
+            {fallbackText ?? ariaLabel}
+          </p>
+          <div className="w-8 h-px bg-ink-700 mt-3" />
+        </div>
       </div>
     )
   }

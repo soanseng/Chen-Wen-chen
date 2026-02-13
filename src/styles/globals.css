@@ -27,6 +27,26 @@
 
 body {
   @apply bg-ink-950 text-ink-100 font-serif antialiased;
+  -webkit-tap-highlight-color: transparent;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-600);
 }
 
 /* Reduce motion: skip all scroll-driven animations */
@@ -35,4 +55,18 @@ body {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* Ensure touch targets are at least 44px on mobile */
+@media (max-width: 640px) {
+  button,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
 }

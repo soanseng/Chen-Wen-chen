@@ -37,7 +37,7 @@ export function Chapter06() {
       {/* 第一段：定調——「畏罪自殺」 */}
       <ScrollSection aria-label="官方定調">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s1.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -54,7 +54,7 @@ export function Chapter06() {
       {/* 第二段：Wecht 的獨立調查 */}
       <ScrollSection aria-label="Wecht 的獨立調查">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s2.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -71,7 +71,7 @@ export function Chapter06() {
       {/* PIXEL_SCENE: wecht-arrival */}
       <ScrollSection minHeight="80vh" aria-label="Wecht 抵台場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh] px-4">
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <WechtArrivalScene progress={progress} isInView={isInView} />
           </div>
         )}
@@ -80,7 +80,7 @@ export function Chapter06() {
       {/* 第三、四、五段：懲罰、妨礙、升官 */}
       <ScrollSection aria-label="真相壓制">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s3.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -97,7 +97,7 @@ export function Chapter06() {
       {/* 第六段：秘密實驗——排除自殺 */}
       <ScrollSection aria-label="明園專案">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s4.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -114,7 +114,7 @@ export function Chapter06() {
       {/* 第七段：漫長的調查之路 */}
       <ScrollSection aria-label="漫長的調查之路">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s5.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -131,7 +131,7 @@ export function Chapter06() {
       {/* INFOGRAPHIC: investigation-waves */}
       <ScrollSection minHeight="60vh" aria-label="七波調查比較表">
         {(progress, isInView) => (
-          <div className="max-w-5xl mx-auto px-4 py-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <InvestigationWaves
               progress={progress}
               isInView={isInView}

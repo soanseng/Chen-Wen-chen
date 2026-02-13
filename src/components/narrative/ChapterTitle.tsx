@@ -26,20 +26,20 @@ export function ChapterTitle({
   return (
     <header
       ref={ref}
-      className={`flex flex-col items-center justify-center min-h-[60vh] text-center px-4 ${className}`}
+      className={`flex flex-col items-center justify-center min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] text-center px-4 sm:px-6 ${className}`}
       style={style}
     >
-      <span className="text-ink-500 font-mono text-sm tracking-[0.3em] uppercase mb-4">
+      <span className="text-ink-500 font-mono text-xs sm:text-sm tracking-[0.3em] uppercase mb-3 sm:mb-4">
         {numberToChinese(chapter)}
       </span>
-      <h2 className="text-4xl md:text-6xl font-display text-ink-50 mb-4">
+      <h2 className="text-3xl sm:text-4xl md:text-6xl font-display text-ink-50 mb-3 sm:mb-4">
         {title}
       </h2>
-      <span className="text-ink-400 font-mono text-sm tracking-wider">
+      <span className="text-ink-400 font-mono text-xs sm:text-sm tracking-wider">
         {timeRange}
       </span>
       {mood && (
-        <span className="text-ink-600 text-xs mt-2 italic">
+        <span className="text-ink-600 text-[10px] sm:text-xs mt-2 italic">
           {mood}
         </span>
       )}

@@ -28,7 +28,7 @@ export function Chapter01() {
       {/* 成長背景 */}
       <ScrollSection aria-label="成長背景">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s1.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -45,7 +45,7 @@ export function Chapter01() {
       {/* PIXEL_SCENE: campus-life */}
       <ScrollSection minHeight="80vh" aria-label="Carnegie Mellon 校園場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh] px-4">
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <CampusLifeScene progress={progress} isInView={isInView} />
           </div>
         )}
@@ -54,7 +54,7 @@ export function Chapter01() {
       {/* 赴美求學與學術成就 */}
       <ScrollSection aria-label="赴美求學與學術成就">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s2.paragraphs.map((p, i) => (
               <div
                 key={i}

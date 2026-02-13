@@ -27,7 +27,7 @@ export function Chapter07() {
       {/* 促轉會的結論 */}
       <ScrollSection aria-label="促轉會的結論">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s1.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -44,7 +44,7 @@ export function Chapter07() {
       {/* 真相為何難明 */}
       <ScrollSection aria-label="真相為何難明">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s2.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -61,7 +61,7 @@ export function Chapter07() {
       {/* 整體評價——留白收尾 */}
       <ScrollSection aria-label="整體評價">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s3.paragraphs.map((p, i) => (
               <div
                 key={i}

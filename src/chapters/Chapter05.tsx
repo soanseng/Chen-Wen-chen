@@ -40,7 +40,7 @@ export function Chapter05() {
       {/* PIXEL_SCENE: library-dawn */}
       <ScrollSection minHeight="80vh" aria-label="台大研究生圖書館旁清晨場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh] px-4">
+          <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[80vh] px-4">
             <LibraryDawnScene progress={progress} isInView={isInView} />
           </div>
         )}
@@ -49,7 +49,7 @@ export function Chapter05() {
       {/* 第一段：清晨的發現 */}
       <ScrollSection aria-label="清晨的發現">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s1.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -66,7 +66,7 @@ export function Chapter05() {
       {/* INFOGRAPHIC: library-building */}
       <ScrollSection minHeight="60vh" aria-label="研究生圖書館建築剖面圖">
         {(progress, isInView) => (
-          <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <LibraryBuilding progress={progress} isInView={isInView} />
           </div>
         )}
@@ -75,7 +75,7 @@ export function Chapter05() {
       {/* 第二、三段：遺體姿態的矛盾 & 衣著異常 */}
       <ScrollSection aria-label="遺體姿態與衣著異常">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s2.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -92,7 +92,7 @@ export function Chapter05() {
       {/* 第四段：傷痕分析 */}
       <ScrollSection aria-label="傷痕分析">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s3.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -109,7 +109,7 @@ export function Chapter05() {
       {/* INFOGRAPHIC: injury-diagram */}
       <ScrollSection minHeight="60vh" aria-label="傷痕位置人體圖">
         {(progress, isInView) => (
-          <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <InjuryDiagram progress={progress} isInView={isInView} />
           </div>
         )}
@@ -118,7 +118,7 @@ export function Chapter05() {
       {/* 第五段：關鍵疑點 */}
       <ScrollSection aria-label="六大關鍵疑點">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s4.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -135,7 +135,7 @@ export function Chapter05() {
       {/* INFOGRAPHIC: six-doubts */}
       <ScrollSection minHeight="60vh" aria-label="六大疑點卡片">
         {(progress, isInView) => (
-          <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <SixDoubts progress={progress} isInView={isInView} />
           </div>
         )}
@@ -144,7 +144,7 @@ export function Chapter05() {
       {/* 第六段：死因研判 */}
       <ScrollSection aria-label="死因研判">
         {(progress) => (
-          <div className="max-w-2xl mx-auto px-4 py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             {s5.paragraphs.map((p, i) => (
               <div
                 key={i}
@@ -161,7 +161,7 @@ export function Chapter05() {
       {/* INFOGRAPHIC: crime-scene-map */}
       <ScrollSection minHeight="60vh" aria-label="現場平面圖">
         {(progress, isInView) => (
-          <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
             <CrimeSceneMap progress={progress} isInView={isInView} />
           </div>
         )}

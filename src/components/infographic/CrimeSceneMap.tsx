@@ -100,20 +100,20 @@ export function CrimeSceneMap({ progress, isInView, className = '' }: CrimeScene
 
   return (
     <div className={className} role="region" aria-label="陳文成案現場平面圖">
-      <h3 className="text-ink-200 text-base font-medium mb-1 text-center">
+      <h3 className="text-ink-200 text-sm sm:text-base font-medium mb-1 text-center">
         現場平面圖
       </h3>
-      <p className="text-ink-400 text-xs font-mono text-center mb-4">
+      <p className="text-ink-400 text-[10px] sm:text-xs font-mono text-center mb-3 sm:mb-4">
         台大研究生圖書館周邊 ｜ 陳屍位置 ｜ 深夜無車輛進出紀錄
       </p>
 
       {/* Layer toggles */}
-      <div className="flex justify-center gap-2 mb-6">
+      <div className="flex flex-wrap justify-center gap-2 mb-4 sm:mb-6">
         {layers.map((layer) => (
           <button
             key={layer.id}
             type="button"
-            className={`text-[11px] px-3 py-1 rounded font-mono transition-colors ${
+            className={`text-[11px] px-3 py-1.5 sm:py-1 rounded font-mono transition-colors ${
               activeLayers.has(layer.id)
                 ? 'bg-accent-blue/20 text-accent-blue border border-accent-blue/40'
                 : 'bg-ink-800 text-ink-400 border border-ink-700 hover:text-ink-200'
@@ -129,7 +129,7 @@ export function CrimeSceneMap({ progress, isInView, className = '' }: CrimeScene
       <svg
         viewBox="0 0 500 420"
         className="w-full max-w-2xl mx-auto"
-        style={{ maxHeight: '480px' }}
+        style={{ minHeight: '280px', maxHeight: '480px' }}
         role="img"
         aria-label="台大研究生圖書館現場俯瞰圖"
       >
@@ -460,6 +460,13 @@ export function CrimeSceneMap({ progress, isInView, className = '' }: CrimeScene
                 }
                 aria-label={point.label}
               >
+                {/* Invisible larger touch target */}
+                <circle
+                  cx={point.x}
+                  cy={point.y}
+                  r={16}
+                  fill="transparent"
+                />
                 <circle
                   cx={point.x}
                   cy={point.y}
@@ -475,15 +482,15 @@ export function CrimeSceneMap({ progress, isInView, className = '' }: CrimeScene
 
       {/* Active annotation detail */}
       {activeDetail && (
-        <div className="mt-4 mx-auto max-w-xl bg-ink-900/90 border border-ink-700 rounded px-4 py-3">
-          <div className="text-ink-100 text-sm font-medium mb-1">{activeDetail.label}</div>
-          <p className="text-ink-300 text-xs leading-relaxed">{activeDetail.detail}</p>
-          <Citation source={activeDetail.source} className="text-xs mt-2" />
+        <div className="mt-3 sm:mt-4 mx-auto max-w-xl bg-ink-900/90 border border-ink-700 rounded px-3 sm:px-4 py-2 sm:py-3">
+          <div className="text-ink-100 text-xs sm:text-sm font-medium mb-1">{activeDetail.label}</div>
+          <p className="text-ink-300 text-[11px] sm:text-xs leading-relaxed">{activeDetail.detail}</p>
+          <Citation source={activeDetail.source} className="text-[10px] sm:text-xs mt-2" />
         </div>
       )}
 
       {/* Legend */}
-      <div className="flex flex-wrap gap-4 justify-center mt-6 text-[10px] text-ink-500 font-mono">
+      <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mt-4 sm:mt-6 text-[9px] sm:text-[10px] text-ink-500 font-mono">
         <span className="flex items-center gap-1">
           <span className="inline-block w-3 h-3 rounded bg-ink-700/50 border border-ink-600" />
           建築

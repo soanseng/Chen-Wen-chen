@@ -18,7 +18,7 @@ export function Citation({ source, detail, className = '' }: CitationProps) {
         onClick={() => detail && setExpanded(!expanded)}
         onMouseEnter={() => detail && setExpanded(true)}
         onMouseLeave={() => setExpanded(false)}
-        className="text-ink-400 text-sm border-b border-ink-700 border-dashed cursor-help
+        className="text-ink-400 text-xs sm:text-sm border-b border-ink-700 border-dashed cursor-help
                    hover:text-accent-gold hover:border-accent-gold transition-colors"
       >
         （來源：{source}）

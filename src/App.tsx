@@ -38,13 +38,13 @@ function HeroHeader() {
   return (
     <header
       ref={ref}
-      className="flex flex-col items-center justify-center h-screen text-center px-4 scroll-animated"
+      className="flex flex-col items-center justify-center h-[80vh] sm:h-screen text-center px-4 sm:px-6 scroll-animated"
       style={style}
     >
-      <h1 className="text-4xl md:text-6xl font-display text-ink-50 mb-4">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl font-display text-ink-50 mb-3 sm:mb-4">
         陳文成事件
       </h1>
-      <p className="text-ink-400 font-mono text-sm tracking-wider">
+      <p className="text-ink-400 font-mono text-xs sm:text-sm tracking-wider">
         互動式歷史紀錄 · 1981
       </p>
     </header>
@@ -83,13 +83,13 @@ function App() {
           <ChapterDivider />
 
           {/* INFOGRAPHIC: character-map (global) */}
-          <section aria-label="人物關係圖" className="py-16">
-            <div className="max-w-4xl mx-auto px-4">
+          <section aria-label="人物關係圖" className="py-10 sm:py-16">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <CharacterMap />
             </div>
           </section>
 
-          <footer className="py-16 text-center text-ink-600 text-sm font-mono">
+          <footer className="py-10 sm:py-16 text-center text-ink-600 text-xs sm:text-sm font-mono px-4">
             <p>基於歷史文獻的紀錄呈現</p>
           </footer>
         </main>
