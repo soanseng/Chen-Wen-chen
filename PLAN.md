@@ -332,9 +332,9 @@ git commit -m "docs: design narrative chapter structure with scene and infograph
 
 ---
 
-## Phase 3: 技術架構建立
+## Phase 3: 技術架構建立 ✅ COMPLETED
 
-### Task 3.1: 初始化 Vite + React + TypeScript 專案
+### Task 3.1: 初始化 Vite + React + TypeScript 專案 ✅
 
 **Files:**
 - Create: `package.json`, `tsconfig.json`, `tsconfig.node.json`, `vite.config.ts`, `index.html`
@@ -368,7 +368,7 @@ git commit -m "feat: initialize Vite + React + TypeScript project"
 
 ---
 
-### Task 3.2: 設定 TailwindCSS 暗色主題
+### Task 3.2: 設定 TailwindCSS 暗色主題 ✅
 
 **Files:**
 - Modify: `package.json` (加依賴)
@@ -439,7 +439,7 @@ git commit -m "feat: configure TailwindCSS with dark newspaper theme"
 
 ---
 
-### Task 3.3: 整合 PixiJS
+### Task 3.3: 整合 PixiJS ✅
 
 **Files:**
 - Modify: `package.json`
@@ -505,7 +505,7 @@ git commit -m "feat: integrate PixiJS with React wrapper"
 
 ---
 
-### Task 3.4: 建立 Scrollytelling 機制
+### Task 3.4: 建立 Scrollytelling 機制 ✅
 
 **Files:**
 - Modify: `package.json`
@@ -550,7 +550,7 @@ git commit -m "feat: implement scrollytelling mechanism"
 
 ---
 
-### Task 3.5: 建立基礎 UI 元件
+### Task 3.5: 建立基礎 UI 元件 ✅
 
 **Files:**
 - Create: `src/components/narrative/TypewriterText.tsx` — 打字機效果文字
