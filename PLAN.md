@@ -674,7 +674,7 @@ git commit -m "feat: populate chapter narrative content"
 
 ---
 
-### Task 4.3: 實作 Timeline 元件（兩種時間線）
+### Task 4.3: 實作 Timeline 元件（兩種時間線） ✅
 
 規格來源：`docs/extracted/infographic-specs.md` → `surveillance-timeline` + `july-hourly-timeline`
 
