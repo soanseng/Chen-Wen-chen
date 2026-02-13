@@ -777,7 +777,7 @@ git commit -m "feat: implement testimony contradiction comparison table"
 
 ---
 
-### Task 4.6: 實作第五章法醫證據圖表（4 個）
+### Task 4.6: 實作第五章法醫證據圖表（4 個） ✅
 
 規格來源：`docs/extracted/infographic-specs.md` → `library-building`, `injury-diagram`, `crime-scene-map`, `six-doubts`
 
