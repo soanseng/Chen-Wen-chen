@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { SurveillanceTimeline } from '@/components/infographic/SurveillanceTimeline'
 import chapterData from '@/data/chapters/ch02.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -42,13 +43,7 @@ export function Chapter02() {
       <ScrollSection minHeight="60vh" aria-label="彩虹資料監控時間線">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* SurveillanceTimeline 元件：Task 4.3 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ surveillance-timeline · progress: {progress.toFixed(2)} ]
-            </div>
+            <SurveillanceTimeline progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

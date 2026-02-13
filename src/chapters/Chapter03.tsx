@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
 import chapterData from '@/data/chapters/ch03.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -71,13 +72,7 @@ export function Chapter03() {
       <ScrollSection minHeight="60vh" aria-label="七月逐時時間線">
         {(progress, isInView) => (
           <div className="max-w-4xl mx-auto px-4 py-16">
-            {/* HourlyTimeline 元件：Task 4.3 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ july-hourly-timeline (part 1) · progress: {progress.toFixed(2)} ]
-            </div>
+            <HourlyTimeline phase={1} progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
