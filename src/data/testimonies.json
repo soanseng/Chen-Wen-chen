@@ -1,0 +1,229 @@
+{
+  "title": "證詞矛盾對照表",
+  "subtitle": "五名目擊證人 + 警總官方說法的交叉比對",
+  "source": "促轉會調查報告，第64–87、158–159頁",
+  "dimensions": [
+    {
+      "id": "end-time",
+      "label": "約談結束時間",
+      "description": "警總宣稱約談結束並派車送返的時間點"
+    },
+    {
+      "id": "escort",
+      "label": "是否派車送返",
+      "description": "陳文成是否由警總人員駕車送回住處附近"
+    },
+    {
+      "id": "departure-state",
+      "label": "陳文成離開時狀態",
+      "description": "陳文成離開警總（或被送返）時的身體與精神狀態"
+    },
+    {
+      "id": "sighting",
+      "label": "目擊地點與方式",
+      "description": "證人聲稱在何處、以何種方式見到陳文成"
+    },
+    {
+      "id": "height",
+      "label": "目擊對象身高描述",
+      "description": "證人描述目擊對象的身高特徵"
+    },
+    {
+      "id": "return-home",
+      "label": "是否見到陳文成返家",
+      "description": "是否有人目擊陳文成確實進入住處"
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "garrison-official",
+      "name": "警總官方說法",
+      "role": "約談執行機關",
+      "credibility": "disputed",
+      "credibilityNote": "警總在法醫報告未完成前即定調「畏罪自殺」，且主導偵辦過程",
+      "source": "促轉會調查報告，第69–77頁",
+      "testimonies": {
+        "end-time": "約談於當晚約21:30結束",
+        "escort": "是——派王憶華等人駕車送返住處附近",
+        "departure-state": "汪敬煦稱陳文成離開時「心情很好」",
+        "sighting": "—",
+        "height": "—",
+        "return-home": "宣稱已送達住處附近"
+      }
+    },
+    {
+      "id": "wang-wen-ji",
+      "name": "王文繼等四人",
+      "role": "警總保安處人員",
+      "credibility": "disputed",
+      "credibilityNote": "警總方面人員，說法與其他目擊者存在出入",
+      "source": "促轉會調查報告，第69–73頁，表8",
+      "testimonies": {
+        "end-time": "各人對結束時間的說法存在出入",
+        "escort": "稱有派車護送",
+        "departure-state": "未有一致說法",
+        "sighting": "—",
+        "height": "—",
+        "return-home": "—"
+      }
+    },
+    {
+      "id": "xu-cui-ping",
+      "name": "徐翠屏",
+      "role": "目擊證人",
+      "credibility": "normal",
+      "credibilityNote": null,
+      "source": "促轉會調查報告，第69–77頁，表8",
+      "testimonies": {
+        "end-time": "與其他證人的目擊時間不一致",
+        "escort": "未直接描述",
+        "departure-state": "未明確描述",
+        "sighting": "聲稱在住處附近看見一名男子",
+        "height": "描述的身高與陳文成實際身高有明顯差距",
+        "return-home": "未見到陳文成確實進入住處"
+      }
+    },
+    {
+      "id": "lin-xiu-ping",
+      "name": "林秀屏",
+      "role": "目擊證人",
+      "credibility": "normal",
+      "credibilityNote": null,
+      "source": "促轉會調查報告，第69–77頁，表8",
+      "testimonies": {
+        "end-time": "目擊時間與其他證人不同",
+        "escort": "未直接描述",
+        "departure-state": "未明確描述",
+        "sighting": "聲稱在不同地點看見",
+        "height": "描述與其他證人有出入",
+        "return-home": "未見到返家"
+      }
+    },
+    {
+      "id": "pan-jin-ying",
+      "name": "潘錦英",
+      "role": "目擊證人",
+      "credibility": "normal",
+      "credibilityNote": null,
+      "source": "促轉會調查報告，第69–77頁，表8",
+      "testimonies": {
+        "end-time": "目擊時間與其他證人矛盾",
+        "escort": "對是否有車輛的描述與警總說法不符",
+        "departure-state": "未明確描述",
+        "sighting": "聲稱看到的場景與其他證人不同",
+        "height": "描述的身高特徵不一致",
+        "return-home": "未見到返家"
+      }
+    },
+    {
+      "id": "huang-kun-he",
+      "name": "黃坤和",
+      "role": "目擊證人",
+      "credibility": "normal",
+      "credibilityNote": null,
+      "source": "促轉會調查報告，第69–77頁，表8",
+      "testimonies": {
+        "end-time": "目擊時間與其他證人不一致",
+        "escort": "描述與警總「派車送返」說法不符",
+        "departure-state": "未明確描述",
+        "sighting": "聲稱在附近看到步行的男子",
+        "height": "描述的身高與其他證人有差異",
+        "return-home": "未見到返家"
+      }
+    },
+    {
+      "id": "xu-qiu-huang",
+      "name": "許秋煌",
+      "role": "目擊證人",
+      "credibility": "normal",
+      "credibilityNote": null,
+      "source": "促轉會調查報告，第69–77頁，表8",
+      "testimonies": {
+        "end-time": "目擊時間與其他證人不同",
+        "escort": "描述與其他證人不一致",
+        "departure-state": "未明確描述",
+        "sighting": "目擊場景描述與其他證人矛盾",
+        "height": "描述的目擊對象身高與陳文成不符",
+        "return-home": "未見到返家"
+      }
+    },
+    {
+      "id": "deng-wei-xiang",
+      "name": "鄧維祥",
+      "role": "關鍵證人",
+      "credibility": "unreliable",
+      "credibilityNote": "歷次證詞前後歧異甚大，妻子鄧湯娟好之證詞亦與其矛盾。促轉會認定其說詞難以採信。",
+      "source": "促轉會調查報告，第78–87頁",
+      "testimonies": {
+        "end-time": "自稱深夜接到陳文成來電",
+        "escort": "—",
+        "departure-state": "稱陳文成前來找他",
+        "sighting": "自稱兩人碰面後至臺大研究圖書館附近",
+        "height": "—",
+        "return-home": "稱陳文成未返家，而是前往臺大"
+      }
+    },
+    {
+      "id": "ni-zhao-qiang",
+      "name": "倪肇強",
+      "role": "證人",
+      "credibility": "unreliable",
+      "credibilityNote": "未能確認目擊對象即為陳文成；歷次證詞前後歧異、出入甚大；明園專案現場模擬已證明其當晚根本無法清楚看見太平梯上狀況。",
+      "source": "促轉會調查報告，第158頁",
+      "testimonies": {
+        "end-time": "—",
+        "escort": "—",
+        "departure-state": "—",
+        "sighting": "聲稱在夜間看到有人在研究圖書館太平梯上",
+        "height": "無法確認目擊對象身分",
+        "return-home": "—"
+      }
+    }
+  ],
+  "contradictions": [
+    {
+      "dimensionId": "end-time",
+      "witnessIds": ["xu-cui-ping", "lin-xiu-ping", "pan-jin-ying", "huang-kun-he", "xu-qiu-huang"],
+      "description": "五名目擊證人的目擊時間點彼此不一致，且與警總宣稱的約談結束時間存在矛盾",
+      "source": "促轉會調查報告，第69–77頁，表8"
+    },
+    {
+      "dimensionId": "height",
+      "witnessIds": ["xu-cui-ping", "lin-xiu-ping", "pan-jin-ying", "huang-kun-he", "xu-qiu-huang"],
+      "description": "目擊證人描述的對象身高各不相同，且與陳文成實際身高存在差距，無法確認目擊對象即為陳文成",
+      "source": "促轉會調查報告，第69–77頁，表8"
+    },
+    {
+      "dimensionId": "escort",
+      "witnessIds": ["garrison-official", "pan-jin-ying", "huang-kun-he"],
+      "description": "警總稱派車送返，但部分證人描述看到的是步行男子，而非由車中走出，「送還」說法缺乏印證",
+      "source": "促轉會調查報告，第69–77頁"
+    },
+    {
+      "dimensionId": "return-home",
+      "witnessIds": ["garrison-official", "xu-cui-ping", "lin-xiu-ping", "pan-jin-ying", "huang-kun-he", "xu-qiu-huang"],
+      "description": "警總宣稱送達住處附近，但無任何證人目擊陳文成確實進入住處",
+      "source": "促轉會調查報告，第77頁"
+    },
+    {
+      "dimensionId": "sighting",
+      "witnessIds": ["deng-wei-xiang"],
+      "description": "鄧維祥自稱深夜與陳文成碰面並至臺大，但歷次證詞前後矛盾，其妻證詞亦不符，促轉會認定難以採信",
+      "source": "促轉會調查報告，第78–87頁"
+    },
+    {
+      "dimensionId": "sighting",
+      "witnessIds": ["ni-zhao-qiang"],
+      "description": "倪肇強聲稱看到有人在太平梯上，但明園專案現場模擬證實他在當晚根本無法清楚看見太平梯上的狀況",
+      "source": "促轉會調查報告，第158頁"
+    }
+  ],
+  "conclusion": {
+    "text": "五位目擊證人的證詞，就目擊的時間點及目擊對象之身高差距，均與警總的說法乃至王憶華的證詞有明顯且無從合理解釋的矛盾，無法證明警總確有將陳文成送返住處。",
+    "source": "促轉會調查報告，第77頁"
+  },
+  "tjcConclusion": {
+    "text": "現有證據無法證明陳文成於70年7月2日被警總帶走後，有脫離警總的實力支配。",
+    "source": "促轉會調查報告，第158頁"
+  }
+}

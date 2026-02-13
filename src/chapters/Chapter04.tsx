@@ -3,6 +3,7 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { DialogueBox } from '@/components/narrative/DialogueBox'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
+import { TestimonyComparison } from '@/components/infographic/TestimonyComparison'
 import chapterData from '@/data/chapters/ch04.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -98,13 +99,7 @@ export function Chapter04() {
       <ScrollSection minHeight="60vh" aria-label="證詞矛盾對照表">
         {(progress, isInView) => (
           <div className="max-w-5xl mx-auto px-4 py-16">
-            {/* TestimonyComparison 元件：Task 4.5 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ testimony-comparison · progress: {progress.toFixed(2)} ]
-            </div>
+            <TestimonyComparison progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
