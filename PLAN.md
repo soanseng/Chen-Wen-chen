@@ -829,7 +829,7 @@ git commit -m "feat: implement Chapter 5 forensic evidence infographics"
 
 ---
 
-### Task 4.7: 實作七波調查比較表
+### Task 4.7: 實作七波調查比較表 ✅
 
 規格來源：`docs/extracted/infographic-specs.md` → `investigation-waves`
 
