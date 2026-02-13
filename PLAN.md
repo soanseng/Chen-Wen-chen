@@ -629,7 +629,7 @@ git commit -m "feat: create chapter framework with scene and infographic slots"
 
 ---
 
-### Task 4.2: 填入敘事內容
+### Task 4.2: 填入敘事內容 ✅
 
 **Files:**
 - Modify: `src/chapters/Chapter01.tsx` ~ `Chapter07.tsx`
