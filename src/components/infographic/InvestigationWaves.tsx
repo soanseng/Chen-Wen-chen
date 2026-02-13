@@ -114,8 +114,18 @@ export function InvestigationWaves({
                       transform: `translateY(${isVisible ? 0 : 8}px)`,
                     }}
                     onClick={() => toggleExpand(inv.id)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        toggleExpand(inv.id)
+                      }
+                    }}
                     onMouseEnter={() => setHoveredRow(inv.id)}
                     onMouseLeave={() => setHoveredRow(null)}
+                    tabIndex={0}
+                    role="button"
+                    aria-expanded={isExpanded}
+                    aria-label={`${inv.year}年 ${inv.institution} ${inv.conclusion}`}
                   >
                     {/* Year */}
                     <td className="p-2 border-b border-ink-800 align-top">

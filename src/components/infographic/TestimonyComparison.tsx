@@ -162,8 +162,8 @@ export function TestimonyComparison({
                           {isContradicted && (
                             <span
                               className="inline-block ml-1 text-accent-red text-[10px] font-mono"
-                              title="此證詞與其他證詞存在矛盾"
-                              aria-label="矛盾標記"
+                              role="img"
+                              aria-label="此證詞與其他證詞存在矛盾"
                             >
                               ✕
                             </span>

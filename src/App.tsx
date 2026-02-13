@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { ContentWarning } from '@/components/ui/ContentWarning'
 import { CharacterMap } from '@/components/infographic/CharacterMap'
 import { useScrollProgress } from '@/hooks/useScrollProgress'
@@ -53,17 +53,35 @@ function HeroHeader() {
 
 function App() {
   const [ready, setReady] = useState(false)
+  const mainRef = useRef<HTMLElement>(null)
 
   const handleWarningDismiss = useCallback(() => {
     setReady(true)
+    // Move focus to main content after warning is dismissed
+    requestAnimationFrame(() => {
+      mainRef.current?.focus()
+    })
   }, [])
 
   return (
     <div className="min-h-screen bg-ink-950 text-ink-100 font-serif">
+      {/* Skip navigation link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink-900 focus:text-ink-100 focus:px-4 focus:py-2 focus:border focus:border-accent-gold focus:rounded focus:text-sm focus:font-mono"
+      >
+        跳至主要內容
+      </a>
+
       <ContentWarning onDismiss={handleWarningDismiss} />
 
       {ready && (
-        <main>
+        <main
+          ref={mainRef}
+          id="main-content"
+          tabIndex={-1}
+          className="outline-none"
+        >
           <HeroHeader />
 
           <Chapter01 />

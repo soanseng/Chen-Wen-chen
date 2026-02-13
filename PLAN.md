@@ -1021,7 +1021,7 @@ git commit -m "feat: responsive design optimization"
 
 ---
 
-### Task 5.3: SEO 與 OG Tags
+### Task 5.3: SEO 與 OG Tags ✅
 
 **Files:**
 - Modify: `index.html`
