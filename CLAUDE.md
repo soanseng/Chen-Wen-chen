@@ -18,7 +18,7 @@
 | 樣式 | TailwindCSS v4 | 工具類 CSS、自訂暗色主題 |
 | 場景渲染 | PixiJS v8 | Pixel art 場景、動畫 |
 | 捲動敘事 | GSAP ScrollTrigger 或 Intersection Observer | Scrollytelling 觸發 |
-| 部署 | Vercel / Netlify | 靜態網站部署 |
+| 部署 | GitHub Pages + GitHub Actions | 靜態網站部署 |
 
 ---
 

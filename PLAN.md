@@ -1052,27 +1052,83 @@ git commit -m "feat: add SEO, OG tags, and accessibility"
 
 ---
 
-### Task 5.4: 部署
+### Task 5.4: 部署至 GitHub Pages
 
 **Files:**
-- Create: `vercel.json` 或 `netlify.toml`
+- Create: `.github/workflows/deploy.yml`
+- Modify: `vite.config.ts`（設定 `base` 路徑）
 
-**Step 1: 建置測試**
+**Step 1: 設定 Vite base path**
+在 `vite.config.ts` 加入 `base`，對應 GitHub Pages 的 repo 路徑：
+```ts
+export default defineConfig({
+  base: '/Chen-Wen-chen/',
+  // ...existing config
+})
+```
+
+**Step 2: 建立 GitHub Actions workflow**
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+**Step 3: 建置測試**
 ```bash
 npm run build
 npm run preview
 ```
+確認本地建置正常，特別注意 `base` 路徑下的資源載入。
 
-**Step 2: 設定部署平台**
-連接 Git repository，設定自動部署。
+**Step 4: 啟用 GitHub Pages**
+在 repo Settings → Pages → Source 選擇 **GitHub Actions**。
 
-**Step 3: 部署並驗證**
-確認線上版本功能正常。
+**Step 5: 推送並驗證**
+推送至 main 後，GitHub Actions 自動觸發部署。確認 `https://<username>.github.io/Chen-Wen-chen/` 功能正常。
 
-**Step 4: Commit**
+**Step 6: Commit**
 ```bash
-git add vercel.json
-git commit -m "chore: add deployment configuration"
+git add .github/workflows/deploy.yml vite.config.ts
+git commit -m "chore: add GitHub Pages deployment via GitHub Actions"
 ```
 
 ---
