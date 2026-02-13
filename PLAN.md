@@ -1052,7 +1052,7 @@ git commit -m "feat: add SEO, OG tags, and accessibility"
 
 ---
 
-### Task 5.4: 部署至 GitHub Pages
+### Task 5.4: 部署至 GitHub Pages ✅
 
 **Files:**
 - Create: `.github/workflows/deploy.yml`
