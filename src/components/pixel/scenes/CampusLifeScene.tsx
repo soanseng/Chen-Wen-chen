@@ -203,9 +203,25 @@ export function CampusLifeScene({ progress, isInView }: PixelSceneProps) {
   }, [])
 
   const onProgress = useCallback((_progress: number, scene: Container) => {
-    // Fade in as user scrolls into view
-    const fadeIn = Math.min(1, _progress * 4)
-    scene.alpha = fadeIn
+    // Layered entrance: room → figure → warm glow
+    scene.alpha = Math.min(1, _progress * 3)
+
+    // Phase 1 (0-0.3): Room structure visible
+    // Phase 2 (0.3-0.6): Figure appears, chalk text sharpens
+    // Phase 3 (0.6-1.0): Light intensifies to full warmth
+    const children = scene.children
+    // Figure is child index 8 (after wall, floor, window, lightRays, board, chalk, desk, papers)
+    const figure = children[8] as Container | undefined
+    if (figure) {
+      const figureAlpha = Math.min(1, Math.max(0, (_progress - 0.2) * 4))
+      figure.alpha = figureAlpha
+    }
+
+    // Light rays intensify with progress
+    const lightRays = children[3] as Graphics | undefined
+    if (lightRays) {
+      lightRays.alpha = 0.08 + _progress * 0.12
+    }
   }, [])
 
   return (

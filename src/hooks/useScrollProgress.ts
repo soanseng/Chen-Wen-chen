@@ -7,17 +7,19 @@ interface ScrollProgressOptions {
   rootMargin?: string
 }
 
-interface ScrollProgressResult {
-  ref: React.RefObject<HTMLDivElement | null>
+interface ScrollProgressResult<T extends HTMLElement> {
+  ref: React.RefObject<T | null>
   /** 0–1 representing scroll progress through the element */
   progress: number
   /** Whether the element is currently visible in the viewport */
   isInView: boolean
 }
 
-export function useScrollProgress(options: ScrollProgressOptions = {}): ScrollProgressResult {
+export function useScrollProgress<T extends HTMLElement = HTMLDivElement>(
+  options: ScrollProgressOptions = {},
+): ScrollProgressResult<T> {
   const { rootMargin = '0px' } = options
-  const ref = useRef<HTMLDivElement | null>(null)
+  const ref = useRef<T | null>(null)
   const [progress, setProgress] = useState(0)
   const [isInView, setIsInView] = useState(false)
   const rafRef = useRef<number>(0)

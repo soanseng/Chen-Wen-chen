@@ -1,3 +1,6 @@
+import { useScrollProgress } from '@/hooks/useScrollProgress'
+import { fadeIn } from '@/utils/animation'
+
 interface ChapterTitleProps {
   /** Chapter number (1-7) */
   chapter: number
@@ -17,12 +20,17 @@ export function ChapterTitle({
   mood,
   className = '',
 }: ChapterTitleProps) {
+  const { ref, progress } = useScrollProgress<HTMLElement>()
+  const style = fadeIn(progress, 0.08, 0.32)
+
   return (
     <header
+      ref={ref}
       className={`flex flex-col items-center justify-center min-h-[60vh] text-center px-4 ${className}`}
+      style={style}
     >
       <span className="text-ink-500 font-mono text-sm tracking-[0.3em] uppercase mb-4">
-        第 {numberToChinese(chapter)} 章
+        {numberToChinese(chapter)}
       </span>
       <h2 className="text-4xl md:text-6xl font-display text-ink-50 mb-4">
         {title}
@@ -41,5 +49,5 @@ export function ChapterTitle({
 
 function numberToChinese(n: number): string {
   const map = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
-  return map[n] ?? String(n)
+  return `第 ${map[n] ?? String(n)} 章`
 }

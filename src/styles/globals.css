@@ -28,3 +28,11 @@
 body {
   @apply bg-ink-950 text-ink-100 font-serif antialiased;
 }
+
+/* Reduce motion: skip all scroll-driven animations */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animated {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

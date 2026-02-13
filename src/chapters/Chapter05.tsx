@@ -6,6 +6,7 @@ import { InjuryDiagram } from '@/components/infographic/InjuryDiagram'
 import { CrimeSceneMap } from '@/components/infographic/CrimeSceneMap'
 import { SixDoubts } from '@/components/infographic/SixDoubts'
 import { LibraryDawnScene } from '@/components/pixel/scenes'
+import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch05.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -47,13 +48,16 @@ export function Chapter05() {
 
       {/* 第一段：清晨的發現 */}
       <ScrollSection aria-label="清晨的發現">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s1.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s1.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -70,13 +74,16 @@ export function Chapter05() {
 
       {/* 第二、三段：遺體姿態的矛盾 & 衣著異常 */}
       <ScrollSection aria-label="遺體姿態與衣著異常">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s2.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s2.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -84,13 +91,16 @@ export function Chapter05() {
 
       {/* 第四段：傷痕分析 */}
       <ScrollSection aria-label="傷痕分析">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s3.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s3.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -107,13 +117,16 @@ export function Chapter05() {
 
       {/* 第五段：關鍵疑點 */}
       <ScrollSection aria-label="六大關鍵疑點">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s4.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s4.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -130,13 +143,16 @@ export function Chapter05() {
 
       {/* 第六段：死因研判 */}
       <ScrollSection aria-label="死因研判">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s5.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s5.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}

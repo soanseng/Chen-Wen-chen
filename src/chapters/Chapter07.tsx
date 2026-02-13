@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch07.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -25,13 +26,16 @@ export function Chapter07() {
 
       {/* 促轉會的結論 */}
       <ScrollSection aria-label="促轉會的結論">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s1.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s1.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -39,13 +43,16 @@ export function Chapter07() {
 
       {/* 真相為何難明 */}
       <ScrollSection aria-label="真相為何難明">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s2.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s2.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -53,13 +60,16 @@ export function Chapter07() {
 
       {/* 整體評價——留白收尾 */}
       <ScrollSection aria-label="整體評價">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s3.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s3.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}

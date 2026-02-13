@@ -173,20 +173,20 @@ export function AirportReturnScene({ progress, isInView }: PixelSceneProps) {
     // Fade in
     scene.alpha = Math.min(1, _progress * 3)
 
-    // Darken scene as progress increases (growing oppression)
-    const darken = _progress * 0.15
-    const children = scene.children
-    for (let i = 0; i < children.length; i++) {
-      const child = children[i]
-      if (shadowsRef.current.includes(child as Graphics)) continue
-      // Don't darken shadows further
+    // Chen walks forward toward counter with progress
+    // Chen is child index 6 (ceiling, lights, glow, walls, sign, floor, counter, officer, chen...)
+    const chen = scene.children[8] as Container | undefined
+    if (chen) {
+      // Walk from x=80 to x=150 as progress goes 0.1→0.7
+      const walk = Math.min(1, Math.max(0, (_progress - 0.1) / 0.6))
+      chen.x = 80 + walk * 70
     }
 
-    // Shadows become more visible as progress increases
+    // Shadows become more visible and close in as progress increases
     for (const shadow of shadowsRef.current) {
-      const baseAlpha = 0.2 + _progress * 0.3
-      const pulse = Math.sin(frameRef.current * 0.02) * 0.1
-      shadow.alpha = Math.min(0.6, baseAlpha + pulse - darken)
+      const baseAlpha = 0.15 + _progress * 0.35
+      const pulse = Math.sin(frameRef.current * 0.02) * 0.08
+      shadow.alpha = Math.min(0.6, baseAlpha + pulse)
     }
   }, [])
 

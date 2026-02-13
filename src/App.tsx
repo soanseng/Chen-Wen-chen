@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react'
 import { ContentWarning } from '@/components/ui/ContentWarning'
 import { CharacterMap } from '@/components/infographic/CharacterMap'
+import { useScrollProgress } from '@/hooks/useScrollProgress'
+import { fadeIn, lineDrawProgress } from '@/utils/animation'
 import {
   Chapter01,
   Chapter02,
@@ -12,10 +14,40 @@ import {
 } from '@/chapters'
 
 function ChapterDivider() {
+  const { ref, progress } = useScrollProgress()
+  const widthPct = lineDrawProgress(progress)
+
   return (
-    <div className="h-[20vh] flex items-center justify-center" aria-hidden="true">
-      <div className="w-16 h-px bg-ink-700" />
+    <div
+      ref={ref}
+      className="h-[20vh] flex items-center justify-center scroll-animated"
+      aria-hidden="true"
+    >
+      <div
+        className="h-px bg-ink-700"
+        style={{ width: `${widthPct * 0.64}px`, maxWidth: '4rem' }}
+      />
     </div>
+  )
+}
+
+function HeroHeader() {
+  const { ref, progress } = useScrollProgress()
+  const style = fadeIn(progress, 0.0, 0.25)
+
+  return (
+    <header
+      ref={ref}
+      className="flex flex-col items-center justify-center h-screen text-center px-4 scroll-animated"
+      style={style}
+    >
+      <h1 className="text-4xl md:text-6xl font-display text-ink-50 mb-4">
+        陳文成事件
+      </h1>
+      <p className="text-ink-400 font-mono text-sm tracking-wider">
+        互動式歷史紀錄 · 1981
+      </p>
+    </header>
   )
 }
 
@@ -32,14 +64,7 @@ function App() {
 
       {ready && (
         <main>
-          <header className="flex flex-col items-center justify-center h-screen text-center px-4">
-            <h1 className="text-4xl md:text-6xl font-display text-ink-50 mb-4">
-              陳文成事件
-            </h1>
-            <p className="text-ink-400 font-mono text-sm tracking-wider">
-              互動式歷史紀錄 · 1981
-            </p>
-          </header>
+          <HeroHeader />
 
           <Chapter01 />
           <ChapterDivider />

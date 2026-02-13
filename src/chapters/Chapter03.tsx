@@ -3,6 +3,7 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
 import { AirportReturnScene } from '@/components/pixel/scenes'
+import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch03.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -28,13 +29,16 @@ export function Chapter03() {
 
       {/* 返台探親、出境許可被扣 */}
       <ScrollSection aria-label="返台探親">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s1.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s1.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -51,13 +55,16 @@ export function Chapter03() {
 
       {/* 6月30日第一次約談、7月1日追問出境證 */}
       <ScrollSection aria-label="第一次約談與出境受阻">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s2.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s2.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}

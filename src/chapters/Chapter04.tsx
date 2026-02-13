@@ -5,6 +5,7 @@ import { DialogueBox } from '@/components/narrative/DialogueBox'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
 import { TestimonyComparison } from '@/components/infographic/TestimonyComparison'
 import { InterrogationRoomScene, BlankHoursScene } from '@/components/pixel/scenes'
+import { staggeredFadeIn } from '@/utils/animation'
 import chapterData from '@/data/chapters/ch04.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -35,13 +36,16 @@ export function Chapter04() {
 
       {/* 第一段：清晨——被帶走 */}
       <ScrollSection aria-label="清晨——被帶走">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s1.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s1.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}
@@ -67,13 +71,16 @@ export function Chapter04() {
 
       {/* 第二段：保安處——十二個小時 */}
       <ScrollSection aria-label="保安處——十二個小時">
-        {(progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s2.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s2.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
 
             {/* 審訊對話 */}
@@ -100,13 +107,16 @@ export function Chapter04() {
 
       {/* 第三段：空白的六小時 */}
       <ScrollSection aria-label="空白的六小時">
-        {(_progress, isInView) => (
-          <div
-            className="max-w-2xl mx-auto px-4 py-16"
-            style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
-          >
+        {(progress) => (
+          <div className="max-w-2xl mx-auto px-4 py-16">
             {s3.paragraphs.map((p, i) => (
-              <NarrativeParagraph key={i} paragraph={p} />
+              <div
+                key={i}
+                className="scroll-animated"
+                style={staggeredFadeIn(progress, i, s3.paragraphs.length)}
+              >
+                <NarrativeParagraph paragraph={p} />
+              </div>
             ))}
           </div>
         )}

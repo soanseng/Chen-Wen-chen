@@ -966,7 +966,7 @@ git commit -m "feat: implement extended pixel art scenes"
 
 ## Phase 5: 打磨與部署
 
-### Task 5.1: 動畫與轉場效果
+### Task 5.1: 動畫與轉場效果 ✅
 
 **Files:**
 - Modify: `src/chapters/Chapter01.tsx` ~ `Chapter07.tsx`

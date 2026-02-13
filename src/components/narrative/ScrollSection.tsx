@@ -16,7 +16,7 @@ export function ScrollSection({
   className = '',
   'aria-label': ariaLabel,
 }: ScrollSectionProps) {
-  const { ref, progress, isInView } = useScrollProgress()
+  const { ref, progress, isInView } = useScrollProgress<HTMLElement>()
 
   return (
     <section
