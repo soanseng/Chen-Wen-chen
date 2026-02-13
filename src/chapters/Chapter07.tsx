@@ -17,7 +17,7 @@ export function Chapter07() {
   const [s1, s2, s3] = data.sections
 
   return (
-    <article aria-label="第七章：未完的故事">
+    <article id="chapter-7" aria-label="第七章：未完的故事">
       <ChapterTitle
         chapter={7}
         title="未完的故事"

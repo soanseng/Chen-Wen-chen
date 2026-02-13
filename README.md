@@ -215,15 +215,16 @@ Chen-Wen-chen/
 
 ## 文獻來源
 
-所有敘事內容基於以下五份歷史文獻，每段敘述皆標註出處頁碼：
+所有敘事內容基於以下歷史文獻，每段敘述皆標註出處頁碼：
 
-| # | 文獻 | 說明 | 語言 |
-|---|------|------|------|
-| 1 | Cyril Wecht, *Death in the Cause of Democracy* | 國際法醫權威 Wecht 受邀赴台鑑定之報告 | 英文 |
-| 2 | 促轉會《陳文成案調查報告》（第 1–72 頁） | 促進轉型正義委員會官方調查報告（前半） | 中文 |
-| 3 | 促轉會《陳文成案調查報告》（第 73–170 頁） | 促進轉型正義委員會官方調查報告（後半） | 中文 |
-| 4 | 《陳文成之死因》 | 死因分析專論 | 中文 |
-| 5 | 黃怡、林世煜《陳文成事件調查報告》 | 獨立調查報告 | 中文 |
+| # | 文獻 | 說明 | 語言 | 連結 |
+|---|------|------|------|------|
+| 1 | Cyril Wecht, *Death in the Cause of Democracy* | 國際法醫權威 Wecht 受邀赴台鑑定之報告 | 英文 | [PDF](http://www.cwcmf.org.tw/the%20truth/wecht_1.pdf) |
+| 2 | 促轉會《陳文成案調查報告》 | 促進轉型正義委員會官方調查報告 | 中文 | [PDF](https://drive.google.com/file/d/14OI0ySfF-_MbLUFyU-1THrdHUyfoTqdI/view?usp=sharing) |
+| 3 | 《陳文成之死因》 | 死因分析專論 | 中文 | [PDF](http://www.cwcmf.org.tw/the%20truth/doubtful_1.pdf) |
+| 4 | 黃怡、林世煜《陳文成事件調查報告》 | 獨立調查報告 | 中文 | [PDF](http://www.cwcmf.org.tw/the%20truth/report_1.pdf) |
+
+以上文獻皆可透過[陳文成博士紀念基金會](http://www.cwcmf.org.tw/)取得。
 
 引用格式範例：
 - `（來源：促轉會調查報告，第 45 頁）`
