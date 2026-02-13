@@ -712,7 +712,7 @@ git commit -m "feat: implement surveillance and hourly timeline components"
 
 ---
 
-### Task 4.4: 實作人物關係圖
+### Task 4.4: 實作人物關係圖 ✅
 
 規格來源：`docs/extracted/infographic-specs.md` → `character-map`
 
