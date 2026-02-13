@@ -10,9 +10,9 @@
 
 ---
 
-## Phase 1: 資料提取與整理
+## Phase 1: 資料提取與整理 ✅ COMPLETED
 
-### Task 1.1: 提取 Wecht 法醫報告
+### Task 1.1: 提取 Wecht 法醫報告 ✅
 
 **Files:**
 - Read: `docs/pdfs/Wecht-為民主而死（Death in the Cause of Democracy）.pdf`
@@ -40,7 +40,7 @@ git commit -m "docs: extract Wecht forensic report"
 
 ---
 
-### Task 1.2: 提取促轉會調查報告（第 1-72 頁）
+### Task 1.2: 提取促轉會調查報告（第 1-72 頁） ✅
 
 **Files:**
 - Read: `docs/pdfs/促轉會《陳文成案調查報告》001-072.pdf`
@@ -68,7 +68,7 @@ git commit -m "docs: extract TJC investigation report part 1 (pp. 1-72)"
 
 ---
 
-### Task 1.3: 提取促轉會調查報告（第 73-170 頁）
+### Task 1.3: 提取促轉會調查報告（第 73-170 頁） ✅
 
 **Files:**
 - Read: `docs/pdfs/促轉會《陳文成案調查報告》073-170.pdf`
@@ -94,7 +94,7 @@ git commit -m "docs: extract TJC investigation report part 2 (pp. 73-170)"
 
 ---
 
-### Task 1.4: 提取死因分析報告
+### Task 1.4: 提取死因分析報告 ✅
 
 **Files:**
 - Read: `docs/pdfs/陳文成之死因.pdf`
@@ -119,7 +119,7 @@ git commit -m "docs: extract cause of death analysis"
 
 ---
 
-### Task 1.5: 提取黃怡、林世煜調查報告
+### Task 1.5: 提取黃怡、林世煜調查報告 ✅
 
 **Files:**
 - Read: `docs/pdfs/陳文成事件調查報告-黃怡_林世煜.pdf`
@@ -145,7 +145,7 @@ git commit -m "docs: extract Huang-Lin investigation report"
 
 ---
 
-### Task 1.6: 建立整合時間線
+### Task 1.6: 建立整合時間線 ✅
 
 **Files:**
 - Read: `docs/extracted/01-wecht-report.md` ~ `05-investigation-report.md`
@@ -182,7 +182,7 @@ git commit -m "docs: create integrated event timeline"
 
 ---
 
-### Task 1.7: 建立人物資料庫
+### Task 1.7: 建立人物資料庫 ✅
 
 **Files:**
 - Read: `docs/extracted/01-wecht-report.md` ~ `05-investigation-report.md`
@@ -218,7 +218,7 @@ git commit -m "docs: create character database with relationships"
 
 ---
 
-### Task 1.8: 撰寫整合敘事
+### Task 1.8: 撰寫整合敘事 ✅
 
 **Files:**
 - Read: `docs/extracted/01-wecht-report.md` ~ `05-investigation-report.md`
