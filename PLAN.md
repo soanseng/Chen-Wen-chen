@@ -589,7 +589,7 @@ git commit -m "feat: create base narrative and UI components"
 > 圖表規格：`docs/extracted/infographic-specs.md`
 > 章節結構：`docs/narrative-structure.md`
 
-### Task 4.1: 建立章節框架與路由
+### Task 4.1: 建立章節框架與路由 ✅
 
 **Files:**
 - Create: `src/chapters/Chapter01.tsx` ~ `Chapter07.tsx`
