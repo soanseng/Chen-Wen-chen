@@ -930,7 +930,7 @@ git commit -m "feat: implement 7 core pixel art scenes"
 
 ---
 
-### Task 4.9: 實作擴充 Pixel Art 場景（選做）
+### Task 4.9: 實作擴充 Pixel Art 場景（選做） ✅
 
 規格來源：`docs/extracted/pixel-art-scenes.md` → 擴充場景
 
