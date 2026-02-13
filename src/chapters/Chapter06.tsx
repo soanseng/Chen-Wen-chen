@@ -2,6 +2,7 @@ import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { InvestigationWaves } from '@/components/infographic/InvestigationWaves'
+import { WechtArrivalScene } from '@/components/pixel/scenes'
 import chapterData from '@/data/chapters/ch06.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -63,14 +64,8 @@ export function Chapter06() {
       {/* PIXEL_SCENE: wecht-arrival */}
       <ScrollSection minHeight="80vh" aria-label="Wecht 抵台場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh]">
-            {/* WechtArrivalScene 元件：Task 4.8 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ wecht-arrival scene · progress: {progress.toFixed(2)} ]
-            </div>
+          <div className="flex items-center justify-center min-h-[80vh] px-4">
+            <WechtArrivalScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

@@ -5,6 +5,7 @@ import { LibraryBuilding } from '@/components/infographic/LibraryBuilding'
 import { InjuryDiagram } from '@/components/infographic/InjuryDiagram'
 import { CrimeSceneMap } from '@/components/infographic/CrimeSceneMap'
 import { SixDoubts } from '@/components/infographic/SixDoubts'
+import { LibraryDawnScene } from '@/components/pixel/scenes'
 import chapterData from '@/data/chapters/ch05.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -38,14 +39,8 @@ export function Chapter05() {
       {/* PIXEL_SCENE: library-dawn */}
       <ScrollSection minHeight="80vh" aria-label="台大研究生圖書館旁清晨場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh]">
-            {/* LibraryDawnScene 元件：Task 4.8 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ library-dawn scene · progress: {progress.toFixed(2)} ]
-            </div>
+          <div className="flex items-center justify-center min-h-[80vh] px-4">
+            <LibraryDawnScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

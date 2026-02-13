@@ -858,7 +858,7 @@ git commit -m "feat: implement investigation waves comparison table"
 
 ---
 
-### Task 4.8: 實作核心 Pixel Art 場景（7 個）
+### Task 4.8: 實作核心 Pixel Art 場景（7 個） ✅
 
 規格來源：`docs/extracted/pixel-art-scenes.md` → 核心場景
 

@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { CampusLifeScene } from '@/components/pixel/scenes'
 import chapterData from '@/data/chapters/ch01.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -40,14 +41,8 @@ export function Chapter01() {
       {/* PIXEL_SCENE: campus-life */}
       <ScrollSection minHeight="80vh" aria-label="Carnegie Mellon 校園場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh]">
-            {/* CampusLifeScene 元件：Task 4.8 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ campus-life scene · progress: {progress.toFixed(2)} ]
-            </div>
+          <div className="flex items-center justify-center min-h-[80vh] px-4">
+            <CampusLifeScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>

@@ -4,6 +4,7 @@ import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
 import { DialogueBox } from '@/components/narrative/DialogueBox'
 import { HourlyTimeline } from '@/components/infographic/HourlyTimeline'
 import { TestimonyComparison } from '@/components/infographic/TestimonyComparison'
+import { InterrogationRoomScene, BlankHoursScene } from '@/components/pixel/scenes'
 import chapterData from '@/data/chapters/ch04.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -58,15 +59,8 @@ export function Chapter04() {
       {/* PIXEL_SCENE: interrogation-room */}
       <ScrollSection minHeight="80vh" aria-label="審訊室場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh]">
-            {/* InterrogationRoomScene 元件：Task 4.8 實作 */}
-            {/* 與 DialogueBox 連動 */}
-            <div
-              className="text-ink-600 font-mono text-sm"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ interrogation-room scene · progress: {progress.toFixed(2)} ]
-            </div>
+          <div className="flex items-center justify-center min-h-[80vh] px-4">
+            <InterrogationRoomScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
@@ -121,14 +115,8 @@ export function Chapter04() {
       {/* PIXEL_SCENE: blank-hours */}
       <ScrollSection minHeight="80vh" aria-label="空白的六小時場景">
         {(progress, isInView) => (
-          <div className="flex items-center justify-center min-h-[80vh]">
-            {/* BlankHoursScene 元件：Task 4.8 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ blank-hours scene · progress: {progress.toFixed(2)} ]
-            </div>
+          <div className="flex items-center justify-center min-h-[80vh] px-4">
+            <BlankHoursScene progress={progress} isInView={isInView} />
           </div>
         )}
       </ScrollSection>
