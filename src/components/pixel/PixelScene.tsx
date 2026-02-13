@@ -38,23 +38,17 @@ export function PixelScene({
   const appRef = useRef<Application | null>(null)
   const sceneRef = useRef<Container | null>(null)
   const cleanupRef = useRef<(() => void) | null>(null)
-  const [isMobile, setIsMobile] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
   const initializedRef = useRef(false)
 
-  // Detect mobile and reduced motion
+  // Detect reduced motion preference
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640)
-    checkMobile()
-    window.addEventListener('resize', checkMobile, { passive: true })
-
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
     setReducedMotion(mql.matches)
     const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
     mql.addEventListener('change', handler)
 
     return () => {
-      window.removeEventListener('resize', checkMobile)
       mql.removeEventListener('change', handler)
     }
   }, [])
@@ -68,7 +62,7 @@ export function PixelScene({
   // Init/destroy PixiJS app based on viewport visibility
   const initApp = useCallback(async () => {
     const el = containerRef.current
-    if (!el || appRef.current || isMobile || reducedMotion) return
+    if (!el || appRef.current || reducedMotion) return
 
     const app = new Application()
     let cancelled = false
@@ -106,7 +100,7 @@ export function PixelScene({
     return () => {
       cancelled = true
     }
-  }, [isMobile, reducedMotion])
+  }, [reducedMotion])
 
   const destroyApp = useCallback(() => {
     if (cleanupRef.current) {
@@ -140,8 +134,8 @@ export function PixelScene({
     }
   }, [progress])
 
-  // Mobile / reduced-motion fallback
-  if (isMobile || reducedMotion) {
+  // Reduced-motion fallback
+  if (reducedMotion) {
     return (
       <div
         className="w-full max-w-2xl mx-auto bg-ink-900/40 border border-ink-800/60 rounded-sm overflow-hidden"
