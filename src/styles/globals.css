@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  /* 暗色主題 — 報紙/打字機質感 */
+  --color-ink-50: #f5f5f0;
+  --color-ink-100: #e8e4db;
+  --color-ink-200: #d4cfc3;
+  --color-ink-300: #b8b0a0;
+  --color-ink-400: #9a8f7d;
+  --color-ink-500: #7d7163;
+  --color-ink-600: #635850;
+  --color-ink-700: #4a4039;
+  --color-ink-800: #332b25;
+  --color-ink-900: #1c1814;
+  --color-ink-950: #0d0b09;
+
+  /* 強調色 */
+  --color-accent-red: #c23b22;
+  --color-accent-gold: #d4a855;
+  --color-accent-blue: #4a6fa5;
+
+  /* 字體 */
+  --font-serif: "Noto Serif TC", serif;
+  --font-mono: "JetBrains Mono", "Noto Sans Mono", monospace;
+  --font-display: "Noto Serif TC", serif;
+}
+
+body {
+  @apply bg-ink-950 text-ink-100 font-serif antialiased;
+}
