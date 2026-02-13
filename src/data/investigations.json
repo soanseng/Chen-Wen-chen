@@ -1,0 +1,102 @@
+{
+  "title": "歷次調查比較表",
+  "subtitle": "1981–2020：四十年間陳文成案的七波調查",
+  "source": "促轉會調查報告，第13–19頁，表2",
+  "investigations": [
+    {
+      "id": "taipei-prosecutors-1981",
+      "year": "1981.07",
+      "yearLabel": "1981",
+      "institution": "台北地檢處",
+      "institutionDetail": "檢察官陳春男",
+      "type": "偵查",
+      "conclusion": "自殺或意外墜樓",
+      "conclusionType": "suicide",
+      "keyFinding": "法醫調查未完即定調",
+      "detail": "七月二十日，檢察官陳春男發表偵查報告，結論為「自殺或意外墜樓死亡」。然而在此之前，警總已於七月四日召開記者會宣布「畏罪自殺」，無形中限縮了後續偵辦方向——既然警總已說是自殺，由警總指揮督導的專案小組，自然不可能考慮警總涉案的嫌疑。",
+      "source": "促轉會調查報告，第13頁，表2；促轉會調查報告（下冊），第115–120頁"
+    },
+    {
+      "id": "wecht-1981",
+      "year": "1981.09",
+      "yearLabel": "1981",
+      "institution": "Wecht / DeGroot",
+      "institutionDetail": "獨立法醫專家",
+      "type": "法醫鑑定",
+      "conclusion": "最可能的是謀殺",
+      "conclusionType": "homicide",
+      "keyFinding": "傷勢不符自殺",
+      "detail": "國際法醫專家 Cyril Wecht 與 DeGroot 赴台進行獨立法醫調查。Wecht 根據遺體傷痕模式——肋骨骨折、無防禦傷、無手腳著地傷——認定最可能的死因是謀殺（homicide）。若因政治理念遭害，即構成政治刺殺。",
+      "source": "促轉會調查報告，第14頁，表2；Wecht Report, p. 10–12"
+    },
+    {
+      "id": "mingyuan-1984",
+      "year": "1984",
+      "yearLabel": "1984",
+      "institution": "警總（秘密）",
+      "institutionDetail": "明園專案小組",
+      "type": "落體實驗",
+      "conclusion": "排除自殺",
+      "conclusionType": "homicide",
+      "keyFinding": "人體模型實驗結果列為機密",
+      "detail": "明園專案小組秘密以人體模型從台大圖書館五樓進行多種情境的拋落實驗。結果顯示「自殺的可能性小」。汪敬煦向蔣經國報告此結論，但國安局以「本案政治性大於法律性」、「以免再引不良反應」為由，將實驗結果列為機密不對外公布。",
+      "source": "促轉會調查報告，第15–16頁；促轉會調查報告（下冊），第92–97頁、第154–156頁"
+    },
+    {
+      "id": "wecht-1985",
+      "year": "1985",
+      "yearLabel": "1985",
+      "institution": "Wecht",
+      "institutionDetail": "學術發表",
+      "type": "學術論文",
+      "conclusion": "維持謀殺判定",
+      "conclusionType": "homicide",
+      "keyFinding": "國際學術期刊正式發表",
+      "detail": "Wecht 正式驗屍報告《Murder in Taiwan》發表於《美國法醫學與病理學》（American Journal of Forensic Medicine and Pathology）期刊，一九八五年六月號。謀殺判定正式進入國際學術記錄。",
+      "source": "Wecht Report, p. 13（譯注8）"
+    },
+    {
+      "id": "prosecution-1990",
+      "year": "1990",
+      "yearLabel": "1990",
+      "institution": "高等法院檢察署",
+      "institutionDetail": "陳寶月控告",
+      "type": "刑事控告",
+      "conclusion": "不起訴處分",
+      "conclusionType": "inconclusive",
+      "keyFinding": "陳寶月控告汪敬煦涉嫌共同殺人",
+      "detail": "陳文成二姐陳寶月委由律師控告時任警總總司令汪敬煦等人涉嫌共同殺人罪，最終不起訴處分。",
+      "source": "促轉會調查報告（下冊），第155頁"
+    },
+    {
+      "id": "control-yuan-2009",
+      "year": "2009",
+      "yearLabel": "2009",
+      "institution": "監察院",
+      "institutionDetail": "第六波調查",
+      "type": "行政調查",
+      "conclusion": "要求重啟偵查",
+      "conclusionType": "inconclusive",
+      "keyFinding": "指出歷次調查諸多疏漏",
+      "detail": "監察院再次調查陳文成案，指出歷次調查存在諸多疏漏，要求司法機關重啟偵查。此前，二〇〇〇年政黨輪替後監察院曾重啟調查，二〇〇七至二〇〇八年台北地檢署因案件逾追訴時效而簽結。",
+      "source": "促轉會調查報告，第17–18頁，表2"
+    },
+    {
+      "id": "tjc-2020",
+      "year": "2020",
+      "yearLabel": "2020",
+      "institution": "促進轉型正義委員會",
+      "institutionDetail": "第四十六次委員會議",
+      "type": "調查報告",
+      "conclusion": "他殺可能性高",
+      "conclusionType": "homicide",
+      "keyFinding": "四大結論",
+      "detail": "促轉會發表《陳文成案調查報告》，做出四大結論：一、陳文成及親友於案發前後遭到嚴密監控；二、現有證據無法證明陳文成於七月二日被警總帶走後有脫離警總的實力支配；三、陳文成陳屍處並非第一現場，且死於他殺之可能性顯高於自殺或意外死亡；四、警總介入偵辦，且威權統治當局阻礙家屬對陳文成案真相的追查與揭露。",
+      "source": "促轉會調查報告，第157–159頁"
+    }
+  ],
+  "conclusion": {
+    "text": "從一九八一年到二〇二〇年，歷時近四十年、至少七波調查，真相始終未能完全釐清。獨立調查一再指向他殺——而當局的回應，往往是壓制、隱匿，或推託。",
+    "source": "促轉會調查報告，第13–19頁，表2"
+  }
+}

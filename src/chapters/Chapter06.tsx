@@ -1,6 +1,7 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
 import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { InvestigationWaves } from '@/components/infographic/InvestigationWaves'
 import chapterData from '@/data/chapters/ch06.json'
 import type { ChapterData } from '@/data/chapters/types'
 
@@ -120,13 +121,10 @@ export function Chapter06() {
       <ScrollSection minHeight="60vh" aria-label="七波調查比較表">
         {(progress, isInView) => (
           <div className="max-w-5xl mx-auto px-4 py-16">
-            {/* InvestigationWaves 元件：Task 4.7 實作 */}
-            <div
-              className="text-ink-600 font-mono text-sm text-center"
-              style={{ opacity: isInView ? 0.5 : 0, transition: 'opacity 0.6s' }}
-            >
-              [ investigation-waves · progress: {progress.toFixed(2)} ]
-            </div>
+            <InvestigationWaves
+              progress={progress}
+              isInView={isInView}
+            />
           </div>
         )}
       </ScrollSection>
