@@ -1,0 +1,43 @@
+{
+  "chapter": 1,
+  "title": "學者之路",
+  "timeRange": "1950–1981",
+  "mood": "contemplative",
+  "sections": [
+    {
+      "id": "background",
+      "subtitle": "成長背景",
+      "paragraphs": [
+        {
+          "text": "一九五〇年一月三十日，陳文成出生於台北縣林口鄉，家境困苦。",
+          "citation": "黃怡、林世煜調查報告，第3頁"
+        },
+        {
+          "text": "陳文成成長於二二八事件後的台灣。戒嚴令下，白色恐怖的陰影籠罩全島，但他的家庭「與政治素無淵源」。",
+          "citation": "黃怡、林世煜調查報告，第3頁"
+        }
+      ]
+    },
+    {
+      "id": "academic-journey",
+      "subtitle": "赴美求學與學術成就",
+      "paragraphs": [
+        {
+          "text": "儘管出身清寒，陳文成天資聰穎，憑藉努力取得赴美留學的機會。一九七五年前後，他前往密西根大學（University of Michigan）攻讀統計學博士。在密西根求學期間，他結識了日後的摯友鄧維祥。",
+          "citation": "Wecht Report, p. 1"
+        },
+        {
+          "text": "取得博士學位後，陳文成受聘為卡內基美隆大學（Carnegie Mellon University）統計系助理教授。年僅二十八歲，他已在學術領域嶄露頭角。",
+          "citation": "Wecht Report, p. 1；促轉會調查報告，第1頁"
+        },
+        {
+          "text": "在匹茲堡，陳文成與妻子陳素貞育有一子，取名艾瑞克（Eric）。一家三口的生活平靜而充實——白天在校園授課研究，夜晚回到溫暖的家。",
+          "citation": "Wecht Report, p. 3"
+        },
+        {
+          "text": "然而，遠在太平洋彼岸的台灣正發生劇變，而這位年輕的統計學者無法置身事外。"
+        }
+      ]
+    }
+  ]
+}

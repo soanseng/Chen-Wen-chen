@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch01.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第一章：學者之路（1950–1978）
@@ -7,6 +12,8 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * Pixel Art 場景：campus-life
  */
 export function Chapter01() {
+  const [s1, s2] = data.sections
+
   return (
     <article aria-label="第一章：學者之路">
       <ChapterTitle
@@ -23,10 +30,9 @@ export function Chapter01() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch01 section 1 — 林口童年 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -53,10 +59,9 @@ export function Chapter01() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch01 section 2 — 赴美、博士、CMU 助理教授 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

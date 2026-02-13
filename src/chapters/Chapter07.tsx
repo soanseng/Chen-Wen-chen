@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch07.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第七章：未完的故事（2020—）
@@ -7,6 +12,8 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * 無 Pixel Art 場景、無資訊圖表
  */
 export function Chapter07() {
+  const [s1, s2, s3] = data.sections
+
   return (
     <article aria-label="第七章：未完的故事">
       <ChapterTitle
@@ -23,10 +30,9 @@ export function Chapter07() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch07 section 1 — 四大結論 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -38,10 +44,9 @@ export function Chapter07() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch07 section 2 — 威權妨礙、證據湮滅 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -53,10 +58,9 @@ export function Chapter07() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch07 section 3 — 政權維穩、未解的問題 */}
-            </p>
+            {s3.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

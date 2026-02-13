@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch06.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第六章：追尋真相（1981–2020）
@@ -7,16 +12,16 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * Pixel Art 場景：wecht-arrival
  * 資訊圖表：investigation-waves
  *
- * 七段式結構：
+ * 五段式結構（合併七段為五段）：
  * 1. 定調——「畏罪自殺」
  * 2. Wecht 的獨立調查
- * 3. 懲罰說真話的人
- * 4. 全面妨礙真相
- * 5. 升官——嫌疑方主管變偵辦主導者
- * 6. 秘密實驗——排除自殺
- * 7. 漫長的調查之路
+ * 3. 真相壓制（懲罰、妨礙、升官）
+ * 4. 秘密實驗——排除自殺
+ * 5. 漫長的調查之路
  */
 export function Chapter06() {
+  const [s1, s2, s3, s4, s5] = data.sections
+
   return (
     <article aria-label="第六章：追尋真相">
       <ChapterTitle
@@ -33,10 +38,9 @@ export function Chapter06() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch06 section 1 — 警總記者會、檢察官偵查報告 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -48,10 +52,9 @@ export function Chapter06() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch06 section 2 — Wecht 三天行程、記者會 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -78,10 +81,9 @@ export function Chapter06() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch06 sections 3–5 — 記者周清月、投書操縱、汪敬煦升官 */}
-            </p>
+            {s3.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -93,10 +95,9 @@ export function Chapter06() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch06 section 6 — 明園專案、汪敬煦簽呈 */}
-            </p>
+            {s4.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -108,10 +109,9 @@ export function Chapter06() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch06 section 7 — 七波調查 */}
-            </p>
+            {s5.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

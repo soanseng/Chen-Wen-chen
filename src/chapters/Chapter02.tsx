@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch02.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第二章：海外的聲音（1978–1981）
@@ -8,6 +13,8 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * 資訊圖表：surveillance-timeline
  */
 export function Chapter02() {
+  const [s1, s2] = data.sections
+
   return (
     <article aria-label="第二章：海外的聲音">
       <ChapterTitle
@@ -24,10 +31,9 @@ export function Chapter02() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch02 section 1 — 美麗島雜誌、募款 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -62,17 +68,16 @@ export function Chapter02() {
         )}
       </ScrollSection>
 
-      {/* 時代背景：美麗島事件、林宅血案 */}
-      <ScrollSection aria-label="時代背景">
+      {/* 監控與時代背景 */}
+      <ScrollSection aria-label="監控與時代背景">
         {(_progress, isInView) => (
           <div
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch02 section 2 — 美麗島事件、林宅血案 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

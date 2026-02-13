@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch03.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第三章：歸途（1981年5月—7月1日）
@@ -8,6 +13,8 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * 資訊圖表：july-hourly-timeline（跨 Ch3-4）
  */
 export function Chapter03() {
+  const [s1, s2] = data.sections
+
   return (
     <article aria-label="第三章：歸途">
       <ChapterTitle
@@ -24,10 +31,9 @@ export function Chapter03() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch03 section 1 — 返台、出境許可被扣 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -54,10 +60,9 @@ export function Chapter03() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch03 section 2 — 第一次約談、最後的自由夜晚 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

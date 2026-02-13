@@ -1,5 +1,10 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import chapterData from '@/data/chapters/ch05.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第五章：陳屍台大（1981年7月3日）
@@ -7,15 +12,16 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * Pixel Art 場景：library-dawn
  * 資訊圖表：library-building, injury-diagram, crime-scene-map, six-doubts
  *
- * 六段式結構：
+ * 五段式結構：
  * 1. 清晨的發現
- * 2. 遺體姿態的矛盾
- * 3. 衣著異常
- * 4. 傷痕分析
- * 5. 關鍵疑點（六大疑點）
- * 6. 死因研判
+ * 2. 遺體姿態與衣著異常
+ * 3. 傷痕分析
+ * 4. 關鍵疑點（六大疑點）
+ * 5. 死因研判
  */
 export function Chapter05() {
+  const [s1, s2, s3, s4, s5] = data.sections
+
   return (
     <article aria-label="第五章：陳屍台大">
       <ChapterTitle
@@ -47,10 +53,9 @@ export function Chapter05() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch05 section 1 — 校警電話、發現遺體 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -77,10 +82,9 @@ export function Chapter05() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch05 sections 2–3 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -92,10 +96,9 @@ export function Chapter05() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch05 section 4 — 體內傷、體外傷 */}
-            </p>
+            {s3.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -122,10 +125,9 @@ export function Chapter05() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch05 section 5 — 六大疑點 */}
-            </p>
+            {s4.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -152,10 +154,9 @@ export function Chapter05() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch05 section 6 — Wecht 謀殺判定、促轉會結論 */}
-            </p>
+            {s5.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>

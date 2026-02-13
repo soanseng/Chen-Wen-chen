@@ -1,5 +1,11 @@
 import { ChapterTitle } from '@/components/narrative/ChapterTitle'
 import { ScrollSection } from '@/components/narrative/ScrollSection'
+import { NarrativeParagraph } from '@/components/narrative/NarrativeParagraph'
+import { DialogueBox } from '@/components/narrative/DialogueBox'
+import chapterData from '@/data/chapters/ch04.json'
+import type { ChapterData } from '@/data/chapters/types'
+
+const data = chapterData as ChapterData
 
 /**
  * 第四章：約談（1981年7月2日）
@@ -13,6 +19,8 @@ import { ScrollSection } from '@/components/narrative/ScrollSection'
  * 3. 晚間——空白的六小時（~21:30–翌日07:00）
  */
 export function Chapter04() {
+  const [s1, s2, s3] = data.sections
+
   return (
     <article aria-label="第四章：約談">
       <ChapterTitle
@@ -29,10 +37,9 @@ export function Chapter04() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch04 section 1 — 05:00 打籃球、07:45 電話、08:30 被帶走 */}
-            </p>
+            {s1.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
@@ -70,15 +77,24 @@ export function Chapter04() {
 
       {/* 第二段：保安處——十二個小時 */}
       <ScrollSection aria-label="保安處——十二個小時">
-        {(_progress, isInView) => (
+        {(progress, isInView) => (
           <div
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容（含 DialogueBox）：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch04 section 2 — 十二小時審訊、錄音、矛盾說法 */}
-            </p>
+            {s2.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
+
+            {/* 審訊對話 */}
+            {s2.dialogue && (
+              <div className="my-8">
+                <DialogueBox lines={s2.dialogue} progress={progress} />
+                <p className="text-ink-500 text-xs mt-2 text-right font-mono">
+                  （來源：促轉會調查報告，第59–61頁）
+                </p>
+              </div>
+            )}
           </div>
         )}
       </ScrollSection>
@@ -105,10 +121,9 @@ export function Chapter04() {
             className="max-w-2xl mx-auto px-4 py-16"
             style={{ opacity: isInView ? 1 : 0, transition: 'opacity 0.6s' }}
           >
-            {/* 敘事內容：Task 4.2 填入 */}
-            <p className="text-ink-200 leading-relaxed text-lg">
-              {/* ch04 section 3 — 空白的六小時、五名證人矛盾 */}
-            </p>
+            {s3.paragraphs.map((p, i) => (
+              <NarrativeParagraph key={i} paragraph={p} />
+            ))}
           </div>
         )}
       </ScrollSection>
