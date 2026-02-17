@@ -17,6 +17,8 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'character-map', label: '人物關係圖' },
   { id: 'afterword', label: '後記' },
   { id: 'take-action', label: '採取行動' },
+  { id: 'guestbook', label: '留言板' },
+  { id: 'series', label: '系列網站' },
 ]
 
 export function NavigationMenu() {

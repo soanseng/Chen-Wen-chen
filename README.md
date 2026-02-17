@@ -296,6 +296,18 @@ npm run preview
 
 ---
 
+## 系列網站
+
+台灣威權時代重大案件 · 互動式歷史紀錄：
+
+| 案件 | 年份 | 網站 | 原始碼 |
+|------|------|------|--------|
+| 林宅血案 | 1980 | [線上閱讀](https://soanseng.github.io/the-lin/) | [GitHub](https://github.com/soanseng/the-lin) |
+| 陳文成事件 | 1981 | [線上閱讀](https://soanseng.github.io/Chen-Wen-chen/)（本站） | [GitHub](https://github.com/soanseng/Chen-Wen-chen) |
+| 江南案 | 1984 | [線上閱讀](https://soanseng.github.io/henry-liu-case/) | [GitHub](https://github.com/soanseng/henry-liu-case) |
+
+---
+
 ## 授權
 
 本專案以 [MIT License](LICENSE) 開源。

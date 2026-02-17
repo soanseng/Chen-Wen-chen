@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef } from 'react'
+import Giscus from '@giscus/react'
 import { NavigationMenu } from '@/components/ui/NavigationMenu'
 import { ContentWarning } from '@/components/ui/ContentWarning'
 import { CharacterMap } from '@/components/infographic/CharacterMap'
@@ -285,6 +286,145 @@ function TakeAction() {
   )
 }
 
+function SeriesWebsites() {
+  const { ref, progress } = useScrollProgress()
+  const style = fadeIn(progress, 0.0, 0.4)
+
+  const sites = [
+    {
+      title: '林宅血案',
+      url: 'https://soanseng.github.io/the-lin/',
+      description: '1980 年林義雄家宅血案',
+    },
+    {
+      title: '陳文成事件',
+      url: 'https://soanseng.github.io/Chen-Wen-chen/',
+      description: '1981 年陳文成命案（本站）',
+      current: true,
+    },
+    {
+      title: '江南案',
+      url: 'https://soanseng.github.io/henry-liu-case/',
+      description: '1984 年劉宜良命案',
+    },
+  ]
+
+  return (
+    <section
+      id="series"
+      ref={ref}
+      aria-label="系列網站"
+      className="py-16 sm:py-24 scroll-animated"
+      style={style}
+    >
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <h2 className="text-lg sm:text-xl font-display text-ink-200 mb-2 text-center tracking-wide">
+          系列網站
+        </h2>
+        <p className="text-ink-500 text-xs sm:text-sm text-center font-mono mb-8 sm:mb-12">
+          台灣威權時代重大案件 · 互動式歷史紀錄
+        </p>
+
+        <div className="space-y-3 sm:space-y-4">
+          {sites.map((site) => (
+            <a
+              key={site.url}
+              href={site.current ? undefined : site.url}
+              target={site.current ? undefined : '_blank'}
+              rel={site.current ? undefined : 'noopener noreferrer'}
+              aria-current={site.current ? 'page' : undefined}
+              className={`block px-4 sm:px-5 py-3 sm:py-4 rounded border transition-colors ${
+                site.current
+                  ? 'border-ink-600 bg-ink-900/50 cursor-default'
+                  : 'border-ink-800 hover:border-ink-600 hover:bg-ink-900/30'
+              }`}
+            >
+              <span className={`text-sm sm:text-base font-display ${
+                site.current ? 'text-ink-200' : 'text-ink-200'
+              }`}>
+                {site.title}
+                {site.current && (
+                  <span className="ml-2 text-ink-500 font-mono text-[10px] sm:text-xs">
+                    ← 本站
+                  </span>
+                )}
+              </span>
+              <span className="block text-ink-500 text-xs sm:text-sm mt-1">
+                {site.description}
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-8 sm:mt-10 text-center">
+          <a
+            href="https://github.com/soanseng/Chen-Wen-chen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-ink-400 text-xs sm:text-sm font-mono hover:text-ink-200 transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            原始碼 Source Code
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function GuestBook() {
+  const { ref, progress } = useScrollProgress()
+  const style = fadeIn(progress, 0.0, 0.4)
+
+  return (
+    <section
+      id="guestbook"
+      ref={ref}
+      aria-label="留言板"
+      className="py-16 sm:py-24 scroll-animated"
+      style={style}
+    >
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <h2 className="text-lg sm:text-xl font-display text-ink-200 mb-4 sm:mb-6 text-center tracking-wide">
+          留言板
+        </h2>
+        <p className="text-ink-400 text-xs sm:text-sm text-center leading-relaxed mb-8 sm:mb-12">
+          留言會保存在{' '}
+          <a
+            href="https://github.com/soanseng/henry-liu-case/discussions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink-200 underline underline-offset-2 decoration-ink-600 hover:decoration-ink-400 transition-colors"
+          >
+            GitHub Discussions
+          </a>
+          ，需要 GitHub 帳號登入。
+          <br className="hidden sm:block" />
+          也可以直接到 Discussions 頁面發表。
+        </p>
+
+        <Giscus
+          repo="soanseng/henry-liu-case"
+          repoId="R_kgDORSEDdg"
+          category="General"
+          categoryId="DIC_kwDORSEDds4C2nQw"
+          mapping="specific"
+          term="留言板 Guestbook"
+          strict="0"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="top"
+          theme="noborder_dark"
+          lang="zh-TW"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  )
+}
+
 function App() {
   const [ready, setReady] = useState(false)
   const mainRef = useRef<HTMLElement>(null)
@@ -350,6 +490,14 @@ function App() {
           <ChapterDivider />
 
           <TakeAction />
+
+          <ChapterDivider />
+
+          <GuestBook />
+
+          <ChapterDivider />
+
+          <SeriesWebsites />
 
           <footer className="py-10 sm:py-16 text-center text-ink-600 text-xs sm:text-sm font-mono px-4">
             <p>基於歷史文獻的紀錄呈現 · MIT License</p>
