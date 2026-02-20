@@ -83,7 +83,7 @@ function Afterword() {
           <p>
             這個網站本來是打算在二二八的時候才要公告出來的，但因為
             <a
-              href="https://soanseng.github.io/the-lin/"
+              href="https://lin.nectamen.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink-200 underline underline-offset-2 decoration-ink-600 hover:decoration-ink-400 transition-colors"
@@ -293,19 +293,24 @@ function SeriesWebsites() {
   const sites = [
     {
       title: '林宅血案',
-      url: 'https://soanseng.github.io/the-lin/',
+      url: 'https://lin.nectamen.com/',
       description: '1980 年林義雄家宅血案',
     },
     {
       title: '陳文成事件',
-      url: 'https://soanseng.github.io/Chen-Wen-chen/',
+      url: 'https://cwc.nectamen.com/',
       description: '1981 年陳文成命案（本站）',
       current: true,
     },
     {
       title: '江南案',
-      url: 'https://soanseng.github.io/henry-liu-case/',
+      url: 'https://liu.nectamen.com/',
       description: '1984 年劉宜良命案',
+    },
+    {
+      title: '鄭南榕事件',
+      url: 'https://nylon.nectamen.com/',
+      description: '1989 年鄭南榕自焚事件',
     },
   ]
 

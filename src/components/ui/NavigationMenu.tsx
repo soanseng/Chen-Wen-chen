@@ -88,7 +88,7 @@ export function NavigationMenu() {
         aria-expanded={open}
         aria-controls="nav-menu"
         aria-label={open ? '關閉目錄' : '開啟目錄'}
-        className="fixed top-4 left-4 z-50 w-10 h-10 flex items-center justify-center rounded border border-ink-700 bg-ink-950/80 backdrop-blur-sm text-ink-300 hover:text-ink-100 hover:border-ink-500 transition-colors"
+        className="fixed top-4 left-4 z-50 w-10 h-10 flex items-center justify-center rounded-full border border-ink-700 bg-ink-950/80 backdrop-blur-sm text-ink-300 hover:text-ink-100 hover:border-ink-500 transition-colors"
       >
         {open ? (
           // X icon
@@ -121,11 +121,11 @@ export function NavigationMenu() {
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="pt-18 px-5 pb-6 h-full overflow-y-auto">
+        <div className="pt-18 px-5 pb-6 h-full overflow-y-auto flex flex-col">
           <p className="text-ink-500 font-mono text-[10px] tracking-[0.25em] uppercase mb-6">
             目錄
           </p>
-          <ul className="space-y-1">
+          <ul className="space-y-1 flex-1">
             {NAV_ITEMS.map((item) => (
               <li key={item.id}>
                 <button
@@ -144,6 +144,14 @@ export function NavigationMenu() {
               </li>
             ))}
           </ul>
+          <div className="border-t border-ink-800 pt-4 mt-4">
+            <a
+              href="https://nectamen.com/"
+              className="flex items-center gap-1.5 px-3 py-2 text-[11px] font-mono tracking-[0.15em] text-ink-500 hover:text-ink-300 transition-colors"
+            >
+              ↑ nectamen.com
+            </a>
+          </div>
         </div>
       </nav>
     </>
