@@ -78,8 +78,8 @@ export function PixelScene({
         resolution: 1,
         antialias: false,
       })
-    } catch {
-      // WebGL context creation failed — silently degrade
+    } catch (err) {
+      console.error('[PixelScene] PixiJS init failed:', err)
       return
     }
 
@@ -89,8 +89,11 @@ export function PixelScene({
     }
 
     const canvas = app.canvas as HTMLCanvasElement
+    // Use width:100% + height:auto so canvas scales by its intrinsic 320×180
+    // ratio without depending on the parent having a definite CSS height
     canvas.style.width = '100%'
-    canvas.style.height = '100%'
+    canvas.style.height = 'auto'
+    canvas.style.display = 'block'
     canvas.style.imageRendering = 'pixelated'
     el.appendChild(canvas)
 
@@ -159,17 +162,14 @@ export function PixelScene({
     )
   }
 
+  // Single container div — canvas uses its intrinsic 320×180 to set height
+  // via width:100% + height:auto, so no aspect-ratio or h-full needed here
   return (
     <div
+      ref={containerRef}
       className="w-full max-w-4xl mx-auto"
-      style={{ aspectRatio: `${BASE_WIDTH}/${BASE_HEIGHT}` }}
-    >
-      <div
-        ref={containerRef}
-        className="w-full h-full"
-        role="img"
-        aria-label={ariaLabel}
-      />
-    </div>
+      role="img"
+      aria-label={ariaLabel}
+    />
   )
 }
